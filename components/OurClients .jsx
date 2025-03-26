@@ -43,6 +43,7 @@ const OurClients = () => {
                 alt={`Client ${index + 1}`}
                 width={120}
                 height={80}
+                style={{ width: "auto", height: "auto" }} // Ensures aspect ratio is maintained
                 className="object-contain"
               />
             </div>

@@ -64,6 +64,7 @@ const Navbar = () => {
           alt="Logo"
           width={70}
           height={70}
+          style={{ width: "auto", height: "auto" }}
           className="rounded-full"
         />
 
