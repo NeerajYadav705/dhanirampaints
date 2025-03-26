@@ -2,7 +2,8 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import productData from "./ProductData";
+import productData from "./productData";
+
 
 export default function ProductSection() {
   const [selectedProduct, setSelectedProduct] = useState(null);
