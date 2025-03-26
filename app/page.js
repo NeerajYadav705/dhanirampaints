@@ -1,4 +1,5 @@
 import About from "@/components/AboutUs";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import OurClients from "@/components/OurClients ";
@@ -17,8 +18,7 @@ const page = () => {
       <VisionMissionCommitment />
       <OurClients />
       <ProductSection />
-      {/* <Products /> */}
-      {/* <TeamSection /> */}
+      <Footer />
     </>
   );
 };
