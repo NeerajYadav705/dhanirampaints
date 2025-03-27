@@ -1,53 +1,105 @@
-"use client"
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
-const Hero = () => {
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
+const HeroSection = () => {
+  const [showSecondSection, setShowSecondSection] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowSecondSection(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Animation variants
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
-    <section id="home" className="h-screen flex items-center justify-center px-6 md:px-20">
-      <div className="max-w-6xl w-full flex flex-col-reverse lg:flex-row items-center gap-10">
-        {/* Left Content */}
-        <div className="w-full lg:w-1/2 text-center lg:text-left">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            <span className="text-[#e21138]">DHANIRAM</span> <br />
-            <span className="text-[#40b5ad]">PAINT</span>
-          </h1>
-          <p className="text-gray-600 text-lg mt-3">
-            WE'RE WORKING SINCE 2005 IN THIS FIELD
-          </p>
-          <p className="text-gray-500 text-md mt-4 leading-relaxed">
-            Quality you can trust and durability you deserve—our paints ensure
-            superior performance, long-lasting protection, and lasting value.
-          </p>
-          {/* Button */}
-          <button 
-            onClick={scrollToContact}
-            className="mt-6 bg-[#ec5800] text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-[#6e260e] transition cursor-pointer"
+    <div className="relative h-screen w-full">
+      {/* First Section */}
+      <div
+        className={`absolute inset-0 transition-opacity duration-300 ${
+          showSecondSection ? "opacity-0" : "opacity-100"
+        }`}
+      >
+        <Image
+          src="/assets/hero1.jpg"
+          alt="Innovative Paints"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/40 flex items-end justify-end pb-[10%] pr-[10%]">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            transition={{ staggerChildren: 0.1 }}
+            className="text-right text-white max-w-xl"
           >
-            Contact Us
-          </button>
-        </div>
-
-        {/* Right Image */}
-        <div className="w-full lg:w-1/2 flex justify-center">
-          <Image
-            src="/assets/hero.png"
-            alt="Painting Workers"
-            width={500}
-            height={500}
-            className="w-full max-w-[400px] md:max-w-[500px] h-auto"
-          />
+            <motion.h1
+              variants={textVariants}
+              transition={{ duration: 0.6 }}
+              className="text-4xl md:text-6xl font-bold mb-2 leading-tight"
+            >
+              QUALITY YOU CAN TRUST,
+            </motion.h1>
+            <motion.h1
+              variants={textVariants}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-4xl md:text-6xl font-bold leading-tight"
+            >
+              DURABILITY YOU DESERVE
+            </motion.h1>
+          </motion.div>
         </div>
       </div>
-    </section>
+
+      {/* Second Section */}
+      <div
+        className={`absolute inset-0 transition-opacity duration-300 ${
+          showSecondSection ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <Image
+          src="/assets/hero2.jpg"
+          alt="Premium Coatings"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/40 flex items-end justify-end pb-[10%] pr-[10%]">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            transition={{ staggerChildren: 0.1 }}
+            className="text-right text-white max-w-xl"
+          >
+            <motion.h1
+              variants={textVariants}
+              transition={{ duration: 0.6 }}
+              className="text-4xl md:text-6xl font-bold mb-2 leading-tight"
+            >
+              PREMIUM COATINGS THAT
+            </motion.h1>
+            <motion.h1
+              variants={textVariants}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-4xl md:text-6xl font-bold leading-tight"
+            >
+              STAND THE TEST OF TIME
+            </motion.h1>
+          </motion.div>
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default Hero;
+export default HeroSection;

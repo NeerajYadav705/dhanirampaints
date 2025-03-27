@@ -1,6 +1,7 @@
-import About from "@/components/AboutUs";
+import AboutSection from "@/components/AboutSection ";
 import ContactSection from "@/components/ContactSection";
 import EnquirySection from "@/components/EnquirySection";
+import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
@@ -11,23 +12,24 @@ import QualityControlSection from "@/components/QualityControlSection ";
 import TeamSection from "@/components/TeamSection";
 // import TeamSection from "@/components/TeamSection ";
 
-import VisionMissionCommitment from "@/components/VisionMissionCommitment ";
+import VisionMissionCommitment from "@/components/VisionMission ";
 import React from "react";
 
 const page = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
-      <About />
+      <AboutSection />
       <VisionMissionCommitment />
       <OurClients />
-      <ProductSection />
+      <FAQSection />
+      {/* <ProductSection />
       <QualityControlSection />
       <ContactSection />
-      <EnquirySection />
+      <EnquirySection /> */}
       {/* <TeamSection/> */}
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

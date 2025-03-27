@@ -1,13 +1,9 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
-import {
-  FaInstagram,
-  FaLinkedin,
-  FaTwitter,
-  FaChevronDown,
-} from "react-icons/fa";
+import { FaChevronDown } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Sheet,
   SheetContent,
@@ -15,23 +11,43 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 const productCategories = [
-  { name: "Premium Brand: Olympus", id: "olympus-products" },
-  { name: "Standard Brand: Luxoite", id: "luxoite-products" },
-  { name: "Economical Brand: Rolex", id: "rolex-products" },
+  { name: "INDUSTRIAL", path: "/industrial" },
+  { name: "DECORATIVE", path: "/decorative" },
+  { name: "FLOOR COATINGS", path: "/floorcoating" },
+  { name: "PRECOAT", path: "/precoat" },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
   const [mobileProductsDropdownOpen, setMobileProductsDropdownOpen] =
     useState(false);
-
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [visible, setVisible] = useState(true);
   const dropdownRef = useRef(null);
+
+  // Handle scroll behavior
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > lastScrollY) {
+        // Scrolling down
+        setVisible(false);
+      } else {
+        // Scrolling up
+        setVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -42,254 +58,162 @@ const Navbar = () => {
     };
 
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
-  // Detect screen width for mobile menu
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Handle navbar hide/show on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        setShowNavbar(false); // Hide on scroll down
-      } else {
-        setShowNavbar(true); // Show on scroll up
-      }
-      setLastScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
-
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-    setIsOpen(false);
-    setProductsDropdownOpen(false);
-    setMobileProductsDropdownOpen(false);
-  };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 bg-white shadow-md transition-transform duration-300 ${
-        showNavbar ? "translate-y-0" : "-translate-y-full"
-      }`}
-    >
+    <nav className={`fixed top-0 left-0 w-full z-50 bg-white shadow-md transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+        {/* Rest of your navbar code remains exactly the same */}
         {/* Logo */}
-        <Image
-          src="/assets/dhan.jpg"
-          alt="Logo"
-          width={60}
-          height={60}
-          className="rounded-full w-12 h-12 sm:w-14 sm:h-14"
-        />
+        <div className="flex items-center">
+          <Image
+            src="/assets/logo.png"
+            alt="Logo"
+            width={100}
+            height={100}
+            className="mr-14 w-auto h-auto"
+          />
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-6 items-center">
-          {[
-            { name: "Home", id: "home", color: "#E21138" },
-            { name: "About Us", id: "about-us", color: "#Ec5800" },
-          ].map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className="relative text-lg text-black transition cursor-pointer group"
-            >
-              {item.name}
-              <span
-                className="absolute left-0 bottom-0 w-0 h-[2px] transition-all duration-300 group-hover:w-full"
-                style={{ backgroundColor: item.color }}
-              />
-            </button>
-          ))}
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-6 items-center">
+            <Link href="/" className="group relative text-lg font-medium text-black">
+              <span className="group-hover:text-[#E21138]">HOME</span>
+              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#E21138] transition-all duration-300 group-hover:w-full"></span>
+            </Link>
 
-          {/* Products Dropdown */}
-          <div className="relative group" ref={dropdownRef}>
-            <button
-              onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
-              className="flex items-center text-lg text-black transition cursor-pointer"
-            >
-              Products
-              <FaChevronDown
-                className={`ml-1 transition-transform ${
-                  productsDropdownOpen ? "rotate-180" : ""
-                }`}
-              />
-              <span
-                className="absolute left-0 bottom-0 w-0 h-[2px] transition-all duration-300 group-hover:w-full"
-                style={{ backgroundColor: "#40B5AD" }}
-              />
-            </button>
+            <Link href="/about" className="group relative text-lg font-medium text-black">
+              <span className="group-hover:text-[#EC5800]">ABOUT</span>
+              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#EC5800] transition-all duration-300 group-hover:w-full"></span>
+            </Link>
 
-            {productsDropdownOpen && (
-              <div className="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg z-50 border border-gray-200">
-                {productCategories.map((category) => (
-                  <button
-                    key={category.id}
-                    onClick={() => scrollToSection(category.id)}
-                    className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100 transition-colors"
-                  >
-                    {category.name}
-                  </button>
-                ))}
-              </div>
-            )}
+            {/* Products Dropdown */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
+                className="group relative flex items-center text-lg font-medium text-black"
+              >
+                <span className="group-hover:text-[#40B5AD]">PRODUCTS</span>
+                <FaChevronDown
+                  className={`ml-1 transition-transform ${
+                    productsDropdownOpen ? "rotate-180" : ""
+                  } group-hover:text-[#40B5AD]`}
+                />
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#40B5AD] transition-all duration-300 group-hover:w-full"></span>
+              </button>
+
+              {productsDropdownOpen && (
+                <div className="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg z-50 border border-gray-200">
+                  {productCategories.map((category) => (
+                    <Link
+                      key={category.path}
+                      href={category.path}
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                      onClick={() => setProductsDropdownOpen(false)}
+                    >
+                      {category.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <Link href="/enquiry" className="group relative text-lg font-medium text-black">
+              <span className="group-hover:text-[#009E61]">ENQUIRY</span>
+              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#009E61] transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+
+            <Link href="/contact" className="group relative text-lg font-medium text-black">
+              <span className="group-hover:text-[#6E260E]">CONTACT US</span>
+              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#6E260E] transition-all duration-300 group-hover:w-full"></span>
+            </Link>
           </div>
-
-          {[
-            {
-              name: "Quality Control",
-              id: "quality-control",
-              color: "#009E61",
-            },
-            { name: "Contact Us", id: "contact", color: "#6E260E" },
-            { name: "Enquiry", id: "enquiry", color: "#9333EA" },
-          ].map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className="relative text-lg text-black transition cursor-pointer group"
-            >
-              {item.name}
-              <span
-                className="absolute left-0 bottom-0 w-0 h-[2px] transition-all duration-300 group-hover:w-full"
-                style={{ backgroundColor: item.color }}
-              />
-            </button>
-          ))}
         </div>
 
-        {/* Mobile Menu */}
-        {isMobile && (
-          <div className="md:hidden">
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger className="focus:outline-none">
-                <RxHamburgerMenu className="text-2xl" />
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[280px] sm:w-[300px]">
-                <SheetHeader className="mb-6">
-                  <SheetTitle >
-                    {/* <Image
-                      src="/assets/dhan.jpg"
-                      alt="Logo"
-                      width={60}
-                      height={60}
-                      className="rounded-full w-14 h-14"
-                    /> */}
-                  </SheetTitle>
-                </SheetHeader>
-
-                <div className="flex flex-col h-[calc(100%-80px)] justify-between">
-                  {/* Navigation Links */}
-                  <div className="space-y-4 overflow-y-auto">
-                    {[
-                      { name: "Home", id: "home" },
-                      { name: "About Us", id: "about-us" },
-                    ].map((item) => (
-                      <button
-                        key={item.id}
-                        onClick={() => scrollToSection(item.id)}
-                        className="w-full text-left py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-800 font-medium"
-                      >
-                        {item.name}
-                      </button>
-                    ))}
-
-                    {/* Mobile Products Dropdown */}
-                    <div className="space-y-2">
-                      <button
-                        onClick={() =>
-                          setMobileProductsDropdownOpen(
-                            !mobileProductsDropdownOpen
-                          )
-                        }
-                        className="w-full flex justify-between items-center py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-800 font-medium"
-                      >
-                        <span>Products</span>
-                        <FaChevronDown
-                          className={`transition-transform ${
-                            mobileProductsDropdownOpen ? "rotate-180" : ""
-                          }`}
-                        />
-                      </button>
-
-                      {mobileProductsDropdownOpen && (
-                        <div className="ml-4 space-y-2">
-                          {productCategories.map((category) => (
-                            <button
-                              key={category.id}
-                              onClick={() => scrollToSection(category.id)}
-                              className="w-full text-left py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-600"
-                            >
-                              {category.name}
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-
-                    {[
-                      { name: "Quality Control", id: "quality-control" },
-                      { name: "Contact Us", id: "contact" },
-                      { name: "Enquiry", id: "enquiry" },
-                    ].map((item) => (
-                      <button
-                        key={item.id}
-                        onClick={() => scrollToSection(item.id)}
-                        className="w-full text-left py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-800 font-medium"
-                      >
-                        {item.name}
-                      </button>
-                    ))}
-                  </div>
-
-                  {/* Social Media Links */}
-                  <div className="flex justify-center space-x-6 py-4 border-t border-gray-200">
-                    <a
-                      href="https://www.instagram.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xl text-gray-600 hover:text-[#E21138] transition"
-                    >
-                      <FaInstagram />
-                    </a>
-                    <a
-                      href="https://www.linkedin.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xl text-gray-600 hover:text-[#40B5AD] transition"
-                    >
-                      <FaLinkedin />
-                    </a>
-                    <a
-                      href="https://www.twitter.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xl text-gray-600 hover:text-[#Ec5800] transition"
-                    >
-                      <FaTwitter />
-                    </a>
-                  </div>
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <Sheet>
+            <SheetTrigger className="focus:outline-none">
+              <RxHamburgerMenu className="text-2xl" />
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[280px]">
+              <SheetHeader>
+                <SheetTitle asChild>
+                  <VisuallyHidden>Navigation Menu</VisuallyHidden>
+                </SheetTitle>
+                <div className="pt-4">
+                  <Image
+                    src="/assets/logo.png"
+                    alt="Logo"
+                    width={100}
+                    height={100}
+                    className="w-16 h-auto mx-auto"
+                  />
                 </div>
-              </SheetContent>
-            </Sheet>
-          </div>
-        )}
+              </SheetHeader>
+
+              <div className="mt-6 space-y-4">
+                <Link
+                  href="/"
+                  className="block py-2 px-4 text-gray-800 hover:bg-gray-100"
+                  onClick={() => setIsOpen(false)}
+                >
+                  HOME
+                </Link>
+                <Link
+                  href="/about"
+                  className="block py-2 px-4 text-gray-800 hover:bg-gray-100"
+                  onClick={() => setIsOpen(false)}
+                >
+                  ABOUT
+                </Link>
+
+                {/* Mobile Products Dropdown */}
+                <div>
+                  <button
+                    onClick={() =>
+                      setMobileProductsDropdownOpen(!mobileProductsDropdownOpen)
+                    }
+                    className="w-full flex justify-between items-center py-2 px-4 text-gray-800 hover:bg-gray-100"
+                  >
+                    <span>PRODUCTS</span>
+                    <FaChevronDown
+                      className={`transition-transform ${
+                        mobileProductsDropdownOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  {mobileProductsDropdownOpen && (
+                    <div className="ml-4 mt-2 space-y-2">
+                      {productCategories.map((category) => (
+                        <Link
+                          key={category.path}
+                          href={category.path}
+                          className="block py-2 px-4 text-gray-600 hover:bg-gray-100"
+                          onClick={() => {
+                            setMobileProductsDropdownOpen(false);
+                            setIsOpen(false);
+                          }}
+                        >
+                          {category.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                <Link
+                  href="/contact"
+                  className="block py-2 px-4 text-gray-800 hover:bg-gray-100"
+                  onClick={() => setIsOpen(false)}
+                >
+                  CONTACT US
+                </Link>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </nav>
   );

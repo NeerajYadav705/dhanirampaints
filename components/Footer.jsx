@@ -1,193 +1,165 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
+import React from "react";
 import {
   FaPhone,
   FaEnvelope,
   FaMapMarkerAlt,
-  FaBuilding,
   FaFacebook,
   FaInstagram,
   FaLinkedin,
-  FaTwitter,
+  FaPaintBrush,
 } from "react-icons/fa";
+import Link from "next/link";
+import Image from "next/image";
 
-export default function Footer() {
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
+const Footer = () => {
   return (
-    <footer className="bg-[#0F172A] text-[#E2E8F0] pt-16 pb-8 border-t border-[#1E293B]">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <footer className="bg-[#7e7e7e] text-white pt-20 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Company Info */}
-          <div className="mb-6">
-            <div className="flex flex-col items-start mb-6">
-              <div className="flex items-center mb-4">
-                <Image
-                  src="/assets/dhan.jpg"
-                  alt="Dhani Ram Paint"
-                  width={70}
-                  height={70}
-                  className="rounded-full border-2 border-[#E11D48]"
-                />
-                <h3 className="text-2xl font-bold text-[#E11D48] ml-3">
-                  Dhani Ram <span className="text-[#E2E8F0]">Paint</span>
-                </h3>
-              </div>
-              <p className="mb-4 text-[#94A3B8] text-sm leading-relaxed">
-                Bringing color to life since 2005. Premium quality paints for
-                industries, businesses, and infrastructure projects across
-                India.
-              </p>
-              <div className="flex space-x-4">
-                <a
-                  href="#"
-                  className="text-[#94A3B8] hover:text-[#E11D48] transition-colors duration-300"
-                  aria-label="Facebook"
-                >
-                  <FaFacebook className="h-5 w-5" />
-                </a>
-                <a
-                  href="#"
-                  className="text-[#94A3B8] hover:text-[#E11D48] transition-colors duration-300"
-                  aria-label="Instagram"
-                >
-                  <FaInstagram className="h-5 w-5" />
-                </a>
-                <a
-                  href="#"
-                  className="text-[#94A3B8] hover:text-[#E11D48] transition-colors duration-300"
-                  aria-label="LinkedIn"
-                >
-                  <FaLinkedin className="h-5 w-5" />
-                </a>
-                <a
-                  href="#"
-                  className="text-[#94A3B8] hover:text-[#E11D48] transition-colors duration-300"
-                  aria-label="Twitter"
-                >
-                  <FaTwitter className="h-5 w-5" />
-                </a>
-              </div>
+          <div className="space-y-4">
+            <div className="flex items-center">
+              {/* Company Logo - Replace with your actual logo image */}
+              <Image
+                src="/assets/logo.png"
+                alt="DhaniRam Paints Logo"
+                width={100}
+                height={100}
+                className="mr-3"
+              />
+              <h3 className="text-2xl font-bold">DhaniRam Paints</h3>
+            </div>
+            <p className="text-gray-300">
+              Transforming spaces with quality paints and coatings since 2005.
+            </p>
+            <div className="flex space-x-4 pt-2">
+              <a
+                href="#"
+                className="text-white hover:text-[#E21138] transition-colors duration-300"
+              >
+                <FaFacebook size={20} />
+              </a>
+              <a
+                href="#"
+                className="text-white hover:text-[#EC5800] transition-colors duration-300"
+              >
+                <FaInstagram size={20} />
+              </a>
+              <a
+                href="#"
+                className="text-white hover:text-[#40B5AD] transition-colors duration-300"
+              >
+                <FaLinkedin size={20} />
+              </a>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold mb-5 text-[#F8FAFC] pb-2">
-              Quick Links
-            </h3>
+          {/* Navigation Links (Matching Navbar) */}
+          <div className="space-y-4">
+            <h4 className="text-lg font-semibold">Explore</h4>
             <ul className="space-y-3">
-              {[
-                { name: "Home", id: "home" },
-                { name: "About Us", id: "about-us" },
-                { name: "Our Products", id: "products" },
-                { name: "Quality Control", id: "quality-control" },
-                { name: "Contact Us", id: "contact" },
-              ].map((item) => (
-                <li key={item.id}>
-                  <button
-                    onClick={() => scrollToSection(item.id)}
-                    className="text-[#94A3B8] hover:text-[#F8FAFC] transition-colors duration-300 flex items-center"
-                  >
-                    <span className="w-1.5 h-1.5 bg-[#E11D48] rounded-full mr-3"></span>
-                    {item.name}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Product Categories */}
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold mb-5 text-[#F8FAFC] pb-2">
-              Our Products
-            </h3>
-            <ul className="space-y-3">
-              {[
-                { name: "Premium Brand: Olympus", id: "olympus-products" },
-                { name: "Standard Brand: Luxoite", id: "luxoite-products" },
-                { name: "Economical Brand: Rolex", id: "rolex-products" },
-              ].map((item) => (
-                <li key={item.id}>
-                  <button
-                    onClick={() => scrollToSection(item.id)}
-                    className="text-[#94A3B8] hover:text-[#F8FAFC] transition-colors duration-300 flex items-center"
-                  >
-                    <span className="w-1.5 h-1.5 bg-[#0EA5E9] rounded-full mr-3"></span>
-                    {item.name}
-                  </button>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/"
+                  className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"
+                >
+                  <span className="w-2 h-2 bg-[#E21138] rounded-full mr-2"></span>
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"
+                >
+                  <span className="w-2 h-2 bg-[#EC5800] rounded-full mr-2"></span>
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/products"
+                  className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"
+                >
+                  <span className="w-2 h-2 bg-[#40B5AD] rounded-full mr-2"></span>
+                  Products
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"
+                >
+                  <span className="w-2 h-2 bg-[#6E260E] rounded-full mr-2"></span>
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Contact Info */}
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold mb-5 text-[#F8FAFC] pb-2">
-              Contact Info
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <FaMapMarkerAlt className="text-[#0EA5E9] mt-1 mr-3 flex-shrink-0" />
-                <span className="text-[#94A3B8] text-sm">
-                  123 Color Street, Paint City, PC 12345, India
-                </span>
-              </li>
-              <li className="flex items-center">
-                <FaPhone className="text-[#0EA5E9] mr-3 flex-shrink-0" />
-                <div className="flex flex-col">
-                  <span className="text-[#94A3B8] text-sm">
-                    +91 98765 43210
-                  </span>
-                  <span className="text-[#94A3B8] text-sm">
-                    +91 98765 43211
-                  </span>
-                </div>
-              </li>
-              <li className="flex items-center">
-                <FaEnvelope className="text-[#0EA5E9] mr-3 flex-shrink-0" />
-                <span className="text-[#94A3B8] text-sm">
-                  info@dhanirampaint.com
-                </span>
-              </li>
-              <li className="flex items-center">
-                <FaBuilding className="text-[#0EA5E9] mr-3 flex-shrink-0" />
-                <span className="text-[#94A3B8] text-sm">
-                  Mon-Sat: 9:00 AM - 6:00 PM
-                </span>
-              </li>
-            </ul>
+          <div className="space-y-4">
+            <h4 className="text-lg font-semibold">Get in Touch</h4>
+            <div className="space-y-3">
+              <div className="flex items-start space-x-3">
+                <FaMapMarkerAlt className="mt-1 text-[#009E61]" />
+                <p className="text-gray-300">
+                  123 Industrial Area, Paint Nagar
+                  <br />
+                  Mumbai, Maharashtra 400001
+                </p>
+              </div>
+              <div className="flex items-center space-x-3">
+                <FaPhone className="text-[#E21138]" />
+                <a
+                  href="tel:+911234567890"
+                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                >
+                  +91 12345 67890
+                </a>
+              </div>
+              <div className="flex items-center space-x-3">
+                <FaEnvelope className="text-[#EC5800]" />
+                <a
+                  href="mailto:info@dhanjrampaints.com"
+                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                >
+                  info@dhanjrampaints.com
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-[#1E293B] mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-[#64748B] text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} Dhani Ram Paint. All rights reserved.
+        {/* Divider */}
+        <div className="border-t border-[#ffffff20] my-8 relative"></div>
+
+        {/* Copyright */}
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-400 text-sm">
+            &copy; {new Date().getFullYear()} DhaniRam Paints. All Rights
+            Reserved.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-            {[
-              { name: "Privacy Policy", link: "#" },
-              { name: "Terms of Service", link: "#" },
-              { name: "Sitemap", link: "#" },
-              { name: "Careers", link: "#" },
-            ].map((item) => (
-              <Link
-                key={item.name}
-                href={item.link}
-                className="text-[#64748B] hover:text-[#E11D48] text-sm transition-colors duration-300"
-              >
-                {item.name}
-              </Link>
-            ))}
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <Link
+              href="/privacy"
+              className="text-gray-400 hover:text-white text-sm transition-colors duration-300"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms"
+              className="text-gray-400 hover:text-white text-sm transition-colors duration-300"
+            >
+              Terms of Service
+            </Link>
           </div>
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
