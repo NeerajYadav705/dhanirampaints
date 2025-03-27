@@ -4,7 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import productData from "./productData";
 
-
 export default function ProductSection() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -21,8 +20,15 @@ export default function ProductSection() {
     document.body.style.overflow = "auto";
   };
 
+  // Create a mapping of brand names to IDs
+  const brandIds = {
+    "Premium Brand: Olympus": "olympus-products",
+    "Standard Brand: Luxoite": "luxoite-products",
+    "Economical Brand: Rolex": "rolex-products"
+  };
+
   return (
-    <div className="max-w-7xl mx-auto my-12 px-4 sm:px-6 lg:px-8">
+    <div id="products" className="max-w-7xl mx-auto my-12 px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
           Our Paint Collections
@@ -35,7 +41,11 @@ export default function ProductSection() {
 
       {/* Brand Sections */}
       {Object.entries(productData).map(([brand, categories]) => (
-        <div key={brand} className="mb-16">
+        <div 
+          key={brand} 
+          id={brandIds[brand]} // Add ID for scrolling
+          className="mb-16 scroll-mt-20" // scroll-mt-20 adds offset for fixed header
+        >
           <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
             {brand.split(":")[0].trim()}
             <span className="block text-2xl text-blue-600">

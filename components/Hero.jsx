@@ -1,9 +1,17 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 
 const Hero = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="h-screen flex items-center justify-center px-6 md:px-20">
+    <section id="home" className="h-screen flex items-center justify-center px-6 md:px-20">
       <div className="max-w-6xl w-full flex flex-col-reverse lg:flex-row items-center gap-10">
         {/* Left Content */}
         <div className="w-full lg:w-1/2 text-center lg:text-left">
@@ -12,14 +20,17 @@ const Hero = () => {
             <span className="text-[#40b5ad]">PAINT</span>
           </h1>
           <p className="text-gray-600 text-lg mt-3">
-            WE’RE WORKING SINCE 2005 IN THIS FIELD
+            WE'RE WORKING SINCE 2005 IN THIS FIELD
           </p>
           <p className="text-gray-500 text-md mt-4 leading-relaxed">
             Quality you can trust and durability you deserve—our paints ensure
             superior performance, long-lasting protection, and lasting value.
           </p>
           {/* Button */}
-          <button className="mt-6 bg-[#ec5800] text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-[#6e260e] transition cursor-pointer">
+          <button 
+            onClick={scrollToContact}
+            className="mt-6 bg-[#ec5800] text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-[#6e260e] transition cursor-pointer"
+          >
             Contact Us
           </button>
         </div>
