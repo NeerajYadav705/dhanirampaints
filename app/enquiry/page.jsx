@@ -2,7 +2,7 @@ import React from 'react'
 
 const Enquiry = () => {
   return (
-    <div>Enquiry</div>
+    <div className="h-screen w-full flex items-center justify-center">Enquiry</div>
   )
 }
 
