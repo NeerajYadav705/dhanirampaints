@@ -18,7 +18,7 @@ const Industrial = () => {
       name: "Bitumen Paint",
       description:
         "Waterproof and corrosion-resistant coating. Perfect for pipelines and tanks.",
-      image: "/images/bitumen.jpg",
+      image: "/assets/aboutbg.jpg",
       color: "#E21138",
     },
     {
@@ -26,7 +26,7 @@ const Industrial = () => {
       name: "Aluminum Paint",
       description:
         "Heat-reflective and anti-corrosive properties for industrial equipment.",
-      image: "/images/aluminum.jpg",
+      image: "/assets/aboutbg.jpg",
       color: "#E21138",
     },
     {
@@ -34,7 +34,7 @@ const Industrial = () => {
       name: "PU Paint",
       description:
         "High abrasion resistance and flexibility for automotive applications.",
-      image: "/images/pu-paint.jpg",
+      image: "/assets/aboutbg.jpg",
       color: "#E21138",
     },
     {
@@ -42,7 +42,7 @@ const Industrial = () => {
       name: "Epoxy Paint",
       description:
         "Superior adhesion and chemical resistance for industrial floors.",
-      image: "/images/epoxy.jpg",
+      image: "/assets/aboutbg.jpg",
       color: "#E21138",
     },
     {
@@ -50,7 +50,7 @@ const Industrial = () => {
       name: "Red Oxide Primer",
       description:
         "Essential rust-inhibiting base coat for iron and steel surfaces.",
-      image: "/images/red-oxide.jpg",
+      image: "/assets/aboutbg.jpg",
       color: "#E21138",
     },
   ];

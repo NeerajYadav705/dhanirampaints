@@ -77,7 +77,7 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div variants={item} className="relative">
             <Image
-              src="/about-image.jpg"
+              src="/assets/aboutbg.jpg"
               alt="Dhaniram Paints Factory"
               width={600}
               height={400}
@@ -553,7 +553,7 @@ const About = () => {
               </div>
             </motion.div>
             <Image
-              src="/distribution-map.jpg"
+              src="/assets/aboutbg.jpg"
               alt="Dhaniram Paints Distribution Map"
               fill
               className="object-cover"

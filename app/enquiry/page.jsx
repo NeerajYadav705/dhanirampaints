@@ -105,7 +105,7 @@ const Enquiry = () => {
         className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden"
       >
         {/* Form Header */}
-        <div className="bg-[#009E61] p-6 sm:p-8 text-white">
+        <div className="bg-[#009E61] p-6 m-2 rounded-t-lg sm:p-8 text-white">
           <motion.h1
             variants={slideUp}
             className="text-2xl sm:text-3xl font-bold"

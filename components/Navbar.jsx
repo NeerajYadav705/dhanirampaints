@@ -8,7 +8,6 @@ import {
   FaTwitter,
   FaInstagram,
 } from "react-icons/fa";
-import { IoIosMail } from "react-icons/io";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -17,6 +16,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  SheetClose,
 } from "@/components/ui/sheet";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
@@ -29,7 +29,6 @@ const productCategories = [
 
 const Navbar = () => {
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
   const [mobileProductsDropdownOpen, setMobileProductsDropdownOpen] =
     useState(false);
@@ -41,15 +40,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY) {
-        // Scrolling down
-        setVisible(false);
-      } else {
-        // Scrolling up
-        setVisible(true);
-      }
-
+      setVisible(currentScrollY <= lastScrollY || currentScrollY < 10);
       setLastScrollY(currentScrollY);
     };
 
@@ -69,7 +60,6 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Check if current path is a product category
   const isProductActive = productCategories.some(
     (category) => pathname === category.path
   );
@@ -83,13 +73,16 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
         {/* Logo and Main Navigation */}
         <div className="flex items-center">
-          <Image
-            src="/assets/logo.png"
-            alt="Logo"
-            width={100}
-            height={100}
-            className="mr-14 w-auto h-auto"
-          />
+          <Link href="/">
+            <Image
+              src="/assets/logo.png"
+              alt="Logo"
+              width={100}
+              height={100}
+              className="mr-14 w-auto h-auto"
+              priority
+            />
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6 items-center">
@@ -253,28 +246,31 @@ const Navbar = () => {
               </SheetHeader>
 
               <div className="flex-1 mt-6 space-y-4">
-                <Link
-                  href="/"
-                  className={`block py-2 px-4 ${
-                    pathname === "/"
-                      ? "text-[#E21138] font-medium"
-                      : "text-gray-800"
-                  } hover:bg-gray-100`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  HOME
-                </Link>
-                <Link
-                  href="/about"
-                  className={`block py-2 px-4 ${
-                    pathname === "/about"
-                      ? "text-[#EC5800] font-medium"
-                      : "text-gray-800"
-                  } hover:bg-gray-100`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  ABOUT
-                </Link>
+                <SheetClose asChild>
+                  <Link
+                    href="/"
+                    className={`block py-2 px-4 ${
+                      pathname === "/"
+                        ? "text-[#E21138] font-medium"
+                        : "text-gray-800"
+                    } hover:bg-gray-100`}
+                  >
+                    HOME
+                  </Link>
+                </SheetClose>
+
+                <SheetClose asChild>
+                  <Link
+                    href="/about"
+                    className={`block py-2 px-4 ${
+                      pathname === "/about"
+                        ? "text-[#EC5800] font-medium"
+                        : "text-gray-800"
+                    } hover:bg-gray-100`}
+                  >
+                    ABOUT
+                  </Link>
+                </SheetClose>
 
                 {/* Mobile Products Dropdown */}
                 <div>
@@ -299,49 +295,48 @@ const Navbar = () => {
                   {mobileProductsDropdownOpen && (
                     <div className="ml-4 mt-2 space-y-2">
                       {productCategories.map((category) => (
-                        <Link
-                          key={category.path}
-                          href={category.path}
-                          className={`block py-2 px-4 ${
-                            pathname === category.path
-                              ? "text-[#40B5AD] font-medium"
-                              : "text-gray-600"
-                          } hover:bg-gray-100`}
-                          onClick={() => {
-                            setMobileProductsDropdownOpen(false);
-                            setIsOpen(false);
-                          }}
-                        >
-                          {category.name}
-                        </Link>
+                        <SheetClose key={category.path} asChild>
+                          <Link
+                            href={category.path}
+                            className={`block py-2 px-4 ${
+                              pathname === category.path
+                                ? "text-[#40B5AD] font-medium"
+                                : "text-gray-600"
+                            } hover:bg-gray-100`}
+                          >
+                            {category.name}
+                          </Link>
+                        </SheetClose>
                       ))}
                     </div>
                   )}
                 </div>
 
-                <Link
-                  href="/enquiry"
-                  className={`block py-2 px-4 ${
-                    pathname === "/enquiry"
-                      ? "text-[#009E61] font-medium"
-                      : "text-gray-800"
-                  } hover:bg-gray-100`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  ENQUIRY
-                </Link>
+                <SheetClose asChild>
+                  <Link
+                    href="/enquiry"
+                    className={`block py-2 px-4 ${
+                      pathname === "/enquiry"
+                        ? "text-[#009E61] font-medium"
+                        : "text-gray-800"
+                    } hover:bg-gray-100`}
+                  >
+                    ENQUIRY
+                  </Link>
+                </SheetClose>
 
-                <Link
-                  href="/contact"
-                  className={`block py-2 px-4 ${
-                    pathname === "/contact"
-                      ? "text-[#6E260E] font-medium"
-                      : "text-gray-800"
-                  } hover:bg-gray-100`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  CONTACT US
-                </Link>
+                <SheetClose asChild>
+                  <Link
+                    href="/contact"
+                    className={`block py-2 px-4 ${
+                      pathname === "/contact"
+                        ? "text-[#6E260E] font-medium"
+                        : "text-gray-800"
+                    } hover:bg-gray-100`}
+                  >
+                    CONTACT US
+                  </Link>
+                </SheetClose>
               </div>
 
               {/* Social Icons at Bottom of Mobile Menu */}
