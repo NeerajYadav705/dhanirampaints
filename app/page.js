@@ -10,9 +10,11 @@ import OurClients from "@/components/OurClients ";
 import ProductSection from "@/components/products/ProductSection";
 import QualityControlSection from "@/components/QualityControlSection ";
 import TeamSection from "@/components/TeamSection";
+import USP from "@/components/usp";
 // import TeamSection from "@/components/TeamSection ";
 
 import VisionMissionCommitment from "@/components/VisionMission ";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import React from "react";
 
 const page = () => {
@@ -21,9 +23,11 @@ const page = () => {
       {/* <Navbar /> */}
       <Hero />
       <AboutSection />
+      <USP />
       <VisionMissionCommitment />
       <OurClients />
       <FAQSection />
+      {/* <WhatsAppButton /> */}
       {/* <ProductSection />
       <QualityControlSection />
       <ContactSection />

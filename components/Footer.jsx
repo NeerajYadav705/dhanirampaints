@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { motion } from "framer-motion";
 import {
   FaPhone,
   FaEnvelope,
@@ -12,153 +13,204 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 
+// Animation variants
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 }
+};
+
 const Footer = () => {
   return (
-    <footer className="bg-[#7e7e7e] text-white pt-20 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <motion.footer 
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      variants={container}
+      className="bg-gray-200 text-gray-800 pt-20 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-t border-gray-200"
+    >
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Company Info */}
-          <div className="space-y-4">
+          <motion.div variants={item} className="space-y-4">
             <div className="flex items-center">
-              {/* Company Logo - Replace with your actual logo image */}
               <Image
                 src="/assets/logo.png"
                 alt="DhaniRam Paints Logo"
-                width={100}
-                height={100}
+                width={120}
+                height={80}
                 className="mr-3"
               />
-              <h3 className="text-2xl font-bold">DhaniRam Paints</h3>
+              <h3 className="text-2xl font-bold text-[#6E260E]">DhaniRam Paints</h3>
             </div>
-            <p className="text-gray-300">
+            <p className="text-gray-600">
               Transforming spaces with quality paints and coatings since 2005.
             </p>
-            <div className="flex space-x-4 pt-2">
-              <a
+            <motion.div 
+              variants={container}
+              className="flex space-x-4 pt-2"
+            >
+              <motion.a
+                variants={item}
+                whileHover={{ y: -3 }}
                 href="#"
-                className="text-white hover:text-[#E21138] transition-colors duration-300"
+                className="text-[#6E260E] hover:text-[#E21138] transition-colors duration-300"
               >
                 <FaFacebook size={20} />
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                variants={item}
+                whileHover={{ y: -3 }}
                 href="#"
-                className="text-white hover:text-[#EC5800] transition-colors duration-300"
+                className="text-[#6E260E] hover:text-[#EC5800] transition-colors duration-300"
               >
                 <FaInstagram size={20} />
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                variants={item}
+                whileHover={{ y: -3 }}
                 href="#"
-                className="text-white hover:text-[#40B5AD] transition-colors duration-300"
+                className="text-[#6E260E] hover:text-[#40B5AD] transition-colors duration-300"
               >
                 <FaLinkedin size={20} />
-              </a>
-            </div>
-          </div>
+              </motion.a>
+            </motion.div>
+          </motion.div>
 
-          {/* Navigation Links (Matching Navbar) */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Explore</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/"
-                  className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"
+          {/* Navigation Links */}
+          <motion.div variants={item} className="space-y-4">
+            <h4 className="text-lg font-semibold text-[#6E260E]">Explore</h4>
+            <motion.ul 
+              variants={container}
+              className="space-y-3"
+            >
+              {[
+                { href: "/", text: "Home", color: "#E21138" },
+                { href: "/about", text: "About Us", color: "#EC5800" },
+                { href: "/products", text: "Products", color: "#40B5AD" },
+                { href: "/contact", text: "Contact Us", color: "#009E61" }
+              ].map((link, index) => (
+                <motion.li 
+                  key={index}
+                  variants={item}
+                  whileHover={{ x: 5 }}
                 >
-                  <span className="w-2 h-2 bg-[#E21138] rounded-full mr-2"></span>
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"
-                >
-                  <span className="w-2 h-2 bg-[#EC5800] rounded-full mr-2"></span>
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/products"
-                  className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"
-                >
-                  <span className="w-2 h-2 bg-[#40B5AD] rounded-full mr-2"></span>
-                  Products
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"
-                >
-                  <span className="w-2 h-2 bg-[#6E260E] rounded-full mr-2"></span>
-                  Contact Us
-                </Link>
-              </li>
-            </ul>
-          </div>
+                  <Link
+                    href={link.href}
+                    className="text-gray-600 hover:text-[#6E260E] transition-colors duration-300 flex items-center"
+                  >
+                    <span 
+                      className="w-2 h-2 rounded-full mr-2" 
+                      style={{ backgroundColor: link.color }}
+                    ></span>
+                    {link.text}
+                  </Link>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </motion.div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Get in Touch</h4>
-            <div className="space-y-3">
-              <div className="flex items-start space-x-3">
+          <motion.div variants={item} className="space-y-4">
+            <h4 className="text-lg font-semibold text-[#6E260E]">Get in Touch</h4>
+            <motion.div 
+              variants={container}
+              className="space-y-3"
+            >
+              <motion.div 
+                variants={item}
+                className="flex items-start space-x-3"
+              >
                 <FaMapMarkerAlt className="mt-1 text-[#009E61]" />
-                <p className="text-gray-300">
-                  123 Industrial Area, Paint Nagar
-                  <br />
+                <p className="text-gray-600">
+                  123 Industrial Area, Paint Nagar<br />
                   Mumbai, Maharashtra 400001
                 </p>
-              </div>
-              <div className="flex items-center space-x-3">
+              </motion.div>
+              <motion.div 
+                variants={item}
+                whileHover={{ x: 3 }}
+                className="flex items-center space-x-3"
+              >
                 <FaPhone className="text-[#E21138]" />
                 <a
                   href="tel:+911234567890"
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                  className="text-gray-600 hover:text-[#6E260E] transition-colors duration-300"
                 >
                   +91 12345 67890
                 </a>
-              </div>
-              <div className="flex items-center space-x-3">
+              </motion.div>
+              <motion.div 
+                variants={item}
+                whileHover={{ x: 3 }}
+                className="flex items-center space-x-3"
+              >
                 <FaEnvelope className="text-[#EC5800]" />
                 <a
                   href="mailto:info@dhanjrampaints.com"
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                  className="text-gray-600 hover:text-[#6E260E] transition-colors duration-300"
                 >
                   info@dhanjrampaints.com
                 </a>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
 
         {/* Divider */}
-        <div className="border-t border-[#ffffff20] my-8 relative"></div>
+        <motion.div 
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="border-t border-[#6E260E]/20 my-8 relative"
+        ></motion.div>
 
         {/* Copyright */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} DhaniRam Paints. All Rights
-            Reserved.
-          </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link
-              href="/privacy"
-              className="text-gray-400 hover:text-white text-sm transition-colors duration-300"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms"
-              className="text-gray-400 hover:text-white text-sm transition-colors duration-300"
-            >
-              Terms of Service
-            </Link>
-          </div>
-        </div>
+        <motion.div 
+          variants={container}
+          className="flex flex-col md:flex-row justify-between items-center"
+        >
+          <motion.p 
+            variants={item}
+            className="text-gray-500 text-sm"
+          >
+            &copy; {new Date().getFullYear()} DhaniRam Paints. All Rights Reserved.
+          </motion.p>
+          <motion.div 
+            variants={container}
+            className="flex space-x-6 mt-4 md:mt-0"
+          >
+            <motion.div variants={item}>
+              <Link
+                href="/privacy"
+                className="text-gray-500 hover:text-[#6E260E] text-sm transition-colors duration-300"
+              >
+                Privacy Policy
+              </Link>
+            </motion.div>
+            <motion.div variants={item}>
+              <Link
+                href="/terms"
+                className="text-gray-500 hover:text-[#6E260E] text-sm transition-colors duration-300"
+              >
+                Terms of Service
+              </Link>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 
