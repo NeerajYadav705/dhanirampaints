@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import ColorWall from "@/components/ColorWall";
 
 const Industrial = () => {
   const products = [
@@ -9,7 +10,15 @@ const Industrial = () => {
       id: 1,
       name: "Enamel",
       description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque nam consequatur incidunt earum perspiciatis delectus, fuga non, quidem velit possimus nulla omnis numquam. Qui consequuntur eveniet atque, aliquid dolores quia aut pariatur aliquam est mollitia voluptatum alias iure cum sit eius distinctio. Iste soluta ipsa obcaecati facilis debitis sunt voluptate consectetur nesciunt incidunt, tempora nulla similique tempore? Commodi molestias ullam quia ducimus vitae ratione cupiditate in, quaerat possimus quo eos ut perferendis rem distinctio magni facere aliquam saepe iure! Distinctio accusantium quaerat nobis esse sapiente ab ad at quia inventore dignissimos. Deleniti, ea libero modi voluptas corporis ut dolorem! Inventore!",
+        "High-gloss enamel paint provides a durable, hard finish that's resistant to moisture, heat, and everyday wear. Ideal for metal surfaces, machinery, and equipment requiring both protection and aesthetic appeal. Our enamel formulation offers excellent leveling and a smooth finish with superior color retention.",
+      features: [
+        "High gloss finish",
+        "Excellent durability",
+        "Moisture resistant",
+        "UV protection",
+        "Fast drying",
+        "Wide color range",
+      ],
       image: "/assets/aboutbg.jpg",
       color: "#E21138",
     },
@@ -17,7 +26,15 @@ const Industrial = () => {
       id: 2,
       name: "Bitumen Paint",
       description:
-        "Waterproof and corrosion-resistant coating. Perfect for pipelines and tanks.",
+        "Bituminous coating provides superior waterproofing and corrosion protection for metal and concrete surfaces. Particularly effective for pipelines, tanks, and marine applications where water resistance is critical. Forms a flexible, protective layer that withstands harsh environmental conditions.",
+      features: [
+        "Excellent waterproofing",
+        "Corrosion resistance",
+        "UV stable (black only)",
+        "Chemical resistant",
+        "Easy application",
+        "Long-lasting protection",
+      ],
       image: "/assets/aboutbg.jpg",
       color: "#E21138",
     },
@@ -25,7 +42,15 @@ const Industrial = () => {
       id: 3,
       name: "Aluminum Paint",
       description:
-        "Heat-reflective and anti-corrosive properties for industrial equipment.",
+        "Specialized aluminum paint offers heat reflection and corrosion protection for industrial equipment. The aluminum flakes create a reflective barrier that protects surfaces from heat, moisture, and chemical exposure while providing an attractive metallic finish.",
+      features: [
+        "Heat reflective",
+        "Corrosion resistant",
+        "UV resistant",
+        "High temperature tolerance",
+        "Excellent adhesion",
+        "Durable metallic finish",
+      ],
       image: "/assets/aboutbg.jpg",
       color: "#E21138",
     },
@@ -33,7 +58,15 @@ const Industrial = () => {
       id: 4,
       name: "PU Paint",
       description:
-        "High abrasion resistance and flexibility for automotive applications.",
+        "Polyurethane paint delivers exceptional abrasion resistance and flexibility, making it perfect for automotive and industrial applications. Provides a tough, elastic finish that withstands impacts, vibrations, and extreme weather conditions while maintaining its appearance.",
+      features: [
+        "Extreme abrasion resistance",
+        "Excellent flexibility",
+        "Chemical resistant",
+        "UV stable",
+        "High gloss retention",
+        "Fast curing",
+      ],
       image: "/assets/aboutbg.jpg",
       color: "#E21138",
     },
@@ -41,7 +74,15 @@ const Industrial = () => {
       id: 5,
       name: "Epoxy Paint",
       description:
-        "Superior adhesion and chemical resistance for industrial floors.",
+        "Epoxy coatings create a hard, chemical-resistant surface ideal for industrial floors, tanks, and equipment. Offers superior adhesion to metal and concrete, with excellent resistance to chemicals, impacts, and heavy traffic while being easy to clean and maintain.",
+      features: [
+        "Chemical resistant",
+        "High adhesion",
+        "Impact resistant",
+        "Seamless finish",
+        "Easy to clean",
+        "Custom colors",
+      ],
       image: "/assets/aboutbg.jpg",
       color: "#E21138",
     },
@@ -49,7 +90,15 @@ const Industrial = () => {
       id: 6,
       name: "Red Oxide Primer",
       description:
-        "Essential rust-inhibiting base coat for iron and steel surfaces.",
+        "Rust-inhibitive primer forms a protective barrier on iron and steel surfaces. The red oxide formulation provides excellent corrosion resistance and promotes strong adhesion for topcoats, extending the life of metal structures in harsh environments.",
+      features: [
+        "Rust prevention",
+        "Excellent adhesion",
+        "Dries quickly",
+        "Good coverage",
+        "Compatible with most topcoats",
+        "Durable undercoat",
+      ],
       image: "/assets/aboutbg.jpg",
       color: "#E21138",
     },
@@ -116,7 +165,7 @@ const Industrial = () => {
             transition={{ delay: index * 0.1 }}
             className="group mb-10 sm:mb-12"
           >
-            {/* Animated Tab - Mobile responsive */}
+            {/* Animated Tab */}
             <motion.div
               variants={tabVariants}
               initial="rest"
@@ -129,20 +178,44 @@ const Industrial = () => {
               </h3>
             </motion.div>
 
-            {/* Card Content - Stacked on mobile, row on desktop */}
+            {/* Card Content */}
             <div
-              className={`flex flex-col ${product.id % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-4 sm:gap-6 p-4 sm:p-6 bg-white rounded-b-lg rounded-tr-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300`}
+              className={`flex flex-col ${
+                product.id % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              } gap-4 sm:gap-6 p-4 sm:p-6 bg-white rounded-b-lg rounded-tr-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300`}
               style={{ borderTopColor: product.color }}
             >
-              {/* Text Content - Full width on mobile, half on desktop */}
+              {/* Text Content */}
               <div className="w-full md:w-1/2">
                 <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                   {product.description}
                 </p>
-                <motion.div whileHover={{ x: 5 }} className="mt-4"></motion.div>
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {product.features.map((feature, i) => (
+                    <div key={i} className="flex items-start">
+                      <svg
+                        className="h-5 w-5 mr-2 mt-0.5 flex-shrink-0"
+                        style={{ color: product.color }}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span className="text-gray-700 text-sm sm:text-base">
+                        {feature}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              {/* Image - Full width on mobile, half on desktop */}
+              {/* Image */}
               <div className="w-full md:w-1/2">
                 <motion.div
                   whileHover={{ scale: 1.02 }}
@@ -161,6 +234,7 @@ const Industrial = () => {
           </motion.div>
         ))}
       </div>
+      {/* <ColorWall /> */}
     </div>
   );
 };
