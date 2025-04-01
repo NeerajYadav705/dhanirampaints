@@ -51,28 +51,6 @@ const USP = () => {
     <section className="py-12 md:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          variants={container}
-          className="text-center mb-12"
-        >
-          <motion.h2
-            variants={item}
-            className="text-3xl sm:text-4xl font-bold text-[#6E260E] mb-4"
-          >
-            Why Choose Dhaniram Paints
-          </motion.h2>
-          <motion.p
-            variants={item}
-            className="text-lg text-gray-600 max-w-3xl mx-auto"
-          >
-            Our commitment to excellence ensures you get the best products and
-            services in the industry
-          </motion.p>
-        </motion.div>
-
-        <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"

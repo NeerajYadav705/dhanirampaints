@@ -5,7 +5,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import {
   FaChevronDown,
   FaFacebook,
-  FaTwitter,
+  FaLinkedin,
   FaInstagram,
 } from "react-icons/fa";
 import Image from "next/image";
@@ -64,167 +64,151 @@ const Navbar = () => {
     (category) => pathname === category.path
   );
 
+  // Colors for each nav item
+  const navItems = [
+    { path: "/", name: "HOME", color: "#E21138" },
+    { path: "/about", name: "ABOUT", color: "#EC5800" },
+    { path: null, name: "PRODUCTS", color: "#40B5AD" },
+    { path: "/enquiry", name: "ENQUIRY", color: "#009E61" },
+    { path: "/contact", name: "CONTACT US", color: "#6E260E" },
+  ];
+
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 bg-white shadow-md transition-transform duration-300 ${
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
-        {/* Logo and Main Navigation */}
-        <div className="flex items-center">
-          <Link href="/">
+      <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center h-[150px]">
+        {/* Left Side - Logo and Navigation */}
+        <div className="flex items-center h-full">
+          {/* Larger Logo */}
+          <Link href="/" className="h-full flex items-center z-10 mr-10">
             <Image
               src="/assets/logo.png"
               alt="Logo"
-              width={100}
-              height={100}
-              className="mr-14 w-auto h-auto"
+              width={180}
+              height={80}
+              className="w-auto h-[120px]"
               priority
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-6 items-center">
-            <Link
-              href="/"
-              className={`group relative text-lg font-medium ${
-                pathname === "/" ? "text-[#E21138]" : "text-black"
-              }`}
-            >
-              <span className="group-hover:text-[#E21138]">HOME</span>
-              <span
-                className={`absolute left-0 bottom-0 h-[2px] ${
-                  pathname === "/"
-                    ? "w-full bg-[#E21138]"
-                    : "w-0 bg-[#E21138] group-hover:w-full"
-                } transition-all duration-300`}
-              ></span>
-            </Link>
-
-            <Link
-              href="/about"
-              className={`group relative text-lg font-medium ${
-                pathname === "/about" ? "text-[#EC5800]" : "text-black"
-              }`}
-            >
-              <span className="group-hover:text-[#EC5800]">ABOUT</span>
-              <span
-                className={`absolute left-0 bottom-0 h-[2px] ${
-                  pathname === "/about"
-                    ? "w-full bg-[#EC5800]"
-                    : "w-0 bg-[#EC5800] group-hover:w-full"
-                } transition-all duration-300`}
-              ></span>
-            </Link>
-
-            {/* Products Dropdown */}
-            <div className="relative" ref={dropdownRef}>
-              <button
-                onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
-                className={`group relative flex items-center text-lg font-medium ${
-                  isProductActive ? "text-[#40B5AD]" : "text-black"
-                }`}
-              >
-                <span className="group-hover:text-[#40B5AD]">PRODUCTS</span>
-                <FaChevronDown
-                  className={`ml-1 transition-transform ${
-                    productsDropdownOpen ? "rotate-180" : ""
-                  } group-hover:text-[#40B5AD]`}
-                />
-                <span
-                  className={`absolute left-0 bottom-0 h-[2px] ${
-                    isProductActive
-                      ? "w-full bg-[#40B5AD]"
-                      : "w-0 bg-[#40B5AD] group-hover:w-full"
-                  } transition-all duration-300`}
-                ></span>
-              </button>
-
-              {productsDropdownOpen && (
-                <div className="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg z-50 border border-gray-200">
-                  {productCategories.map((category) => (
-                    <Link
-                      key={category.path}
-                      href={category.path}
-                      className={`block px-4 py-2 ${
-                        pathname === category.path
-                          ? "text-[#40B5AD] bg-gray-100"
-                          : "text-gray-800 hover:bg-gray-100"
+          {/* Desktop Navigation - Enhanced Hover Effect */}
+          <div className="hidden md:flex h-full items-center">
+            {navItems.map((item) => {
+              if (item.path === null) {
+                return (
+                  <div
+                    className="relative h-full flex items-center"
+                    ref={dropdownRef}
+                    key="products"
+                  >
+                    <button
+                      onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
+                      className={`group relative px-6 h-full flex items-center text-lg font-medium transition-colors duration-300 ${
+                        isProductActive ? "text-white" : "text-black hover:text-white"
                       }`}
-                      onClick={() => setProductsDropdownOpen(false)}
                     >
-                      {category.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+                      <div className="relative z-10 flex items-center">
+                        {item.name}
+                        <FaChevronDown
+                          className={`ml-1 transition-transform ${
+                            productsDropdownOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </div>
+                      {/* Enhanced hover background */}
+                      <div
+                        className={`absolute inset-0 w-full h-full bg-[${item.color}] transform -skew-x-12 origin-left transition-all duration-500 ${
+                          isProductActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                        }`}
+                        style={{ 
+                          zIndex: -1,
+                          transformOrigin: 'left center',
+                          transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
+                        }}
+                      ></div>
+                    </button>
 
-            <Link
-              href="/enquiry"
-              className={`group relative text-lg font-medium ${
-                pathname === "/enquiry" ? "text-[#009E61]" : "text-black"
-              }`}
-            >
-              <span className="group-hover:text-[#009E61]">ENQUIRY</span>
-              <span
-                className={`absolute left-0 bottom-0 h-[2px] ${
-                  pathname === "/enquiry"
-                    ? "w-full bg-[#009E61]"
-                    : "w-0 bg-[#009E61] group-hover:w-full"
-                } transition-all duration-300`}
-              ></span>
-            </Link>
+                    {productsDropdownOpen && (
+                      <div className="absolute left-0 top-full w-56 bg-white rounded-md shadow-lg z-50 border border-gray-200">
+                        {productCategories.map((category) => (
+                          <Link
+                            key={category.path}
+                            href={category.path}
+                            className={`block px-4 py-2 ${
+                              pathname === category.path
+                                ? "text-[#40B5AD] bg-gray-100"
+                                : "text-gray-800 hover:bg-gray-100"
+                            }`}
+                            onClick={() => setProductsDropdownOpen(false)}
+                          >
+                            {category.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
 
-            <Link
-              href="/contact"
-              className={`group relative text-lg font-medium ${
-                pathname === "/contact" ? "text-[#6E260E]" : "text-black"
-              }`}
-            >
-              <span className="group-hover:text-[#6E260E]">CONTACT US</span>
-              <span
-                className={`absolute left-0 bottom-0 h-[2px] ${
-                  pathname === "/contact"
-                    ? "w-full bg-[#6E260E]"
-                    : "w-0 bg-[#6E260E] group-hover:w-full"
-                } transition-all duration-300`}
-              ></span>
-            </Link>
+              return (
+                <Link
+                  href={item.path}
+                  key={item.path}
+                  className={`group relative px-6 h-full flex items-center text-lg font-medium transition-colors duration-300 ${
+                    pathname === item.path ? "text-white" : "text-black hover:text-white"
+                  }`}
+                >
+                  <span className="relative z-10">{item.name}</span>
+                  {/* Enhanced hover background */}
+                  <div
+                    className={`absolute inset-0 w-full h-full bg-[${item.color}] transform -skew-x-12 origin-left transition-all duration-500 ${
+                      pathname === item.path ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                    }`}
+                    style={{ 
+                      zIndex: -1,
+                      transformOrigin: 'left center',
+                      transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
+                    }}
+                  ></div>
+                </Link>
+              );
+            })}
           </div>
         </div>
 
-        {/* Social Icons - Desktop */}
-        <div className="hidden md:flex items-center space-x-4">
+        {/* Right Side - Social Icons */}
+        <div className="hidden md:flex items-center space-x-4 z-10">
           <a
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-[#EC5800] transition-colors"
+            className="text-[#6E260E] hover:text-[#3b5998] transition-colors duration-300"
           >
             <FaFacebook size={20} />
           </a>
           <a
-            href="https://twitter.com"
+            href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-blue-400 transition-colors"
+            className="text-[#6E260E] hover:text-[#0077b5] transition-colors duration-300"
           >
-            <FaTwitter size={20} />
+            <FaLinkedin size={20} />
           </a>
           <a
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-pink-600 transition-colors"
+            className="text-[#6E260E] hover:text-[#E1306C] transition-colors duration-300"
           >
             <FaInstagram size={20} />
           </a>
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        <div className="md:hidden z-10">
           <Sheet>
             <SheetTrigger className="focus:outline-none">
               <RxHamburgerMenu className="text-2xl" />
@@ -238,105 +222,73 @@ const Navbar = () => {
                   <Image
                     src="/assets/logo.png"
                     alt="Logo"
-                    width={100}
-                    height={100}
-                    className="w-16 h-auto mx-auto"
+                    width={180}
+                    height={80}
+                    className="w-[120px] h-auto mx-auto"
                   />
                 </div>
               </SheetHeader>
 
               <div className="flex-1 mt-6 space-y-4">
-                <SheetClose asChild>
-                  <Link
-                    href="/"
-                    className={`block py-2 px-4 ${
-                      pathname === "/"
-                        ? "text-[#E21138] font-medium"
-                        : "text-gray-800"
-                    } hover:bg-gray-100`}
-                  >
-                    HOME
-                  </Link>
-                </SheetClose>
+                {navItems.map((item) => {
+                  if (item.path === null) {
+                    return (
+                      <div key="products-mobile">
+                        <button
+                          onClick={() =>
+                            setMobileProductsDropdownOpen(!mobileProductsDropdownOpen)
+                          }
+                          className={`w-full flex justify-between items-center py-2 px-4 transition-colors duration-300 ${
+                            isProductActive
+                              ? "text-white bg-[#40B5AD]"
+                              : "text-gray-800 hover:text-white hover:bg-[#40B5AD]"
+                          }`}
+                        >
+                          <span>{item.name}</span>
+                          <FaChevronDown
+                            className={`transition-transform ${
+                              mobileProductsDropdownOpen ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
 
-                <SheetClose asChild>
-                  <Link
-                    href="/about"
-                    className={`block py-2 px-4 ${
-                      pathname === "/about"
-                        ? "text-[#EC5800] font-medium"
-                        : "text-gray-800"
-                    } hover:bg-gray-100`}
-                  >
-                    ABOUT
-                  </Link>
-                </SheetClose>
+                        {mobileProductsDropdownOpen && (
+                          <div className="ml-4 mt-2 space-y-2">
+                            {productCategories.map((category) => (
+                              <SheetClose key={category.path} asChild>
+                                <Link
+                                  href={category.path}
+                                  className={`block py-2 px-4 transition-colors duration-300 ${
+                                    pathname === category.path
+                                      ? "text-[#40B5AD] font-medium"
+                                      : "text-gray-600 hover:bg-gray-100"
+                                  }`}
+                                >
+                                  {category.name}
+                                </Link>
+                              </SheetClose>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  }
 
-                {/* Mobile Products Dropdown */}
-                <div>
-                  <button
-                    onClick={() =>
-                      setMobileProductsDropdownOpen(!mobileProductsDropdownOpen)
-                    }
-                    className={`w-full flex justify-between items-center py-2 px-4 ${
-                      isProductActive
-                        ? "text-[#40B5AD] font-medium"
-                        : "text-gray-800"
-                    } hover:bg-gray-100`}
-                  >
-                    <span>PRODUCTS</span>
-                    <FaChevronDown
-                      className={`transition-transform ${
-                        mobileProductsDropdownOpen ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
-
-                  {mobileProductsDropdownOpen && (
-                    <div className="ml-4 mt-2 space-y-2">
-                      {productCategories.map((category) => (
-                        <SheetClose key={category.path} asChild>
-                          <Link
-                            href={category.path}
-                            className={`block py-2 px-4 ${
-                              pathname === category.path
-                                ? "text-[#40B5AD] font-medium"
-                                : "text-gray-600"
-                            } hover:bg-gray-100`}
-                          >
-                            {category.name}
-                          </Link>
-                        </SheetClose>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                <SheetClose asChild>
-                  <Link
-                    href="/enquiry"
-                    className={`block py-2 px-4 ${
-                      pathname === "/enquiry"
-                        ? "text-[#009E61] font-medium"
-                        : "text-gray-800"
-                    } hover:bg-gray-100`}
-                  >
-                    ENQUIRY
-                  </Link>
-                </SheetClose>
-
-                <SheetClose asChild>
-                  <Link
-                    href="/contact"
-                    className={`block py-2 px-4 ${
-                      pathname === "/contact"
-                        ? "text-[#6E260E] font-medium"
-                        : "text-gray-800"
-                    } hover:bg-gray-100`}
-                  >
-                    CONTACT US
-                  </Link>
-                </SheetClose>
+                  return (
+                    <SheetClose key={item.path} asChild>
+                      <Link
+                        href={item.path}
+                        className={`block py-2 px-4 transition-colors duration-300 ${
+                          pathname === item.path
+                            ? `bg-[${item.color}] text-white`
+                            : "text-gray-800 hover:bg-[${item.color}] hover:text-white"
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    </SheetClose>
+                  );
+                })}
               </div>
 
               {/* Social Icons at Bottom of Mobile Menu */}
@@ -345,23 +297,23 @@ const Navbar = () => {
                   href="https://facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                  className="text-[#6E260E] hover:text-[#3b5998] transition-colors duration-300"
                 >
                   <FaFacebook size={20} />
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-400 transition-colors"
+                  className="text-[#6E260E] hover:text-[#0077b5] transition-colors duration-300"
                 >
-                  <FaTwitter size={20} />
+                  <FaLinkedin size={20} />
                 </a>
                 <a
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-pink-600 transition-colors"
+                  className="text-[#6E260E] hover:text-[#E1306C] transition-colors duration-300"
                 >
                   <FaInstagram size={20} />
                 </a>
