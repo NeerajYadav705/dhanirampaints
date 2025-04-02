@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import ColorWall from "@/components/ColorWall";
+// import ColorWall from "@/components/ColorWall";
 
 const Industrial = () => {
   const products = [

@@ -66,11 +66,11 @@ const Navbar = () => {
 
   // Colors for each nav item
   const navItems = [
-    { path: "/", name: "HOME", color: "#E21138" },
-    { path: "/about", name: "ABOUT", color: "#EC5800" },
-    { path: null, name: "PRODUCTS", color: "#40B5AD" },
-    { path: "/enquiry", name: "ENQUIRY", color: "#009E61" },
-    { path: "/contact", name: "CONTACT US", color: "#6E260E" },
+    { path: "/", name: "HOME", color: "bg-[#E21138]" },
+    { path: "/about", name: "ABOUT", color: "bg-[#EC5800]" },
+    { path: null, name: "PRODUCTS", color: "bg-[#40B5AD]" },
+    { path: "/enquiry", name: "ENQUIRY", color: "bg-[#009E61]" },
+    { path: "/contact", name: "CONTACT US", color: "bg-[#6E260E]" },
   ];
 
   return (
@@ -80,10 +80,9 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center h-[150px]">
-        {/* Left Side - Logo and Navigation */}
+        {/* Left Side - Logo */}
         <div className="flex items-center h-full">
-          {/* Larger Logo */}
-          <Link href="/" className="h-full flex items-center z-10 mr-10">
+          <Link href="/" className="h-full flex items-center z-10">
             <Image
               src="/assets/logo.png"
               alt="Logo"
@@ -93,90 +92,90 @@ const Navbar = () => {
               priority
             />
           </Link>
+        </div>
 
-          {/* Desktop Navigation - Enhanced Hover Effect */}
-          <div className="hidden md:flex h-full items-center">
-            {navItems.map((item) => {
-              if (item.path === null) {
-                return (
-                  <div
-                    className="relative h-full flex items-center"
-                    ref={dropdownRef}
-                    key="products"
-                  >
-                    <button
-                      onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
-                      className={`group relative px-6 h-full flex items-center text-lg font-medium transition-colors duration-300 ${
-                        isProductActive ? "text-white" : "text-black hover:text-white"
-                      }`}
-                    >
-                      <div className="relative z-10 flex items-center">
-                        {item.name}
-                        <FaChevronDown
-                          className={`ml-1 transition-transform ${
-                            productsDropdownOpen ? "rotate-180" : ""
-                          }`}
-                        />
-                      </div>
-                      {/* Enhanced hover background */}
-                      <div
-                        className={`absolute inset-0 w-full h-full bg-[${item.color}] transform -skew-x-12 origin-left transition-all duration-500 ${
-                          isProductActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                        }`}
-                        style={{ 
-                          zIndex: -1,
-                          transformOrigin: 'left center',
-                          transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
-                        }}
-                      ></div>
-                    </button>
-
-                    {productsDropdownOpen && (
-                      <div className="absolute left-0 top-full w-56 bg-white rounded-md shadow-lg z-50 border border-gray-200">
-                        {productCategories.map((category) => (
-                          <Link
-                            key={category.path}
-                            href={category.path}
-                            className={`block px-4 py-2 ${
-                              pathname === category.path
-                                ? "text-[#40B5AD] bg-gray-100"
-                                : "text-gray-800 hover:bg-gray-100"
-                            }`}
-                            onClick={() => setProductsDropdownOpen(false)}
-                          >
-                            {category.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                );
-              }
-
+        {/* Center - Navigation */}
+        <div className="hidden md:flex h-full items-center flex-1 justify-center">
+          {navItems.map((item) => {
+            if (item.path === null) {
               return (
-                <Link
-                  href={item.path}
-                  key={item.path}
-                  className={`group relative px-6 h-full flex items-center text-lg font-medium transition-colors duration-300 ${
-                    pathname === item.path ? "text-white" : "text-black hover:text-white"
-                  }`}
+                <div
+                  className="relative h-full flex items-center"
+                  ref={dropdownRef}
+                  key="products"
                 >
-                  <span className="relative z-10">{item.name}</span>
-                  {/* Enhanced hover background */}
-                  <div
-                    className={`absolute inset-0 w-full h-full bg-[${item.color}] transform -skew-x-12 origin-left transition-all duration-500 ${
-                      pathname === item.path ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                  <button
+                    onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
+                    className={`group relative px-6 h-full flex items-center text-lg font-medium transition-colors duration-300 ${
+                      isProductActive ? "text-white" : "text-black hover:text-white"
                     }`}
-                    style={{ 
-                      zIndex: -1,
-                      transformOrigin: 'left center',
-                      transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
-                    }}
-                  ></div>
-                </Link>
+                  >
+                    <div className="relative z-10 flex items-center">
+                      {item.name}
+                      <FaChevronDown
+                        className={`ml-1 transition-transform ${
+                          productsDropdownOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </div>
+                    {/* Enhanced hover background */}
+                    <div
+                      className={`absolute inset-0 w-full h-full ${item.color} transform -skew-x-12 origin-left transition-all duration-500 ${
+                        isProductActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                      }`}
+                      style={{ 
+                        zIndex: -1,
+                        transformOrigin: 'left center',
+                        transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
+                      }}
+                    ></div>
+                  </button>
+
+                  {productsDropdownOpen && (
+                    <div className="absolute left-0 top-full w-56 bg-white rounded-md shadow-lg z-50 border border-gray-200">
+                      {productCategories.map((category) => (
+                        <Link
+                          key={category.path}
+                          href={category.path}
+                          className={`block px-4 py-2 ${
+                            pathname === category.path
+                              ? "text-[#40B5AD] bg-gray-100"
+                              : "text-gray-800 hover:bg-gray-100"
+                          }`}
+                          onClick={() => setProductsDropdownOpen(false)}
+                        >
+                          {category.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               );
-            })}
-          </div>
+            }
+
+            return (
+              <Link
+                href={item.path}
+                key={item.path}
+                className={`group relative px-6 h-full flex items-center text-lg font-medium transition-colors duration-300 ${
+                  pathname === item.path ? "text-white" : "text-black hover:text-white"
+                }`}
+              >
+                <span className="relative z-10">{item.name}</span>
+                {/* Enhanced hover background */}
+                <div
+                  className={`absolute inset-0 w-full h-full ${item.color} transform -skew-x-12 origin-left transition-all duration-500 ${
+                    pathname === item.path ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                  style={{ 
+                    zIndex: -1,
+                    transformOrigin: 'left center',
+                    transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
+                  }}
+                ></div>
+              </Link>
+            );
+          })}
         </div>
 
         {/* Right Side - Social Icons */}
@@ -280,8 +279,8 @@ const Navbar = () => {
                         href={item.path}
                         className={`block py-2 px-4 transition-colors duration-300 ${
                           pathname === item.path
-                            ? `bg-[${item.color}] text-white`
-                            : "text-gray-800 hover:bg-[${item.color}] hover:text-white"
+                            ? `text-white ${item.color}`
+                            : "text-gray-800 hover:text-white hover:" + item.color
                         }`}
                       >
                         {item.name}

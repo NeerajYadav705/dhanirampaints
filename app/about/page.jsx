@@ -151,73 +151,6 @@ const About = () => {
         </div>
       </motion.section>
 
-      {/* Values Section */}
-      <motion.section
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        variants={container}
-        className="py-12 md:py-16 bg-gradient-to-br from-[#40B5AD]/10 to-[#009E61]/10"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            variants={slideUp}
-            className="text-2xl sm:text-3xl font-bold text-center text-[#6E260E] mb-8 sm:mb-12"
-          >
-            OUR CORE VALUES
-          </motion.h2>
-          <motion.div
-            variants={container}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
-          >
-            {[
-              {
-                color: "#E21138",
-                title: "Quality Excellence",
-                icon: <FaAward className="text-3xl sm:text-4xl" />,
-                desc: "Uncompromising standards in every product we manufacture",
-              },
-              {
-                color: "#EC5800",
-                title: "Innovation",
-                icon: <FaIndustry className="text-3xl sm:text-4xl" />,
-                desc: "Continuous research for advanced coating solutions",
-              },
-              {
-                color: "#009E61",
-                title: "Sustainability",
-                icon: <FaBuilding className="text-3xl sm:text-4xl" />,
-                desc: "Environmentally responsible manufacturing processes",
-              },
-            ].map((value, index) => (
-              <motion.div
-                key={index}
-                variants={item}
-                whileHover={{ y: -5 }}
-                className="bg-white p-6 sm:p-8 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow duration-300"
-              >
-                <motion.div
-                  whileHover={{ rotate: 360 }}
-                  className="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full flex items-center justify-center mb-4 text-white"
-                  style={{ backgroundColor: value.color }}
-                >
-                  {value.icon}
-                </motion.div>
-                <h3
-                  className="text-lg sm:text-xl font-semibold mb-2"
-                  style={{ color: value.color }}
-                >
-                  {value.title}
-                </h3>
-                <p className="text-sm sm:text-base text-gray-600">
-                  {value.desc}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </motion.section>
-
       {/* Company Overview Section */}
       <motion.section
         initial="hidden"
@@ -365,94 +298,6 @@ const About = () => {
         </div>
       </motion.section>
 
-      {/* Our Team Section */}
-      <motion.section
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        variants={container}
-        className="py-12 md:py-16 bg-white"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            variants={slideUp}
-            className="text-2xl sm:text-3xl font-bold text-center text-[#6E260E] mb-8 sm:mb-12"
-          >
-            OUR LEADERSHIP TEAM
-          </motion.h2>
-          <motion.div
-            variants={container}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
-          >
-            {[
-              {
-                name: "Sidhant Sachdev",
-                role: "HEAD - MARKETING",
-                color: "#E21138",
-                desc: "Driving brand growth and customer engagement strategies",
-                img: "/team/sidhant-sachdev.jpg",
-              },
-              {
-                name: "Manav Sachdev",
-                role: "HEAD - PRODUCTION",
-                color: "#40B5AD",
-                desc: "Ensuring manufacturing excellence and quality control",
-                img: "/assets/manav_sir.png",
-              },
-              {
-                name: "Balchand Sachdev",
-                role: "HEAD - SALES",
-                color: "#EC5800",
-                desc: "Leading sales strategy and client relationships",
-                img: "/team/balchand-sachdev.jpg",
-              },
-              {
-                name: "Ajit Sachdev",
-                role: "PROPRIETOR & HEAD - OPERATIONS",
-                color: "#009E61",
-                desc: "Overseeing company vision and operational excellence",
-                img: "/team/ajit-sachdev.jpg",
-              },
-            ].map((member, index) => (
-              <motion.div
-                key={index}
-                variants={item}
-                whileHover={{ scale: 1.03 }}
-                className="bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 border-t-4"
-                style={{ borderColor: member.color }}
-              >
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="relative pt-[100%]"
-                >
-                  <Image
-                    src={member.img}
-                    alt={member.name}
-                    width={400}
-                    height={400}
-                    className="object-cover w-full h-full absolute top-0 left-0"
-                  />
-                </motion.div>
-                <div className="p-4 sm:p-6 text-center">
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-800">
-                    {member.name}
-                  </h3>
-                  <p
-                    className="text-sm sm:text-base mt-1"
-                    style={{ color: member.color }}
-                  >
-                    {member.role}
-                  </p>
-                  <p className="text-gray-600 text-sm sm:text-base mt-2 sm:mt-3">
-                    {member.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </motion.section>
-
       {/* Distribution/Demographics Section */}
       <motion.section
         initial="hidden"
@@ -467,98 +312,82 @@ const About = () => {
         >
           OUR REACH & DISTRIBUTION
         </motion.h2>
-        <motion.div
-          variants={container}
-          className="grid md:grid-cols-2 gap-8 md:gap-12 items-center"
-        >
-          <motion.div variants={item}>
-            <h3 className="text-xl sm:text-2xl font-semibold text-[#6E260E] mb-4 sm:mb-6 flex items-center">
-              <FaMapMarkedAlt className="mr-2 text-[#EC5800]" />
-              Serving Diverse Industries
-            </h3>
-            <p className="text-base sm:text-lg text-gray-700 mb-4 sm:mb-6">
-              We proudly serve clients across multiple sectors with our
-              specialized coating solutions:
-            </p>
-            <motion.ul variants={container} className="space-y-2 sm:space-y-3">
-              {[
-                {
-                  icon: <FaIndustry className="text-[#E21138]" />,
-                  text: "Manufacturing Units",
-                },
-                {
-                  icon: <FaBuilding className="text-[#EC5800]" />,
-                  text: "Construction & Infrastructure",
-                },
-                {
-                  icon: <FaCar className="text-[#40B5AD]" />,
-                  text: "Automotive Industry",
-                },
-                {
-                  icon: <FaOilCan className="text-[#009E61]" />,
-                  text: "Oil & Gas Sector",
-                },
-                {
-                  icon: <FaShip className="text-[#6E260E]" />,
-                  text: "Marine Applications",
-                },
-              ].map((item, index) => (
-                <motion.li
-                  key={index}
-                  variants={item}
-                  className="flex items-start"
-                >
-                  <span className="mt-1 mr-3">{item.icon}</span>
-                  <span className="text-sm sm:text-base text-gray-700">
-                    {item.text}
-                  </span>
-                </motion.li>
-              ))}
-            </motion.ul>
-          </motion.div>
+
+        {/* Centered industry items */}
+        <motion.div variants={container} className="flex flex-col items-center">
+          {/* First row - 3 items */}
           <motion.div
             variants={item}
-            className="relative h-64 sm:h-80 md:h-96 bg-gray-200 rounded-lg overflow-hidden border-4 border-[#6E260E]/20 mt-6 md:mt-0"
+            className="flex flex-wrap justify-center gap-8 md:gap-12 mb-8 md:mb-12"
           >
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="absolute inset-0 bg-gradient-to-r from-[#40B5AD]/20 to-[#009E61]/20 z-10 flex items-center justify-center"
-            >
-              <div className="text-center p-4 sm:p-6 bg-white/90 rounded-lg shadow-lg max-w-xs">
-                <h3 className="text-lg sm:text-xl font-bold text-[#6E260E] mb-2">
-                  Our Network
-                </h3>
-                <p className="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4">
-                  Serving clients across India with regional distribution
-                  centers
-                </p>
-                <div className="flex justify-center space-x-2">
-                  {["#E21138", "#EC5800", "#40B5AD", "#009E61", "#6E260E"].map(
-                    (color, i) => (
-                      <motion.span
-                        key={i}
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.5 + i * 0.1 }}
-                        className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 rounded-full"
-                        style={{ backgroundColor: color }}
-                      ></motion.span>
-                    )
-                  )}
-                </div>
-              </div>
-            </motion.div>
-            <Image
-              src="/assets/aboutbg.jpg"
-              alt="Dhaniram Paints Distribution Map"
-              fill
-              className="object-cover"
-            />
+            {[
+              {
+                icon: <FaIndustry className="text-[#E21138]" size={70} />,
+                text: "Manufacturing Units",
+              },
+              {
+                icon: <FaBuilding className="text-[#EC5800]" size={70} />,
+                text: "Construction & Infrastructure",
+              },
+              {
+                icon: <FaCar className="text-[#40B5AD]" size={70} />,
+                text: "Automotive Industry",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                variants={item}
+                className="flex flex-col items-center text-center w-40 sm:w-48"
+              >
+                <span className="mb-3">{item.icon}</span>
+                <span className="text-lg font-medium text-gray-800">
+                  {item.text}
+                </span>
+              </motion.div>
+            ))}
           </motion.div>
+
+          {/* Second row - 2 items */}
+          <motion.div
+            variants={item}
+            className="flex flex-wrap justify-center gap-8 md:gap-12 mb-12"
+          >
+            {[
+              {
+                icon: <FaOilCan className="text-[#009E61]" size={70} />,
+                text: "Oil & Gas Sector",
+              },
+              {
+                icon: <FaShip className="text-[#6E260E]" size={70} />,
+                text: "Marine Applications",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index + 3} // Start index from 3 to avoid duplicate keys
+                variants={item}
+                className="flex flex-col items-center text-center w-40 sm:w-48"
+              >
+                <span className="mb-3">{item.icon}</span>
+                <span className="text-lg font-medium text-gray-800">
+                  {item.text}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+
+        {/* Description at bottom */}
+        <motion.div variants={item} className="max-w-3xl mx-auto text-center">
+          <p className="text-base sm:text-lg text-gray-700 mb-4">
+            We proudly serve clients across multiple sectors with our
+            specialized coating solutions, delivering high-performance products
+            tailored to each industry's unique requirements.
+          </p>
+          <p className="text-base sm:text-lg text-gray-700">
+            With a nationwide distribution network and technical expertise, we
+            ensure timely delivery and application support wherever our clients
+            need us.
+          </p>
         </motion.div>
       </motion.section>
     </div>

@@ -36,7 +36,7 @@ const Footer = () => {
       whileInView="show"
       viewport={{ once: true }}
       variants={container}
-      className="bg-[#fdf0d5] text-gray-800 pt-20 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-t border-gray-200"
+      className="bg-[#edede9] text-gray-800 pt-20 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-t border-gray-200"
     >
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Footer Content */}
