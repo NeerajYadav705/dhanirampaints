@@ -323,48 +323,6 @@ const Enquiry = () => {
             </motion.form>
           )}
         </div>
-
-        {/* Contact Info Footer */}
-        <div className="bg-gray-100 p-6 sm:p-8 border-t border-gray-200">
-          <h3 className="text-lg font-medium text-[#6E260E] mb-4">
-            Other ways to reach us
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="flex items-start">
-              <div className="flex-shrink-0 bg-[#E21138]/10 p-3 rounded-full">
-                <FaPhone className="h-6 w-6 text-[#E21138]" />
-              </div>
-              <div className="ml-3">
-                <h4 className="text-sm font-medium text-gray-900">
-                  Sales Team
-                </h4>
-                <p className="text-sm text-gray-600">+91 98765 43210</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 bg-[#40B5AD]/10 p-3 rounded-full">
-                <FaEnvelope className="h-6 w-6 text-[#40B5AD]" />
-              </div>
-              <div className="ml-3">
-                <h4 className="text-sm font-medium text-gray-900">Email</h4>
-                <p className="text-sm text-gray-600">
-                  sales@dhanirampaints.com
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 bg-[#009E61]/10 p-3 rounded-full">
-                <FaMapMarkerAlt className="h-6 w-6 text-[#009E61]" />
-              </div>
-              <div className="ml-3">
-                <h4 className="text-sm font-medium text-gray-900">
-                  Head Office
-                </h4>
-                <p className="text-sm text-gray-600">Mumbai, Maharashtra</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </motion.div>
     </div>
   );

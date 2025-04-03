@@ -103,14 +103,14 @@ const Contact = () => {
                     Our Location
                   </h3>
                   <p className="text-gray-600">
-                    DhaniRam Paints Pvt. Ltd.
+                    DhaniRam Paints
                     <br />
-                    123 Industrial Area, Paint Nagar
+                    Plot 7B, Industrial Area, Bhanpuri
                     <br />
-                    Mumbai, Maharashtra 400001
+                    Raipur, Chattisgarh 400001
                   </p>
                   <a
-                    href={`https://www.google.com/maps?q=${mapLocation.lat},${mapLocation.lng}`}
+                    href={`https://maps.app.goo.gl/qrij6KoDjjBpc4rTA`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#6E260E] hover:underline mt-2 inline-block"
@@ -130,17 +130,17 @@ const Contact = () => {
                   </h3>
                   <p className="text-gray-600">
                     <a
-                      href="tel:+911234567890"
+                      href="tel:+918109288169"
                       className="hover:text-[#6E260E] transition-colors"
                     >
-                      +91 12345 67890 (Sales)
+                      +91 81092 88169
                     </a>
                     <br />
                     <a
-                      href="tel:+911234567891"
+                      href="tel:+919773764257"
                       className="hover:text-[#6E260E] transition-colors"
                     >
-                      +91 12345 67891 (Support)
+                      +91 9773764257
                     </a>
                   </p>
                 </div>
@@ -156,18 +156,12 @@ const Contact = () => {
                   </h3>
                   <p className="text-gray-600">
                     <a
-                      href="mailto:sales@dhanirampaints.com"
+                      href="mailto:support@dhanirampaint.com"
                       className="hover:text-[#6E260E] transition-colors"
                     >
-                      sales@dhanirampaints.com
+                      support@dhanirampaint.com
                     </a>
                     <br />
-                    <a
-                      href="mailto:support@dhanirampaints.com"
-                      className="hover:text-[#6E260E] transition-colors"
-                    >
-                      support@dhanirampaints.com
-                    </a>
                   </p>
                 </div>
               </div>
@@ -182,8 +176,6 @@ const Contact = () => {
                   </h3>
                   <p className="text-gray-600">
                     Monday - Friday: 9:00 AM - 6:00 PM
-                    <br />
-                    Saturday: 10:00 AM - 4:00 PM
                     <br />
                     Sunday: Closed
                   </p>
@@ -231,7 +223,7 @@ const Contact = () => {
             </h3>
             <div className="h-full w-full" style={{ minHeight: "400px" }}>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.376245033156!2d77.10278731508248!3d28.62894398242285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04f5d6c5aed5%3A0x5e3b3a5a3a5a3a5a!2sIndustrial%20Area%2C%20Phase%20II%2C%20New%20Delhi%2C%20Delhi%20110020!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3717.186515251553!2d81.6381226!3d21.303645199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28e0d53ccc7153%3A0xf4612bcf96072e88!2sDhaniram%20Oil%20%26%20Paint%20Industries!5e0!3m2!1sen!2sin!4v1743684909380!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -261,7 +253,7 @@ const Contact = () => {
           </h2>
           <p className="text-lg text-[#E6D5C3] mb-6 max-w-2xl mx-auto">
             For detailed project discussions or bulk orders, please visit our
-            enquiry page.
+            enquiry section.
           </p>
           <motion.a
             whileHover={{ scale: 1.05 }}

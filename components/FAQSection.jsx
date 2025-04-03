@@ -67,7 +67,7 @@ const FAQSection = () => {
                 className="object-cover"
                 quality={100}
               />
-              <div className="absolute inset-0 bg-black/30 flex items-end p-8">
+              <div className="absolute inset-0 bg-black/20 flex items-end p-8">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}

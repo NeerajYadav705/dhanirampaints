@@ -22,6 +22,7 @@ const Industrial = () => {
       image: "/assets/aboutbg.jpg",
       color: "#E21138",
     },
+    
     {
       id: 2,
       name: "Bitumen Paint",
@@ -234,7 +235,7 @@ const Industrial = () => {
           </motion.div>
         ))}
       </div>
-      {/* <ColorWall /> */}
+  
     </div>
   );
 };

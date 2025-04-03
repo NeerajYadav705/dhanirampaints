@@ -19,7 +19,7 @@ const AboutSection = () => {
               className="relative rounded-lg overflow-hidden shadow-xl"
             >
               <Image
-                src="/assets/about.jpg"
+                src="/assets/About Us.jpg"
                 alt="Dhaniram Paints Factory"
                 width={600}
                 height={600}
@@ -64,18 +64,22 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="space-y-4 text-gray-600"
+              className="space-y-4 text-gray-600 relative"
             >
-              <p>
-                Founded in 2005, Dhaniram Paints has been a trusted name in the
-                paint manufacturing industry, delivering high-performance
-                coating solutions that protect, enhance, and add value to a wide
-                range of applications. As a growing MSME, we specialize in
-                industrial, decorative, and specialty paints, offering epoxy
-                coatings, bitumen paints, aluminum paints, primers, and advanced
-                industrial coatings designed for durability and excellence.
+              {/* Left alignment guide (visible only in development) */}
+              <div className="hidden lg:block absolute left-0 top-0 h-full w-px bg-gray-200 -ml-12"></div>
+              
+              <p className="text-justify lg:text-left">
+                Founded in 2005, With our previous branding under the name of
+                our manufacturing & marketing firm, D R Paint & Chemicals, we
+                have been a trusted name in the paint manufacturing industry,
+                delivering high-performance coating solutions that protect,
+                enhance, and add value to a wide range of applications. As a
+                growing MSME, we specialize in industrial, decorative, and
+                specialty paints, offering advanced coatings designed for
+                durability and excellence.
               </p>
-              <p>
+              <p className="text-justify lg:text-left">
                 With nearly two decades of expertise, we have built a reputation
                 for quality, innovation, and reliability, serving businesses
                 that demand long-lasting and cost-effective paint solutions. Our

@@ -2,11 +2,66 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-
 const VisionMission = () => {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#40B5AD]">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Vector Background */}
+      <div className="absolute inset-0 z-0">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 1200 800"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="text-[#40B5AD]"
+        >
+          <defs>
+            <pattern
+              id="pattern-circles"
+              x="0"
+              y="0"
+              width="40"
+              height="40"
+              patternUnits="userSpaceOnUse"
+              patternContentUnits="userSpaceOnUse"
+            >
+              <circle cx="20" cy="20" r="2" fill="currentColor" opacity="0.2" />
+            </pattern>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#40B5AD" stopOpacity="0.9" />
+              <stop offset="100%" stopColor="#2a7a74" stopOpacity="0.9" />
+            </linearGradient>
+          </defs>
+          
+          <rect width="100%" height="100%" fill="url(#gradient)" />
+          <rect width="100%" height="100%" fill="url(#pattern-circles)" />
+          
+          {/* Decorative elements */}
+          <path
+            d="M0,200 Q300,100 600,300 T1200,200"
+            stroke="white"
+            strokeWidth="2"
+            fill="none"
+            opacity="0.1"
+          />
+          <path
+            d="M0,400 Q300,300 600,500 T1200,400"
+            stroke="white"
+            strokeWidth="2"
+            fill="none"
+            opacity="0.1"
+          />
+          <path
+            d="M0,600 Q300,500 600,700 T1200,600"
+            stroke="white"
+            strokeWidth="2"
+            fill="none"
+            opacity="0.1"
+          />
+        </svg>
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -15,7 +70,7 @@ const VisionMission = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Our Vision & Mission
           </h2>
           <div className="w-20 h-1 bg-[#E21138] mx-auto"></div>
@@ -98,15 +153,6 @@ const VisionMission = () => {
             </ul>
           </motion.div>
         </div>
-
-        {/* Decorative Elements */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-          className="mt-16 flex justify-center"
-        ></motion.div>
       </div>
     </section>
   );

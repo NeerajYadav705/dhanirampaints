@@ -22,13 +22,13 @@ const USP = () => {
       icon: <FaMoneyBillWave className="text-4xl" />,
       title: "Cost Effective",
       description: "High-quality paints at competitive market prices",
-      color: "#EC5800",
+      color: "#009E61",
     },
     {
       icon: <FaPalette className="text-4xl" />,
       title: "Tailored Shades",
       description: "Custom color matching for your specific requirements",
-      color: "#009E61",
+      color: "#EC5800",
     },
   ];
 

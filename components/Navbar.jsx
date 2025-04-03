@@ -106,9 +106,10 @@ const Navbar = () => {
                 >
                   <button
                     onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
-                    className={`group relative px-6 h-full flex items-center text-lg font-medium transition-colors duration-300 ${
-                      isProductActive ? "text-white" : "text-black hover:text-white"
+                    className={`group relative px-6 h-full flex items-center text-lg font-medium ${
+                      isProductActive ? "text-white" : "text-black"
                     }`}
+                    data-products-button
                   >
                     <div className="relative z-10 flex items-center">
                       {item.name}
@@ -118,14 +119,16 @@ const Navbar = () => {
                         }`}
                       />
                     </div>
-                    {/* Enhanced hover background */}
+                    {/* Enhanced rhombus hover background */}
                     <div
-                      className={`absolute inset-0 w-full h-full ${item.color} transform -skew-x-12 origin-left transition-all duration-500 ${
-                        isProductActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                      className={`absolute inset-0 w-full h-full ${item.color} transform -skew-x-12 transition-all duration-500 ${
+                        isProductActive || productsDropdownOpen
+                          ? "scale-x-100 opacity-100"
+                          : "scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100"
                       }`}
                       style={{ 
                         zIndex: -1,
-                        transformOrigin: 'left center',
+                        transformOrigin: 'center',
                         transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
                       }}
                     ></div>
@@ -157,19 +160,21 @@ const Navbar = () => {
               <Link
                 href={item.path}
                 key={item.path}
-                className={`group relative px-6 h-full flex items-center text-lg font-medium transition-colors duration-300 ${
-                  pathname === item.path ? "text-white" : "text-black hover:text-white"
+                className={`group relative px-6 h-full flex items-center text-lg font-medium ${
+                  pathname === item.path ? "text-white" : "text-black"
                 }`}
               >
                 <span className="relative z-10">{item.name}</span>
-                {/* Enhanced hover background */}
+                {/* Enhanced rhombus hover background */}
                 <div
-                  className={`absolute inset-0 w-full h-full ${item.color} transform -skew-x-12 origin-left transition-all duration-500 ${
-                    pathname === item.path ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                  className={`absolute inset-0 w-full h-full ${item.color} transform -skew-x-12 transition-all duration-500 ${
+                    pathname === item.path
+                      ? "scale-x-100 opacity-100"
+                      : "scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100"
                   }`}
                   style={{ 
                     zIndex: -1,
-                    transformOrigin: 'left center',
+                    transformOrigin: 'center',
                     transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
                   }}
                 ></div>

@@ -47,11 +47,10 @@ const Footer = () => {
               <Image
                 src="/assets/logo.png"
                 alt="DhaniRam Paints Logo"
-                width={120}
+                width={150}
                 height={80}
                 className="mr-3"
               />
-              <h3 className="text-2xl font-bold text-[#6E260E]">DhaniRam Paints</h3>
             </div>
             <p className="text-gray-600">
               Transforming spaces with quality paints and coatings since 2005.

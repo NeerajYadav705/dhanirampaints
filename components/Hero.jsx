@@ -23,78 +23,82 @@ const HeroSection = () => {
 
   return (
     <div className="relative h-screen w-full">
-      {/* First Section */}
+      {/* First Section - Right aligned, no yellow text */}
       <div
         className={`absolute inset-0 transition-opacity duration-300 ${
           showSecondSection ? "opacity-0" : "opacity-100"
         }`}
       >
         <Image
-          src="/assets/hero1.jpg"
-          alt="Innovative Paints"
+          src="/assets/homepage1.png"
+          alt="Crafting Coatings"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/40 flex items-end justify-end pb-[10%] pr-[10%]">
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-end pr-[10%]">
           <motion.div
             initial="hidden"
             animate="visible"
             transition={{ staggerChildren: 0.1 }}
-            className="text-right text-white max-w-xl"
+            className="text-right"
           >
-            <motion.h1
+            <motion.div
               variants={textVariants}
               transition={{ duration: 0.6 }}
-              className="text-4xl md:text-6xl font-bold mb-2 leading-tight"
+              className="text-4xl md:text-7xl font-bold leading-none text-white"
+              style={{ fontFamily: "Lancelot" }}
             >
-              QUALITY YOU CAN TRUST,
-            </motion.h1>
-            <motion.h1
+              Crafting Coatings,
+            </motion.div>
+            <motion.div
               variants={textVariants}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl md:text-6xl font-bold leading-tight"
+              className="text-3xl md:text-7xl font-bold leading-none text-white mt-2"
+              style={{ fontFamily: "lancelot" }}
             >
-              DURABILITY YOU DESERVE
-            </motion.h1>
+              Cultivating Connections
+            </motion.div>
           </motion.div>
         </div>
       </div>
 
-      {/* Second Section */}
+      {/* Second Section - Updated to match image exactly */}
       <div
         className={`absolute inset-0 transition-opacity duration-300 ${
           showSecondSection ? "opacity-100" : "opacity-0"
         }`}
       >
         <Image
-          src="/assets/hero2.jpg"
-          alt="Premium Coatings"
+          src="/assets/homepage2.png"
+          alt="Premium Paint Solutions"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/40 flex items-end justify-end pb-[10%] pr-[10%]">
+        <div className="absolute inset-0 bg-black/40 flex items-center pl-[10%]">
           <motion.div
             initial="hidden"
             animate="visible"
             transition={{ staggerChildren: 0.1 }}
-            className="text-right text-white max-w-xl"
+            className="text-left"
           >
-            <motion.h1
+            <motion.div
               variants={textVariants}
               transition={{ duration: 0.6 }}
-              className="text-4xl md:text-6xl font-bold mb-2 leading-tight"
+              className="text-4xl md:text-7xl  font-bold leading-none text-white"
+              style={{ fontFamily: "lancelot" }}
             >
-              PREMIUM COATINGS THAT
-            </motion.h1>
-            <motion.h1
+              Premium <span className="text-[#ffcd05]">Paint</span> Solutions
+            </motion.div>
+            <motion.div
               variants={textVariants}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl md:text-6xl font-bold leading-tight"
+              className="text-4xl md:text-7xl font-bold leading-none text-white mt-2"
+              style={{ fontFamily: "lancelot" }}
             >
-              STAND THE TEST OF TIME
-            </motion.h1>
+              for every industry
+            </motion.div>
           </motion.div>
         </div>
       </div>
