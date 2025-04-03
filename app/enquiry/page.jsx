@@ -7,7 +7,8 @@ import {
   FaIndustry,
   FaFileAlt,
   FaCheck,
-  FaMapMarkerAlt,
+  FaWeight,
+  FaFlask,
 } from "react-icons/fa";
 import Image from "next/image";
 
@@ -44,6 +45,8 @@ const Enquiry = () => {
     phone: "",
     company: "",
     productInterest: "",
+    quantityUnit: "liters", // Default to liters
+    quantity: "",
     message: "",
   });
 
@@ -68,6 +71,8 @@ const Enquiry = () => {
         phone: "",
         company: "",
         productInterest: "",
+        quantityUnit: "liters",
+        quantity: "",
         message: "",
       });
       setSubmitted(false);
@@ -284,8 +289,81 @@ const Enquiry = () => {
                   <option value="Decorative Paints">Decorative Paints</option>
                   <option value="Floor Coatings">Floor Coatings</option>
                   <option value="Precoat Metals">Precoat Metals</option>
-                  <option value="Specialty Coatings">Specialty Coatings</option>
                 </select>
+              </motion.div>
+
+              {/* MOQ Section */}
+              <motion.div variants={item} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Minimum Order Quantity (MOQ)
+                  </label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="relative">
+                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        {formData.quantityUnit === "liters" ? (
+                          <FaFlask className="h-5 w-5 text-gray-400" />
+                        ) : (
+                          <FaWeight className="h-5 w-5 text-gray-400" />
+                        )}
+                      </div>
+                      <input
+                        type="number"
+                        id="quantity"
+                        name="quantity"
+                        min="1"
+                        value={formData.quantity}
+                        onChange={handleChange}
+                        className="pl-10 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[#009E61] focus:border-[#009E61]"
+                        placeholder={
+                          formData.quantityUnit === "liters"
+                            ? "Quantity in liters"
+                            : "Quantity in kg"
+                        }
+                      />
+                    </div>
+                    <div className="flex items-center space-x-4 bg-gray-50 p-2 rounded-md">
+                      <div className="flex items-center">
+                        <input
+                          id="liters"
+                          name="quantityUnit"
+                          type="radio"
+                          value="liters"
+                          checked={formData.quantityUnit === "liters"}
+                          onChange={handleChange}
+                          className="h-4 w-4 text-[#009E61] focus:ring-[#009E61] border-gray-300"
+                        />
+                        <label
+                          htmlFor="liters"
+                          className="ml-2 block text-sm text-gray-700"
+                        >
+                          Liters
+                        </label>
+                      </div>
+                      <div className="flex items-center">
+                        <input
+                          id="kilograms"
+                          name="quantityUnit"
+                          type="radio"
+                          value="kilograms"
+                          checked={formData.quantityUnit === "kilograms"}
+                          onChange={handleChange}
+                          className="h-4 w-4 text-[#009E61] focus:ring-[#009E61] border-gray-300"
+                        />
+                        <label
+                          htmlFor="kilograms"
+                          className="ml-2 block text-sm text-gray-700"
+                        >
+                          Kilograms
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="mt-1 text-xs text-gray-500">
+                    Please specify your required quantity (minimum order
+                    quantities may apply)
+                  </p>
+                </div>
               </motion.div>
 
               <motion.div variants={item}>

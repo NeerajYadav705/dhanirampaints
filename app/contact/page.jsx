@@ -175,7 +175,7 @@ const Contact = () => {
                     Business Hours
                   </h3>
                   <p className="text-gray-600">
-                    Monday - Friday: 9:00 AM - 6:00 PM
+                    Monday - Saturday: 9:00 AM - 7:00 PM
                     <br />
                     Sunday: Closed
                   </p>

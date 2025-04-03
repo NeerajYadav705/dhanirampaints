@@ -8,7 +8,6 @@ import {
   FaFacebook,
   FaInstagram,
   FaLinkedin,
-  FaPaintBrush,
 } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
@@ -36,10 +35,64 @@ const Footer = () => {
       whileInView="show"
       viewport={{ once: true }}
       variants={container}
-      className="bg-[#edede9] text-gray-800 pt-20 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-t border-gray-200"
+      className="relative overflow-hidden pt-20 pb-16 px-4 sm:px-6 lg:px-8 bg-[#99dc25]"
     >
+      {/* Elegant criss-cross wavy lines background */}
+      <div className="absolute inset-0 z-0 overflow-hidden opacity-10">
+        <svg 
+          viewBox="0 0 1200 600" 
+          className="w-full h-full"
+          preserveAspectRatio="none"
+        >
+          {/* Diagonal wave 1 (6E260E) */}
+          <path 
+            d="M-100,100 C200,0 400,200 700,100 S1100,0 1300,100" 
+            stroke="#6E260E" 
+            strokeWidth="1.5" 
+            fill="none"
+            strokeDasharray="5,5"
+          />
+          
+          {/* Diagonal wave 2 (E21138) */}
+          <path 
+            d="M-100,300 C200,200 400,400 700,300 S1100,200 1300,300" 
+            stroke="#E21138" 
+            strokeWidth="1.5" 
+            fill="none"
+            strokeDasharray="5,5"
+          />
+          
+          {/* Diagonal wave 3 (40B5AD) */}
+          <path 
+            d="M-100,500 C200,400 400,600 700,500 S1100,400 1300,500" 
+            stroke="#40B5AD" 
+            strokeWidth="1.5" 
+            fill="none"
+            strokeDasharray="5,5"
+          />
+          
+          {/* Opposite diagonal wave 1 (009E61) */}
+          <path 
+            d="M1300,100 C1000,0 800,200 500,100 S100,0 -100,100" 
+            stroke="#009E61" 
+            strokeWidth="1.5" 
+            fill="none"
+            strokeDasharray="5,5"
+          />
+          
+          {/* Opposite diagonal wave 2 (EC5800) */}
+          <path 
+            d="M1300,300 C1000,200 800,400 500,300 S100,200 -100,300" 
+            stroke="#EC5800" 
+            strokeWidth="1.5" 
+            fill="none"
+            strokeDasharray="5,5"
+          />
+        </svg>
+      </div>
+
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Footer Content */}
+        {/* Your existing footer content remains unchanged */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Company Info */}
           <motion.div variants={item} className="space-y-4">
@@ -172,7 +225,7 @@ const Footer = () => {
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="border-t border-[#6E260E]/20 my-8 relative"
+          className="h-px bg-gradient-to-r from-transparent via-[#6E260E]/30 to-transparent my-8"
         ></motion.div>
 
         {/* Copyright */}

@@ -2,15 +2,13 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-// import ColorWall from "@/components/ColorWall";
 
 const Industrial = () => {
   const products = [
     {
       id: 1,
       name: "Enamel",
-      description:
-        "High-gloss enamel paint provides a durable, hard finish that's resistant to moisture, heat, and everyday wear. Ideal for metal surfaces, machinery, and equipment requiring both protection and aesthetic appeal. Our enamel formulation offers excellent leveling and a smooth finish with superior color retention.",
+      description: "High-gloss enamel paint provides a durable, hard finish that's resistant to moisture, heat, and everyday wear. Ideal for metal surfaces, machinery, and equipment requiring both protection and aesthetic appeal. Our enamel formulation offers excellent leveling and a smooth finish with superior color retention.",
       features: [
         "High gloss finish",
         "Excellent durability",
@@ -22,12 +20,10 @@ const Industrial = () => {
       image: "/assets/aboutbg.jpg",
       color: "#E21138",
     },
-    
     {
       id: 2,
       name: "Bitumen Paint",
-      description:
-        "Bituminous coating provides superior waterproofing and corrosion protection for metal and concrete surfaces. Particularly effective for pipelines, tanks, and marine applications where water resistance is critical. Forms a flexible, protective layer that withstands harsh environmental conditions.",
+      description: "Bituminous coating provides superior waterproofing and corrosion protection for metal and concrete surfaces. Particularly effective for pipelines, tanks, and marine applications where water resistance is critical. Forms a flexible, protective layer that withstands harsh environmental conditions.",
       features: [
         "Excellent waterproofing",
         "Corrosion resistance",
@@ -37,13 +33,12 @@ const Industrial = () => {
         "Long-lasting protection",
       ],
       image: "/assets/aboutbg.jpg",
-      color: "#E21138",
+      color: "#40B5AD",
     },
     {
       id: 3,
       name: "Aluminum Paint",
-      description:
-        "Specialized aluminum paint offers heat reflection and corrosion protection for industrial equipment. The aluminum flakes create a reflective barrier that protects surfaces from heat, moisture, and chemical exposure while providing an attractive metallic finish.",
+      description: "Specialized aluminum paint offers heat reflection and corrosion protection for industrial equipment. The aluminum flakes create a reflective barrier that protects surfaces from heat, moisture, and chemical exposure while providing an attractive metallic finish.",
       features: [
         "Heat reflective",
         "Corrosion resistant",
@@ -53,13 +48,12 @@ const Industrial = () => {
         "Durable metallic finish",
       ],
       image: "/assets/aboutbg.jpg",
-      color: "#E21138",
+      color: "#009E61",
     },
     {
       id: 4,
       name: "PU Paint",
-      description:
-        "Polyurethane paint delivers exceptional abrasion resistance and flexibility, making it perfect for automotive and industrial applications. Provides a tough, elastic finish that withstands impacts, vibrations, and extreme weather conditions while maintaining its appearance.",
+      description: "Polyurethane paint delivers exceptional abrasion resistance and flexibility, making it perfect for automotive and industrial applications. Provides a tough, elastic finish that withstands impacts, vibrations, and extreme weather conditions while maintaining its appearance.",
       features: [
         "Extreme abrasion resistance",
         "Excellent flexibility",
@@ -69,13 +63,12 @@ const Industrial = () => {
         "Fast curing",
       ],
       image: "/assets/aboutbg.jpg",
-      color: "#E21138",
+      color: "#EC5800",
     },
     {
       id: 5,
       name: "Epoxy Paint",
-      description:
-        "Epoxy coatings create a hard, chemical-resistant surface ideal for industrial floors, tanks, and equipment. Offers superior adhesion to metal and concrete, with excellent resistance to chemicals, impacts, and heavy traffic while being easy to clean and maintain.",
+      description: "Epoxy coatings create a hard, chemical-resistant surface ideal for industrial floors, tanks, and equipment. Offers superior adhesion to metal and concrete, with excellent resistance to chemicals, impacts, and heavy traffic while being easy to clean and maintain.",
       features: [
         "Chemical resistant",
         "High adhesion",
@@ -85,13 +78,12 @@ const Industrial = () => {
         "Custom colors",
       ],
       image: "/assets/aboutbg.jpg",
-      color: "#E21138",
+      color: "#6E260E",
     },
     {
       id: 6,
       name: "Red Oxide Primer",
-      description:
-        "Rust-inhibitive primer forms a protective barrier on iron and steel surfaces. The red oxide formulation provides excellent corrosion resistance and promotes strong adhesion for topcoats, extending the life of metal structures in harsh environments.",
+      description: "Rust-inhibitive primer forms a protective barrier on iron and steel surfaces. The red oxide formulation provides excellent corrosion resistance and promotes strong adhesion for topcoats, extending the life of metal structures in harsh environments.",
       features: [
         "Rust prevention",
         "Excellent adhesion",
@@ -103,6 +95,27 @@ const Industrial = () => {
       image: "/assets/aboutbg.jpg",
       color: "#E21138",
     },
+  ];
+
+  const brands = [
+    {
+      id: 1,
+      name: "Premium Coatings",
+      description: "Our premium line offers the highest quality industrial coatings with advanced formulations for extreme environments.",
+      image: "/assets/brand1.jpg"
+    },
+    {
+      id: 2,
+      name: "Eco Solutions",
+      description: "Environmentally friendly coatings that meet strict environmental regulations without compromising performance.",
+      image: "/assets/brand2.jpg"
+    },
+    {
+      id: 3,
+      name: "Marine Grade",
+      description: "Specialized formulations designed for marine applications with superior saltwater and UV resistance.",
+      image: "/assets/brand3.jpg"
+    }
   ];
 
   // Animation variants
@@ -156,6 +169,7 @@ const Industrial = () => {
         />
       </motion.div>
 
+      {/* Products Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         {products.map((product, index) => (
           <motion.div
@@ -164,26 +178,28 @@ const Industrial = () => {
             animate="visible"
             variants={cardVariants}
             transition={{ delay: index * 0.1 }}
-            className="group mb-10 sm:mb-12"
+            className="group mb-10 sm:mb-16"
           >
-            {/* Animated Tab */}
-            <motion.div
-              variants={tabVariants}
-              initial="rest"
-              whileHover="hover"
-              style={{ backgroundColor: product.color }}
-              className="w-full sm:w-fit px-4 sm:px-6 py-2 sm:py-3 rounded-t-lg shadow-sm"
-            >
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white text-center sm:text-left px-2 sm:px-16">
-                {product.name}
-              </h3>
-            </motion.div>
+            {/* Alternating Heading */}
+            <div className={`flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+              <motion.div
+                variants={tabVariants}
+                initial="rest"
+                whileHover="hover"
+                style={{ backgroundColor: product.color }}
+                className={`px-6 py-3 rounded-t-lg shadow-sm ${index % 2 === 0 ? 'ml-0' : 'mr-0'}`}
+              >
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white">
+                  {product.name}
+                </h3>
+              </motion.div>
+            </div>
 
             {/* Card Content */}
             <div
               className={`flex flex-col ${
-                product.id % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              } gap-4 sm:gap-6 p-4 sm:p-6 bg-white rounded-b-lg rounded-tr-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300`}
+                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              } gap-6 p-6 bg-white rounded-b-lg rounded-tr-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300`}
               style={{ borderTopColor: product.color }}
             >
               {/* Text Content */}
@@ -235,7 +251,100 @@ const Industrial = () => {
           </motion.div>
         ))}
       </div>
-  
+
+      {/* Brands Section */}
+      <div className="bg-[#f8f8f8] py-16 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={slideUp}
+            className="text-center mb-12"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#6E260E]">
+              Our Premium Brands
+            </h2>
+            <div className="w-24 h-1 bg-[#E21138] mx-auto mt-4"></div>
+          </motion.div>
+
+          <div className="flex flex-col md:flex-row gap-8">
+            {/* Brand Description (30%) */}
+            <div className="w-full md:w-3/10">
+              <motion.div
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                variants={fadeIn}
+                className="bg-white p-6 rounded-lg shadow-sm h-full"
+              >
+                <h3 className="text-xl font-semibold text-[#6E260E] mb-4">
+                  Trusted Quality
+                </h3>
+                <p className="text-gray-700 mb-4">
+                  DhaniRam Paints offers specialized brands tailored for different industrial applications. Each brand represents our commitment to quality, durability, and performance.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-[#E21138] font-bold mr-2">•</span>
+                    <span className="text-gray-700">Certified formulations</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#40B5AD] font-bold mr-2">•</span>
+                    <span className="text-gray-700">Rigorous testing</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#009E61] font-bold mr-2">•</span>
+                    <span className="text-gray-700">Industry-specific solutions</span>
+                  </li>
+                </ul>
+              </motion.div>
+            </div>
+
+            {/* Brand Images (70%) */}
+            <div className="w-full md:w-7/10">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {brands.map((brand, index) => (
+                  <motion.div
+                    key={brand.id}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      show: {
+                        opacity: 1,
+                        y: 0,
+                        transition: { delay: index * 0.2, duration: 0.6 }
+                      }
+                    }}
+                    className="group"
+                  >
+                    <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
+                      <div className="relative h-48 sm:h-56 w-full">
+                        <Image
+                          src={brand.image}
+                          alt={brand.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="text-lg font-semibold text-[#6E260E] mb-2">
+                          {brand.name}
+                        </h3>
+                        <p className="text-gray-600 text-sm">
+                          {brand.description}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
