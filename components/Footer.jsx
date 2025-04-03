@@ -35,7 +35,7 @@ const Footer = () => {
       whileInView="show"
       viewport={{ once: true }}
       variants={container}
-      className="relative overflow-hidden pt-20 pb-16 px-4 sm:px-6 lg:px-8 bg-[#99dc25]"
+      className="relative overflow-hidden pt-20 pb-16 px-4 sm:px-6 lg:px-8 bg-[#669BBC]"
     >
       {/* Elegant criss-cross wavy lines background */}
       <div className="absolute inset-0 z-0 overflow-hidden opacity-10">
