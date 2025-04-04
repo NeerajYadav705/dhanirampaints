@@ -2,13 +2,15 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { FaIndustry, FaPalette, FaSearch, FaSwatchbook } from "react-icons/fa";
 
 const Industrial = () => {
   const products = [
     {
       id: 1,
       name: "Enamel",
-      description: "High-gloss enamel paint provides a durable, hard finish that's resistant to moisture, heat, and everyday wear. Ideal for metal surfaces, machinery, and equipment requiring both protection and aesthetic appeal. Our enamel formulation offers excellent leveling and a smooth finish with superior color retention.",
+      description:
+        "High-gloss enamel paint provides a durable, hard finish that's resistant to moisture, heat, and everyday wear. Ideal for metal surfaces, machinery, and equipment requiring both protection and aesthetic appeal. Our enamel formulation offers excellent leveling and a smooth finish with superior color retention.",
       features: [
         "High gloss finish",
         "Excellent durability",
@@ -23,7 +25,8 @@ const Industrial = () => {
     {
       id: 2,
       name: "Bitumen Paint",
-      description: "Bituminous coating provides superior waterproofing and corrosion protection for metal and concrete surfaces. Particularly effective for pipelines, tanks, and marine applications where water resistance is critical. Forms a flexible, protective layer that withstands harsh environmental conditions.",
+      description:
+        "Bituminous coating provides superior waterproofing and corrosion protection for metal and concrete surfaces. Particularly effective for pipelines, tanks, and marine applications where water resistance is critical. Forms a flexible, protective layer that withstands harsh environmental conditions.",
       features: [
         "Excellent waterproofing",
         "Corrosion resistance",
@@ -38,7 +41,8 @@ const Industrial = () => {
     {
       id: 3,
       name: "Aluminum Paint",
-      description: "Specialized aluminum paint offers heat reflection and corrosion protection for industrial equipment. The aluminum flakes create a reflective barrier that protects surfaces from heat, moisture, and chemical exposure while providing an attractive metallic finish.",
+      description:
+        "Specialized aluminum paint offers heat reflection and corrosion protection for industrial equipment. The aluminum flakes create a reflective barrier that protects surfaces from heat, moisture, and chemical exposure while providing an attractive metallic finish.",
       features: [
         "Heat reflective",
         "Corrosion resistant",
@@ -53,7 +57,8 @@ const Industrial = () => {
     {
       id: 4,
       name: "PU Paint",
-      description: "Polyurethane paint delivers exceptional abrasion resistance and flexibility, making it perfect for automotive and industrial applications. Provides a tough, elastic finish that withstands impacts, vibrations, and extreme weather conditions while maintaining its appearance.",
+      description:
+        "Polyurethane paint delivers exceptional abrasion resistance and flexibility, making it perfect for automotive and industrial applications. Provides a tough, elastic finish that withstands impacts, vibrations, and extreme weather conditions while maintaining its appearance.",
       features: [
         "Extreme abrasion resistance",
         "Excellent flexibility",
@@ -68,7 +73,8 @@ const Industrial = () => {
     {
       id: 5,
       name: "Epoxy Paint",
-      description: "Epoxy coatings create a hard, chemical-resistant surface ideal for industrial floors, tanks, and equipment. Offers superior adhesion to metal and concrete, with excellent resistance to chemicals, impacts, and heavy traffic while being easy to clean and maintain.",
+      description:
+        "Epoxy coatings create a hard, chemical-resistant surface ideal for industrial floors, tanks, and equipment. Offers superior adhesion to metal and concrete, with excellent resistance to chemicals, impacts, and heavy traffic while being easy to clean and maintain.",
       features: [
         "Chemical resistant",
         "High adhesion",
@@ -83,7 +89,8 @@ const Industrial = () => {
     {
       id: 6,
       name: "Red Oxide Primer",
-      description: "Rust-inhibitive primer forms a protective barrier on iron and steel surfaces. The red oxide formulation provides excellent corrosion resistance and promotes strong adhesion for topcoats, extending the life of metal structures in harsh environments.",
+      description:
+        "Rust-inhibitive primer forms a protective barrier on iron and steel surfaces. The red oxide formulation provides excellent corrosion resistance and promotes strong adhesion for topcoats, extending the life of metal structures in harsh environments.",
       features: [
         "Rust prevention",
         "Excellent adhesion",
@@ -101,22 +108,44 @@ const Industrial = () => {
     {
       id: 1,
       name: "Premium Coatings",
-      description: "Our premium line offers the highest quality industrial coatings with advanced formulations for extreme environments.",
-      image: "/assets/brand1.jpg"
+      description:
+        "Our premium line offers the highest quality industrial coatings with advanced formulations for extreme environments.",
+      image: "/assets/brand1.jpg",
     },
     {
       id: 2,
       name: "Eco Solutions",
-      description: "Environmentally friendly coatings that meet strict environmental regulations without compromising performance.",
-      image: "/assets/brand2.jpg"
+      description:
+        "Environmentally friendly coatings that meet strict environmental regulations without compromising performance.",
+      image: "/assets/brand2.jpg",
     },
     {
       id: 3,
       name: "Marine Grade",
-      description: "Specialized formulations designed for marine applications with superior saltwater and UV resistance.",
-      image: "/assets/brand3.jpg"
-    }
+      description:
+        "Specialized formulations designed for marine applications with superior saltwater and UV resistance.",
+      image: "/assets/brand3.jpg",
+    },
   ];
+
+
+  // Animation variants
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
+};
+
+
 
   // Animation variants
   const cardVariants = {
@@ -181,13 +210,19 @@ const Industrial = () => {
             className="group mb-10 sm:mb-16"
           >
             {/* Alternating Heading */}
-            <div className={`flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+            <div
+              className={`flex ${
+                index % 2 === 0 ? "justify-start" : "justify-end"
+              }`}
+            >
               <motion.div
                 variants={tabVariants}
                 initial="rest"
                 whileHover="hover"
                 style={{ backgroundColor: product.color }}
-                className={`px-6 py-3 rounded-t-lg shadow-sm ${index % 2 === 0 ? 'ml-0' : 'mr-0'}`}
+                className={`px-6 py-3 rounded-t-lg shadow-sm ${
+                  index % 2 === 0 ? "ml-0" : "mr-0"
+                }`}
               >
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white">
                   {product.name}
@@ -282,12 +317,16 @@ const Industrial = () => {
                   Trusted Quality
                 </h3>
                 <p className="text-gray-700 mb-4">
-                  DhaniRam Paints offers specialized brands tailored for different industrial applications. Each brand represents our commitment to quality, durability, and performance.
+                  DhaniRam Paints offers specialized brands tailored for
+                  different industrial applications. Each brand represents our
+                  commitment to quality, durability, and performance.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <span className="text-[#E21138] font-bold mr-2">•</span>
-                    <span className="text-gray-700">Certified formulations</span>
+                    <span className="text-gray-700">
+                      Certified formulations
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#40B5AD] font-bold mr-2">•</span>
@@ -295,7 +334,9 @@ const Industrial = () => {
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#009E61] font-bold mr-2">•</span>
-                    <span className="text-gray-700">Industry-specific solutions</span>
+                    <span className="text-gray-700">
+                      Industry-specific solutions
+                    </span>
                   </li>
                 </ul>
               </motion.div>
@@ -315,8 +356,8 @@ const Industrial = () => {
                       show: {
                         opacity: 1,
                         y: 0,
-                        transition: { delay: index * 0.2, duration: 0.6 }
-                      }
+                        transition: { delay: index * 0.2, duration: 0.6 },
+                      },
                     }}
                     className="group"
                   >
@@ -345,6 +386,96 @@ const Industrial = () => {
           </div>
         </div>
       </div>
+
+      {/* RAL Color Section - Improved Version */}
+      <motion.section
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={container}
+        className="py-12 md:py-16 bg-white"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <motion.div variants={slideUp} className="flex justify-center mb-4">
+              <div className="bg-[#6E260E]/10 p-4 rounded-full">
+                <FaPalette className="text-4xl text-[#6E260E]" />
+              </div>
+            </motion.div>
+            <motion.h2
+              variants={slideUp}
+              className="text-2xl sm:text-3xl font-bold text-[#6E260E] mb-4"
+            >
+              Precision Color Matching
+            </motion.h2>
+            <motion.p
+              variants={slideUp}
+              className="text-gray-700 max-w-3xl mx-auto text-lg"
+            >
+              Looking for the perfect custom shade? We recommend the
+              industry-standard RAL Colour Chart for accurate and consistent
+              color selection.
+            </motion.p>
+          </div>
+
+          <motion.div
+            variants={item}
+            className="bg-[#f8f8f8] rounded-lg p-8 max-w-4xl mx-auto"
+          >
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex flex-col items-center text-center">
+                <div className="bg-white p-4 rounded-full mb-3">
+                  <FaSwatchbook className="text-2xl text-[#E21138]" />
+                </div>
+                <h3 className="font-semibold text-[#6E260E] mb-2">
+                  Standardized Colors
+                </h3>
+                <p className="text-gray-700 text-sm">
+                  RAL provides precise digital and physical color references
+                </p>
+              </div>
+
+              <div className="flex flex-col items-center text-center">
+                <div className="bg-white p-4 rounded-full mb-3">
+                  <FaSearch className="text-2xl text-[#40B5AD]" />
+                </div>
+                <h3 className="font-semibold text-[#6E260E] mb-2">
+                  Easy Selection
+                </h3>
+                <p className="text-gray-700 text-sm">
+                  Browse thousands of standardized colors for perfect matches
+                </p>
+              </div>
+
+              <div className="flex flex-col items-center text-center">
+                <div className="bg-white p-4 rounded-full mb-3">
+                  <FaIndustry className="text-2xl text-[#009E61]" />
+                </div>
+                <h3 className="font-semibold text-[#6E260E] mb-2">
+                  Industry Standard
+                </h3>
+                <p className="text-gray-700 text-sm">
+                  Trusted by professionals worldwide for color consistency
+                </p>
+              </div>
+            </div>
+
+            <motion.div variants={item} className="text-center mt-8">
+              <a
+                href="https://www.ralcolor.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#6E260E] hover:bg-[#8a3b1a] text-white font-medium py-3 px-8 rounded-md transition-colors duration-200"
+              >
+                Explore RAL Color Chart
+              </a>
+              <p className="text-sm text-gray-500 mt-4">
+                Need help matching a specific color? Our experts can assist you.
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </motion.section>
     </div>
   );
 };

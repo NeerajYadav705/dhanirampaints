@@ -81,28 +81,27 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center h-[150px]">
         {/* Left Side - Logo */}
-        <div className="flex items-center h-full flex-col">
-          <Link href="/" className="h-full flex items-center  z-10">
-            <Image
-              src="/assets/logo1.png"
-              alt="Logo"
-              width={180}
-              height={80}
-              className="w-auto h-[100px]"
-              priority
-            />
-          </Link>
-          <Link href="/" className="h-full flex items-center z-10">
-            <Image
-              src="/assets/logo2.png"
-              alt="Logo"
-              width={180}
-              height={80}
-              className="w-auto h-[28px]"
-              priority
-            />
-          </Link>
-        </div>
+       {/* Left Side - Logo */}
+<div className="flex flex-col justify-center h-full">
+  <Link href="/" className="flex flex-col items-center gap-1 z-10">
+    <Image
+      src="/assets/logo1.png"
+      alt="First Logo Part"
+      width={180}
+      height={80}
+      className="w-auto h-[60px] object-contain"
+      priority
+    />
+    <Image
+      src="/assets/logo2.png"
+      alt="Second Logo Part"
+      width={180}
+      height={40}
+      className="w-auto h-[25px] object-contain"
+      priority
+    />
+  </Link>
+</div>
 
         {/* Center - Navigation */}
         <div className="hidden md:flex h-full items-center flex-1 justify-center">
