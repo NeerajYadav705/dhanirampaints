@@ -99,7 +99,7 @@ const AboutSection = () => {
               className="mt-8"
             >
               <Link href="/about" passHref>
-                <button className="bg-[#E21138] hover:bg-[#C50E32] text-white font-medium py-3 px-8 rounded-full transition duration-300 shadow-md hover:shadow-lg">
+                <button className="bg-[#E21138] hover:bg-[#C50E32] text-white font-medium py-3 px-8 rounded-full transition duration-300 shadow-md hover:shadow-lg cursour-pointer">
                   Explore More
                 </button>
               </Link>

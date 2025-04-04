@@ -1,6 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useForm, ValidationError } from "@formspree/react";
 import {
   FaPhone,
   FaEnvelope,
@@ -45,12 +46,34 @@ const Enquiry = () => {
     phone: "",
     company: "",
     productInterest: "",
-    quantityUnit: "liters", // Default to liters
+    quantityUnit: "liters",
     quantity: "",
     message: "",
   });
 
-  const [submitted, setSubmitted] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [state, handleSubmit] = useForm("mblgzzer");
+
+  useEffect(() => {
+    if (state.succeeded) {
+      setShowSuccess(true);
+      const timer = setTimeout(() => {
+        setShowSuccess(false);
+        // Reset form data
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          productInterest: "",
+          quantityUnit: "liters",
+          quantity: "",
+          message: "",
+        });
+      }, 3000); // Show success message for 3 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [state.succeeded]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -60,23 +83,9 @@ const Enquiry = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        productInterest: "",
-        quantityUnit: "liters",
-        quantity: "",
-        message: "",
-      });
-      setSubmitted(false);
-    }, 3000);
+    await handleSubmit(e);
   };
 
   return (
@@ -103,6 +112,7 @@ const Enquiry = () => {
           priority
         />
       </motion.div>
+
       <motion.div
         initial="hidden"
         animate="show"
@@ -125,7 +135,7 @@ const Enquiry = () => {
 
         {/* Form Content */}
         <div className="p-6 sm:p-8">
-          {submitted ? (
+          {showSuccess ? (
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -147,13 +157,17 @@ const Enquiry = () => {
           ) : (
             <motion.form
               variants={container}
-              onSubmit={handleSubmit}
+              onSubmit={handleFormSubmit}
               className="space-y-6"
             >
+              <input type="hidden" name="_subject" value="New Enquiry from Dhaniram Paints Website" />
+              <input type="hidden" name="_format" value="plain" />
+              
               <motion.div
                 variants={item}
                 className="grid grid-cols-1 sm:grid-cols-2 gap-6"
               >
+                {/* Name Field */}
                 <div>
                   <label
                     htmlFor="name"
@@ -190,6 +204,7 @@ const Enquiry = () => {
                   </div>
                 </div>
 
+                {/* Email Field */}
                 <div>
                   <label
                     htmlFor="email"
@@ -211,6 +226,11 @@ const Enquiry = () => {
                       className="pl-10 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[#009E61] focus:border-[#009E61]"
                       placeholder="your@email.com"
                     />
+                    <ValidationError 
+                      prefix="Email" 
+                      field="email"
+                      errors={state.errors}
+                    />
                   </div>
                 </div>
               </motion.div>
@@ -219,6 +239,7 @@ const Enquiry = () => {
                 variants={item}
                 className="grid grid-cols-1 sm:grid-cols-2 gap-6"
               >
+                {/* Phone Field */}
                 <div>
                   <label
                     htmlFor="phone"
@@ -243,6 +264,7 @@ const Enquiry = () => {
                   </div>
                 </div>
 
+                {/* Company Field */}
                 <div>
                   <label
                     htmlFor="company"
@@ -267,6 +289,7 @@ const Enquiry = () => {
                 </div>
               </motion.div>
 
+              {/* Product Interest */}
               <motion.div variants={item}>
                 <label
                   htmlFor="productInterest"
@@ -366,6 +389,7 @@ const Enquiry = () => {
                 </div>
               </motion.div>
 
+              {/* Message Field */}
               <motion.div variants={item}>
                 <label
                   htmlFor="message"
@@ -387,15 +411,22 @@ const Enquiry = () => {
                     className="pl-10 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[#009E61] focus:border-[#009E61]"
                     placeholder="Please provide details about your requirements..."
                   />
+                  <ValidationError 
+                    prefix="Message" 
+                    field="message"
+                    errors={state.errors}
+                  />
                 </div>
               </motion.div>
 
+              {/* Submit Button */}
               <motion.div variants={item} className="pt-2">
                 <button
                   type="submit"
+                  disabled={state.submitting}
                   className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#009E61] hover:bg-[#315a4a] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#009E61] transition-colors duration-300"
                 >
-                  Submit Enquiry
+                  {state.submitting ? 'Submitting...' : 'Submit Enquiry'}
                 </button>
               </motion.div>
             </motion.form>

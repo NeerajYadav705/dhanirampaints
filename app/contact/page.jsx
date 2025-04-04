@@ -140,7 +140,7 @@ const Contact = () => {
                       href="tel:+919773764257"
                       className="hover:text-[#6E260E] transition-colors"
                     >
-                      +91 9773764257
+                      +91 97737 64257
                     </a>
                   </p>
                 </div>
