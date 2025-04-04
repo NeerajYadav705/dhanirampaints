@@ -12,34 +12,85 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 
+// Animation variants
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
 const Footer = () => {
-  const brandColors = ["#E21138", "#EC5800", "#40B5AD", "#009E61", "#6E260E"];
-
   return (
-    <footer className="relative overflow-hidden pt-20 pb-16 px-4 sm:px-6 lg:px-8">
-      {/* Subtle diagonal gradient background */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#E21138]/5 via-[#EC5800]/5 to-[#6E260E]/5" />
-
-      {/* Thin color accent bars at top */}
-      <div className="absolute top-0 left-0 right-0 h-1 flex z-10">
-        {brandColors.map((color, i) => (
-          <div 
-            key={i} 
-            className="h-full flex-1"
-            style={{ backgroundColor: color }}
+    <motion.footer 
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      variants={container}
+      className="relative overflow-hidden pt-20 pb-16 px-4 sm:px-6 lg:px-8 bg-[#99dc25]"
+    >
+      {/* Elegant criss-cross wavy lines background */}
+      <div className="absolute inset-0 z-0 overflow-hidden opacity-10">
+        <svg 
+          viewBox="0 0 1200 600" 
+          className="w-full h-full"
+          preserveAspectRatio="none"
+        >
+          {/* Diagonal wave 1 (6E260E) */}
+          <path 
+            d="M-100,100 C200,0 400,200 700,100 S1100,0 1300,100" 
+            stroke="#6E260E" 
+            strokeWidth="1.5" 
+            fill="none"
+            strokeDasharray="5,5"
           />
-        ))}
+          
+          {/* Diagonal wave 2 (E21138) */}
+          <path 
+            d="M-100,300 C200,200 400,400 700,300 S1100,200 1300,300" 
+            stroke="#E21138" 
+            strokeWidth="1.5" 
+            fill="none"
+            strokeDasharray="5,5"
+          />
+          
+          {/* Diagonal wave 3 (40B5AD) */}
+          <path 
+            d="M-100,500 C200,400 400,600 700,500 S1100,400 1300,500" 
+            stroke="#40B5AD" 
+            strokeWidth="1.5" 
+            fill="none"
+            strokeDasharray="5,5"
+          />
+          
+          {/* Opposite diagonal wave 1 (009E61) */}
+          <path 
+            d="M1300,100 C1000,0 800,200 500,100 S100,0 -100,100" 
+            stroke="#009E61" 
+            strokeWidth="1.5" 
+            fill="none"
+            strokeDasharray="5,5"
+          />
+          
+          {/* Opposite diagonal wave 2 (EC5800) */}
+          <path 
+            d="M1300,300 C1000,200 800,400 500,300 S100,200 -100,300" 
+            stroke="#EC5800" 
+            strokeWidth="1.5" 
+            fill="none"
+            strokeDasharray="5,5"
+          />
+        </svg>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Your original content starts here - completely unchanged */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Company Info */}
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            variants={container}
             className="space-y-4"
           >
             <div className="flex items-center">
@@ -81,10 +132,7 @@ const Footer = () => {
 
           {/* Navigation Links */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
+            variants={container}
             className="space-y-4"
           >
             <h4 className="text-lg font-semibold text-[#6E260E]">Explore</h4>
@@ -92,10 +140,14 @@ const Footer = () => {
               {[
                 { href: "/", text: "Home", color: "#E21138" },
                 { href: "/about", text: "About Us", color: "#EC5800" },
-                { href: "/", text: "Products", color: "#40B5AD" },
+                { href: "/products", text: "Products", color: "#40B5AD" },
                 { href: "/contact", text: "Contact Us", color: "#009E61" },
               ].map((link, index) => (
-                <motion.li key={index} whileHover={{ x: 5 }}>
+                <motion.li 
+                  key={index} 
+                  variants={container}
+                  whileHover={{ x: 5 }}
+                >
                   <Link
                     href={link.href}
                     className="text-gray-600 hover:text-[#6E260E] transition-colors duration-300 flex items-center"
@@ -113,25 +165,28 @@ const Footer = () => {
 
           {/* Contact Info */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
+            variants={container}
             className="space-y-4"
           >
             <h4 className="text-lg font-semibold text-[#6E260E]">
               Get in Touch
             </h4>
             <div className="space-y-3">
-              <div className="flex items-start space-x-3">
+              <motion.div 
+                variants={container}
+                className="flex items-start space-x-3"
+              >
                 <FaMapMarkerAlt className="mt-1 text-[#009E61]" />
                 <p className="text-gray-600">
                   Plot 7B, Industrial Area, Bhanpuri,
                   <br />
                   Raipur, Chattisgarh
                 </p>
-              </div>
-              <div className="flex items-center space-x-3">
+              </motion.div>
+              <motion.div 
+                variants={container}
+                className="flex items-center space-x-3"
+              >
                 <FaPhone className="text-[#E21138]" />
                 <a
                   href="tel:+918109288169"
@@ -145,8 +200,11 @@ const Footer = () => {
                 >
                   +91 97737 64257
                 </a>
-              </div>
-              <div className="flex items-center space-x-3">
+              </motion.div>
+              <motion.div 
+                variants={container}
+                className="flex items-center space-x-3"
+              >
                 <FaEnvelope className="text-[#EC5800]" />
                 <a
                   href="mailto:support@dhanirampaint.com"
@@ -154,7 +212,7 @@ const Footer = () => {
                 >
                   support@dhanirampaint.com
                 </a>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
@@ -169,28 +227,31 @@ const Footer = () => {
         />
 
         {/* Copyright */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <motion.div 
+          variants={container}
+          className="flex flex-col md:flex-row justify-between items-center"
+        >
           <p className="text-gray-500 text-sm">
             &copy; {new Date().getFullYear()} DhaniRam Paints. All Rights
             Reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link
-              href="/"
+              href="/privacy-policy"
               className="text-gray-500 hover:text-[#6E260E] text-sm transition-colors duration-300"
             >
               Privacy Policy
             </Link>
             <Link
-              href="/"
+              href="/terms-of-service"
               className="text-gray-500 hover:text-[#6E260E] text-sm transition-colors duration-300"
             >
               Terms of Service
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 
