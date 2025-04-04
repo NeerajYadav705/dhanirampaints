@@ -81,14 +81,24 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center h-[150px]">
         {/* Left Side - Logo */}
-        <div className="flex items-center h-full">
-          <Link href="/" className="h-full flex items-center z-10">
+        <div className="flex items-center h-full flex-col">
+          <Link href="/" className="h-full flex items-center  z-10">
             <Image
-              src="/assets/logo.png"
+              src="/assets/logo1.png"
               alt="Logo"
               width={180}
               height={80}
-              className="w-auto h-[120px]"
+              className="w-auto h-[100px]"
+              priority
+            />
+          </Link>
+          <Link href="/" className="h-full flex items-center z-10">
+            <Image
+              src="/assets/logo2.png"
+              alt="Logo"
+              width={180}
+              height={80}
+              className="w-auto h-[28px]"
               priority
             />
           </Link>
