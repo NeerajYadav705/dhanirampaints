@@ -15,6 +15,7 @@ import {
   FaSwatchbook,
   FaSearch,
 } from "react-icons/fa";
+import ClientsSection from "@/components/ClientsSection";
 
 // Animation variants
 const container = {
@@ -334,6 +335,8 @@ const About = () => {
           </motion.div>
         </div>
       </motion.section>
+
+      <ClientsSection />
 
       {/* Distribution/Demographics Section */}
       <motion.section
