@@ -196,15 +196,19 @@ const Decorative = () => {
               transition={{ delay: index * 0.1 }}
               className="group"
             >
-              {/* Animated Tab */}
+              {/* Animated Tab - Modified for alternating alignment */}
               <motion.div
                 variants={tabVariants}
                 initial="rest"
                 whileHover="hover"
                 style={{ backgroundColor: product.color }}
-                className="w-full sm:w-fit px-4 sm:px-6 py-2 sm:py-3 rounded-t-lg shadow-sm"
+                className={`w-full sm:w-fit px-4 sm:px-6 py-2 sm:py-3 rounded-t-lg shadow-sm ${
+                  index % 2 === 0 ? "ml-0" : "ml-auto"
+                }`}
               >
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white text-center sm:text-left px-2 sm:px-16">
+                <h3 className={`text-xl sm:text-2xl md:text-3xl font-semibold text-white ${
+                  index % 2 === 0 ? "text-left pl-2 sm:pl-16" : "text-right pr-2 sm:pr-16"
+                }`}>
                   {product.name}
                 </h3>
               </motion.div>

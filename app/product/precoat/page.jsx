@@ -1,40 +1,42 @@
 "use client";
-import React from 'react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Precoat = () => {
   const products = [
     {
       id: 1,
       name: "White Putty",
-      description: "High-quality white putty for smooth wall finishes. Our premium putty provides excellent adhesion, workability, and whiteness. It fills cracks and imperfections effectively, creating a perfect base for paint application. Formulated with advanced polymers for enhanced durability and water resistance.",
+      description:
+        "High-quality white putty for smooth wall finishes. Our premium putty provides excellent adhesion, workability, and whiteness. It fills cracks and imperfections effectively, creating a perfect base for paint application. Formulated with advanced polymers for enhanced durability and water resistance.",
       features: [
         "Superior whiteness and brightness",
         "Excellent adhesion to surfaces",
         "Smooth and easy application",
         "Water resistant formulation",
         "Reduces paint consumption",
-        "Long-lasting finish"
+        "Long-lasting finish",
       ],
       image: "/assets/precoat/white-putty.jpg",
-      color: "#6B7280" // Gray
+      color: "#6B7280", // Gray
     },
     {
       id: 2,
       name: "White Cement",
-      description: "Premium white cement for construction and decorative applications. Our white cement offers high strength, consistent whiteness, and excellent workability. Ideal for architectural concrete, terrazzo, tile grout, and decorative plaster work where aesthetic appearance is crucial.",
+      description:
+        "Premium white cement for construction and decorative applications. Our white cement offers high strength, consistent whiteness, and excellent workability. Ideal for architectural concrete, terrazzo, tile grout, and decorative plaster work where aesthetic appearance is crucial.",
       features: [
         "High compressive strength",
         "Consistent whiteness",
         "Excellent workability",
         "Faster setting time",
         "Weather resistant",
-        "Versatile applications"
+        "Versatile applications",
       ],
       image: "/assets/precoat/white-cement.jpg",
-      color: "#9CA3AF" // Light Gray
-    }
+      color: "#9CA3AF", // Light Gray
+    },
   ];
 
   // Animation variants
@@ -98,22 +100,32 @@ const Precoat = () => {
             transition={{ delay: index * 0.1 }}
             className="group mb-10 sm:mb-12"
           >
-            {/* Animated Tab */}
+            {/* Animated Tab - Modified for alternating alignment */}
             <motion.div
               variants={tabVariants}
               initial="rest"
               whileHover="hover"
               style={{ backgroundColor: product.color }}
-              className="w-full sm:w-fit px-4 sm:px-6 py-2 sm:py-3 rounded-t-lg shadow-sm"
+              className={`w-full sm:w-fit px-4 sm:px-6 py-2 sm:py-3 rounded-t-lg shadow-sm ${
+                index % 2 === 0 ? "ml-0" : "ml-auto"
+              }`}
             >
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white text-center sm:text-left px-2 sm:px-16">
+              <h3
+                className={`text-xl sm:text-2xl md:text-3xl font-semibold text-white ${
+                  index % 2 === 0
+                    ? "text-left pl-2 sm:pl-16"
+                    : "text-right pr-2 sm:pr-16"
+                }`}
+              >
                 {product.name}
               </h3>
             </motion.div>
 
             {/* Card Content */}
             <div
-              className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-4 sm:gap-6 p-4 sm:p-6 bg-white rounded-b-lg rounded-tr-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300`}
+              className={`flex flex-col ${
+                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              } gap-4 sm:gap-6 p-4 sm:p-6 bg-white rounded-b-lg rounded-tr-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300`}
               style={{ borderTopColor: product.color }}
             >
               {/* Text Content */}
@@ -124,16 +136,23 @@ const Precoat = () => {
                 <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {product.features.map((feature, i) => (
                     <div key={i} className="flex items-start">
-                      <svg 
-                        className="h-5 w-5 mr-2 mt-0.5 flex-shrink-0" 
-                        style={{ color: product.color }} 
-                        fill="none" 
-                        viewBox="0 0 24 24" 
+                      <svg
+                        className="h-5 w-5 mr-2 mt-0.5 flex-shrink-0"
+                        style={{ color: product.color }}
+                        fill="none"
+                        viewBox="0 0 24 24"
                         stroke="currentColor"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
                       </svg>
-                      <span className="text-gray-700 text-sm sm:text-base">{feature}</span>
+                      <span className="text-gray-700 text-sm sm:text-base">
+                        {feature}
+                      </span>
                     </div>
                   ))}
                 </div>
