@@ -10,91 +10,93 @@ const Decorative = () => {
     interior: [
       {
         id: 1,
-        name: "Emulsion",
+        name: "Interior Emulsion",
         description:
-          "High-quality interior emulsion paint with excellent coverage and durability. Perfect for walls and ceilings in residential and commercial spaces. Provides a smooth, washable finish that resists stains and fading.",
+          "Interior Emulsion is a water-based wall paint designed to provide a smooth, elegant finish for interior walls and ceilings. It is widely used in homes, offices, and commercial spaces for its low odor, quick drying, and clean aesthetic.",
         features: [
-          "Excellent coverage",
-          "Washable finish",
-          "Stain resistant",
-          "Low VOC formulation",
-          "Wide color range",
-          "Fast drying",
+          "Smooth & Rich Finish",
+          "Low Odor & Quick Drying",
+          "Excellent Coverage",
+          "Long-Lasting Colors",
+          "Breathable Film Prevents Peeling",
+          "Ideal for Walls & Ceilings Indoors",
         ],
-        image: "/assets/aboutbg.jpg",
+        image: "/assets/InteriorEmulsion.jpg",
         color: "#E21138",
       },
       {
         id: 2,
-        name: "Primer",
+        name: "Interior Primer",
         description:
-          "Specialized primer for interior surfaces that ensures proper adhesion of topcoats. Seals porous surfaces and creates a uniform base for paint application. Reduces the number of topcoats needed for full coverage.",
+          "Interior Primer is a water-based undercoat applied to walls and ceilings before interior emulsion to create a smooth, sealed surface.",
         features: [
-          "Blocks stains",
-          "Seals porous surfaces",
-          "Improves adhesion",
-          "Reduces topcoat layers",
-          "Dries quickly",
-          "Uniform base",
+          "Strong Adhesion for Topcoat",
+          "Seals Porous Surfaces",
+          "Improves Paint Coverage",
+          "Blocks Minor Stains & Patches",
+          "Quick Drying & Low Odor",
+          "Ideal after Plaster, Putty & Masonry",
         ],
-        image: "/assets/aboutbg.jpg",
+        image: "/assets/InteriorPrimer.jpg",
         color: "#E21138",
       },
       {
         id: 3,
         name: "Distemper",
         description:
-          "Economical water-based paint for interior walls. Easy to apply and provides a matte finish. Ideal for budget-conscious projects where frequent repainting is acceptable.",
+          "Distemper is a traditional water-based wall paint known for its smooth, matte finish and affordability. It is commonly used for cost-effective interior painting in homes, warehouses, and rental properties. Suitable for plastered and brick surfaces, it offers decent coverage and a clean look on a budget.",
         features: [
-          "Cost-effective",
-          "Easy application",
-          "Matte finish",
-          "Water-based",
-          "Low odor",
-          "Quick drying",
+          "Economical Interior Solution",
+          "Easy to Apply",
+          "Classic Matte Finish",
+          "Suitable for Large-Scale Projects",
+          "Available in Multiple Shades",
+          "Ideal for Plastered & Brick Surfaces",
         ],
-        image: "/assets/aboutbg.jpg",
+        image: "/assets/Distemper.jpg",
         color: "#E21138",
       },
       {
         id: 4,
         name: "Texture",
         description:
-          "Decorative textured paint for creating visual interest on interior walls. Available in various patterns and finishes. Hides surface imperfections and adds depth to your walls.",
+          "Texture Paint is a decorative wall finish designed to create artistic, 3D surface effects using specialized aggregates and binders. It is used to add depth, style, and character to feature walls in living rooms, lobbies, showrooms, and exteriors. Its high-build formula with durable polymers and additives offers superior adhesion, weather resistance, and surface flexibility.",
         features: [
-          "Hides imperfections",
-          "Decorative finishes",
-          "Custom patterns",
-          "Durable surface",
-          "Washable",
-          "Easy to repair",
+          "Unique Decorative Finish",
+          "Hides Wall Imperfections",
+          "High Build & Strong Coverage",
+          "Excellent Adhesion",
+          "Weather & Water Resistant",
+          "Ideal for Interior & Exterior Walls",
         ],
-        image: "/assets/aboutbg.jpg",
+        image: "/assets/Texture.jpg",
         color: "#E21138",
       },
+
+      // Add more interior products as needed
     ],
     exterior: [
       {
         id: 1,
         name: "Exterior Emulsion",
         description:
-          "Weather-resistant emulsion formulated for outdoor use. Withstands UV rays, rain, and temperature fluctuations. Maintains color vibrancy and protects against mold and mildew growth.",
+          "Exterior Emulsion is a water-based protective paint formulated for long-lasting performance on exterior walls. It is used to withstand harsh weather conditions while maintaining color and finish on surfaces like cement plaster, concrete, and brickwork. Enriched with UV-resistant pigments and dust-resistant additives, it forms a breathable yet water-repellent film.",
         features: [
-          "UV resistant",
-          "Weatherproof",
-          "Mold resistant",
-          "Color retention",
-          "Breathable",
-          "Long-lasting",
+          "UV & Fade Resistant",
+          "Water Repellent Film",
+          "Dust Resistant",
+          "Excellent Color Retention",
+          "Breathable Coating Prevents Peeling",
+          "Ideal for Cement, Concrete & Brick Walls",
         ],
-        image: "/assets/aboutbg.jpg",
-        color: "#1E40AF",
+        image: "/assets/ExteriorEmulsion.jpg",
+        color: "#40B5AD",
       },
       {
         id: 2,
         name: "Exterior Primer",
         description:
-          "High-performance primer designed for exterior surfaces. Provides superior adhesion and protects against moisture penetration. Creates a stable base for exterior topcoats.",
+          "High-performance primer designed for exterior surfaces. Provides superior adhesion and protects against moisture penetration.",
         features: [
           "Water resistant",
           "Excellent adhesion",
@@ -104,8 +106,9 @@ const Decorative = () => {
           "Quick drying",
         ],
         image: "/assets/aboutbg.jpg",
-        color: "#1E40AF",
+        color: "#40B5AD",
       },
+      // Add more exterior products as needed
     ],
   };
 
@@ -168,7 +171,9 @@ const Decorative = () => {
             whileTap={{ scale: 0.95 }}
             onClick={() => setActiveTab("interior")}
             className={`px-6 py-3 rounded-lg font-semibold text-white transition-colors ${
-              activeTab === "interior" ? "bg-red-600 shadow-lg" : "bg-gray-400"
+              activeTab === "interior"
+                ? "bg-[#E21138] shadow-lg"
+                : "bg-gray-400 hover:bg-gray-500"
             }`}
           >
             Interior Paints
@@ -178,7 +183,9 @@ const Decorative = () => {
             whileTap={{ scale: 0.95 }}
             onClick={() => setActiveTab("exterior")}
             className={`px-6 py-3 rounded-lg font-semibold text-white transition-colors ${
-              activeTab === "exterior" ? "bg-blue-800 shadow-lg" : "bg-gray-400"
+              activeTab === "exterior"
+                ? "bg-[#40B5AD] shadow-lg"
+                : "bg-gray-400 hover:bg-gray-500"
             }`}
           >
             Exterior Paints
@@ -196,29 +203,37 @@ const Decorative = () => {
               transition={{ delay: index * 0.1 }}
               className="group"
             >
-              {/* Animated Tab - Modified for alternating alignment */}
-              <motion.div
-                variants={tabVariants}
-                initial="rest"
-                whileHover="hover"
-                style={{ backgroundColor: product.color }}
-                className={`w-full sm:w-fit px-4 sm:px-6 py-2 sm:py-3 rounded-t-lg shadow-sm ${
-                  index % 2 === 0 ? "ml-0" : "ml-auto"
+              {/* Product Title Tab - Alternating alignment */}
+              <div
+                className={`flex ${
+                  index % 2 === 0 ? "justify-start" : "justify-end"
                 }`}
               >
-                <h3 className={`text-xl sm:text-2xl md:text-3xl font-semibold text-white ${
-                  index % 2 === 0 ? "text-left pl-2 sm:pl-16" : "text-right pr-2 sm:pr-16"
-                }`}>
-                  {product.name}
-                </h3>
-              </motion.div>
+                <motion.div
+                  variants={tabVariants}
+                  initial="rest"
+                  whileHover="hover"
+                  style={{ backgroundColor: product.color }}
+                  className={`px-6 py-3 rounded-t-lg shadow-sm w-fit ${
+                    index % 2 === 0 ? "ml-0" : "mr-0"
+                  }`}
+                >
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white">
+                    {product.name}
+                  </h3>
+                </motion.div>
+              </div>
 
               {/* Card Content */}
               <div
                 className={`flex flex-col ${
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                } gap-4 sm:gap-6 p-4 sm:p-6 bg-white rounded-b-lg rounded-tr-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300`}
-                style={{ borderTopColor: product.color }}
+                } gap-4 sm:gap-6 p-4 sm:p-6 bg-white rounded-b-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300`}
+                style={{
+                  borderTop: `2px solid ${product.color}`,
+                  borderTopLeftRadius: index % 2 === 0 ? "0" : "0.5rem",
+                  borderTopRightRadius: index % 2 === 0 ? "0.5rem" : "0",
+                }}
               >
                 {/* Text Content */}
                 <div className="w-full md:w-1/2">

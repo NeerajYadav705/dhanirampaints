@@ -36,7 +36,7 @@ const HeroSection = () => {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-end pr-[10%]">
+        <div className="absolute inset-0 flex items-center justify-end pr-[10%]">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -46,7 +46,7 @@ const HeroSection = () => {
             <motion.div
               variants={textVariants}
               transition={{ duration: 0.6 }}
-              className="text-4xl md:text-7xl font-bold leading-none text-white"
+              className="text-4xl md:text-9xl font-extralight leading-none text-white"
               style={{ fontFamily: "Lancelot" }}
             >
               Crafting Coatings,
@@ -54,7 +54,7 @@ const HeroSection = () => {
             <motion.div
               variants={textVariants}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-3xl md:text-7xl font-bold leading-none text-white mt-2"
+              className="text-3xl md:text-9xl leading-none text-white mt-2"
               style={{ fontFamily: "lancelot" }}
             >
               Cultivating Connections
@@ -76,7 +76,7 @@ const HeroSection = () => {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/40 flex items-center pl-[10%]">
+        <div className="absolute inset-0  flex items-center pl-[5%]">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -86,15 +86,15 @@ const HeroSection = () => {
             <motion.div
               variants={textVariants}
               transition={{ duration: 0.6 }}
-              className="text-4xl md:text-7xl  font-bold leading-none text-white"
+              className="text-4xl md:text-9xl text-white"
               style={{ fontFamily: "lancelot" }}
             >
-              Premium <span className="text-[#ffcd05]">Paint</span> Solutions
+              Premium <span className="text-[#ffcd05]">paint</span> Solutions
             </motion.div>
             <motion.div
               variants={textVariants}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl md:text-7xl font-bold leading-none text-white mt-2"
+              className="text-4xl md:text-9xl  leading-none text-white mt-2"
               style={{ fontFamily: "lancelot" }}
             >
               for every industry

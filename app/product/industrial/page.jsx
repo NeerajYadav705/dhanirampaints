@@ -8,98 +8,114 @@ const Industrial = () => {
   const products = [
     {
       id: 1,
-      name: "Enamel",
+      name: "DTM Paint",
       description:
-        "High-gloss enamel paint provides a durable, hard finish that's resistant to moisture, heat, and everyday wear. Ideal for metal surfaces, machinery, and equipment requiring both protection and aesthetic appeal. Our enamel formulation offers excellent leveling and a smooth finish with superior color retention.",
+        "DTM (Direct to Metal) Paint is a specially formulated coating designed to be applied directly onto metal surfaces without the need for a separate primer. Unlike the traditional two-coat system of primer followed by enamel, DTM paint combines both functions, saving time and effort. It is commonly used on surfaces like gates, grills, industrial machinery, and metal furniture.",
       features: [
-        "High gloss finish",
+        "Time-Saving",
         "Excellent durability",
-        "Moisture resistant",
-        "UV protection",
-        "Fast drying",
-        "Wide color range",
+        "Corrosion Resistant",
+        "Strong Adhesion",
+        "Durable Finish",
+        "Multi-Surface Compatibility",
       ],
-      image: "/assets/aboutbg.jpg",
+      image: "/assets/DTM.jpg",
       color: "#E21138",
     },
     {
       id: 2,
-      name: "Bitumen Paint",
+      name: "Synthetic Enamel",
       description:
-        "Bituminous coating provides superior waterproofing and corrosion protection for metal and concrete surfaces. Particularly effective for pipelines, tanks, and marine applications where water resistance is critical. Forms a flexible, protective layer that withstands harsh environmental conditions.",
+        "Synthetic Enamel is a versatile paint known for its smooth, glossy finish and durable protective layer on various surfaces. It is commonly used on doors, windows, furniture, machinery, and metal due to its aesthetic appeal and strength. Its unique formulation creates a tough, flexible film that resists moisture, fading, and everyday wear.",
       features: [
-        "Excellent waterproofing",
-        "Corrosion resistance",
-        "UV stable (black only)",
-        "Chemical resistant",
-        "Easy application",
-        "Long-lasting protection",
+        "High Gloss Finish",
+        "Weather & Moisture Resistant",
+        "Smooth Brushability",
+        "Durable & Scratch Resistant",
+        "Strong Adhesion to Wood & Metal",
+        "Excellent Color Retention",
       ],
-      image: "/assets/aboutbg.jpg",
-      color: "#40B5AD",
+      image: "/assets/SyntheticEnamel.jpg",
+      color: "#E21138",
     },
     {
       id: 3,
-      name: "Aluminum Paint",
+      name: "Black Bitumen Paint",
       description:
-        "Specialized aluminum paint offers heat reflection and corrosion protection for industrial equipment. The aluminum flakes create a reflective barrier that protects surfaces from heat, moisture, and chemical exposure while providing an attractive metallic finish.",
+        "Black Bitumen Paint is a solvent-based protective coating made from bitumen, known for its waterproofing and corrosion-resistant properties. It is primarily used to protect metal, concrete, and masonry surfaces exposed to moisture and chemicals. Common applications include underground pipes, tanks, roofs, and foundation walls.",
       features: [
-        "Heat reflective",
-        "Corrosion resistant",
-        "UV resistant",
-        "High temperature tolerance",
-        "Excellent adhesion",
-        "Durable metallic finish",
+        "Excellent Waterproofing",
+        "Anti-Corrosive Protection",
+        "UV Resistant",
+        "Strong Surface Bonding",
+        "Long-Lasting Durability",
+        "Suitable for Metal, Concrete & Masonry",
       ],
-      image: "/assets/aboutbg.jpg",
-      color: "#009E61",
+      image: "/assets/Bitumen.jpg",
+      color: "#40B5AD",
     },
     {
       id: 4,
-      name: "PU Paint",
+      name: "Aluminum Paint",
       description:
-        "Polyurethane paint delivers exceptional abrasion resistance and flexibility, making it perfect for automotive and industrial applications. Provides a tough, elastic finish that withstands impacts, vibrations, and extreme weather conditions while maintaining its appearance.",
+        "Aluminium Paint is a reflective, metallic coating made by mixing finely ground aluminum flakes with a durable resin base. It is used to protect surfaces from heat, sunlight, and corrosion while providing a bright, silver finish. Commonly applied on storage tanks, pipelines, roofs, and radiators. Its chemical structure forms a tight, impermeable film that reflects UV rays and resists oxidation.",
       features: [
-        "Extreme abrasion resistance",
-        "Excellent flexibility",
-        "Chemical resistant",
-        "UV stable",
-        "High gloss retention",
-        "Fast curing",
+        "Heat reflective",
+        "Corrosion resistant",
+        "Weatherproof",
+        "High Coverage",
+        "Bright Metallic Finish",
+        "Ideal for Metal, Concrete & Industrial Surfaces",
       ],
-      image: "/assets/aboutbg.jpg",
-      color: "#EC5800",
+      image: "/assets/aluminium.avif",
+      color: "#009E61",
     },
     {
       id: 5,
-      name: "Epoxy Paint",
+      name: "PU Enamel Paint",
       description:
-        "Epoxy coatings create a hard, chemical-resistant surface ideal for industrial floors, tanks, and equipment. Offers superior adhesion to metal and concrete, with excellent resistance to chemicals, impacts, and heavy traffic while being easy to clean and maintain.",
+        "PU Enamel Paint is a high-performance polyurethane-based coating known for its superior gloss, hardness, and durability. It is used for both decorative and protective purposes on surfaces that demand a premium finish and long-lasting protection. Ideal for automobiles, furniture, appliances, and industrial equipment.",
       features: [
-        "Chemical resistant",
-        "High adhesion",
-        "Impact resistant",
-        "Seamless finish",
-        "Easy to clean",
-        "Custom colors",
+        "High Gloss Finish",
+        "Excellent Scratch Resistance",
+        "UV & Weather Resistant",
+        "Long-Lasting Color Retention",
+        "Chemical & Stain Resistant",
+        "Suitable for Wood, Metal & Plastic Surfaces",
       ],
-      image: "/assets/aboutbg.jpg",
-      color: "#6E260E",
+      image: "/assets/PUEnamel.jpg",
+      color: "#EC5800",
     },
     {
       id: 6,
+      name: "Epoxy Paint",
+      description:
+        "Epoxy Paint is a two-component, chemically resistant coating made by combining epoxy resin with a hardener, forming a tough, durable film. It is used for high-performance protection in industrial, commercial, and marine environments. Known for its excellent chemical bonding, it adheres strongly to concrete, metal, and floors, creating a hard, non-porous surface resistant to wear and corrosion.",
+      features: [
+        "Exceptional Chemical Resistance",
+        "High Abrasion Durability",
+        "Strong Adhesion to Multiple Surfaces",
+        "Long-Lasting Protection",
+        "Easy to Clean & Maintain",
+        "Ideal for Industrial, Marine & Floor Applications",
+      ],
+      image: "/assets/EpoxyPaint.jpg",
+      color: "#6E260E",
+    },
+    {
+      id: 7,
       name: "Red Oxide Primer",
       description:
-        "Rust-inhibitive primer forms a protective barrier on iron and steel surfaces. The red oxide formulation provides excellent corrosion resistance and promotes strong adhesion for topcoats, extending the life of metal structures in harsh environments.",
+        "Red Oxide Primer is a rust-inhibiting, alkyd-based primer formulated with red oxide pigment for superior adhesion and corrosion resistance on metal surfaces. It is widely used as a preparatory coat for grills, gates, machinery, and structural steel. Chemically designed to block moisture and oxidation, it forms a protective base layer; we also offer a BIS-Standard approved Zinc Chrome variant for enhanced performance in demanding conditions.",
       features: [
-        "Rust prevention",
-        "Excellent adhesion",
-        "Dries quickly",
-        "Good coverage",
-        "Compatible with most topcoats",
-        "Durable undercoat",
+        "Strong Rust Protection",
+        "Excellent Metal Adhesion",
+        "Quick Drying",
+        "Moisture Barrier",
+        "Smooth Topcoat Compatibility",
+        "BIS-Grade Zinc Chrome Option Available",
       ],
-      image: "/assets/aboutbg.jpg",
+      image: "/assets/Redoxide.jpg",
       color: "#E21138",
     },
   ];
@@ -128,26 +144,22 @@ const Industrial = () => {
     },
   ];
 
-
   // Animation variants
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
     },
-  },
-};
+  };
 
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+  };
 
-
-
-  // Animation variants
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -190,7 +202,7 @@ const item = {
           </motion.h1>
         </div>
         <Image
-          src="/assets/aboutbg.jpg"
+          src="/assets/IndustryHero.jpg"
           alt="Industrial Paints"
           fill
           className="object-cover"
@@ -198,7 +210,7 @@ const item = {
         />
       </motion.div>
 
-      {/* Products Section */}
+      {/* Products Section - Fixed alignment */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         {products.map((product, index) => (
           <motion.div
@@ -209,7 +221,7 @@ const item = {
             transition={{ delay: index * 0.1 }}
             className="group mb-10 sm:mb-16"
           >
-            {/* Alternating Heading */}
+            {/* Heading Container */}
             <div
               className={`flex ${
                 index % 2 === 0 ? "justify-start" : "justify-end"
@@ -221,7 +233,7 @@ const item = {
                 whileHover="hover"
                 style={{ backgroundColor: product.color }}
                 className={`px-6 py-3 rounded-t-lg shadow-sm ${
-                  index % 2 === 0 ? "ml-0" : "mr-0"
+                  index % 2 === 0 ? "mr-4" : "ml-4"
                 }`}
               >
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white">
@@ -234,8 +246,12 @@ const item = {
             <div
               className={`flex flex-col ${
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              } gap-6 p-6 bg-white rounded-b-lg rounded-tr-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300`}
-              style={{ borderTopColor: product.color }}
+              } gap-6 p-6 bg-white rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300`}
+              style={{
+                borderTop: `4px solid ${product.color}`,
+                borderTopLeftRadius: index % 2 === 0 ? "0" : "0.5rem",
+                borderTopRightRadius: index % 2 === 0 ? "0.5rem" : "0",
+              }}
             >
               {/* Text Content */}
               <div className="w-full md:w-1/2">
@@ -287,107 +303,7 @@ const item = {
         ))}
       </div>
 
-      {/* Brands Section */}
-      <div className="bg-[#f8f8f8] py-16 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={slideUp}
-            className="text-center mb-12"
-          >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#6E260E]">
-              Our Premium Brands
-            </h2>
-            <div className="w-24 h-1 bg-[#E21138] mx-auto mt-4"></div>
-          </motion.div>
-
-          <div className="flex flex-col md:flex-row gap-8">
-            {/* Brand Description (30%) */}
-            <div className="w-full md:w-3/10">
-              <motion.div
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                variants={fadeIn}
-                className="bg-white p-6 rounded-lg shadow-sm h-full"
-              >
-                <h3 className="text-xl font-semibold text-[#6E260E] mb-4">
-                  Trusted Quality
-                </h3>
-                <p className="text-gray-700 mb-4">
-                  DhaniRam Paints offers specialized brands tailored for
-                  different industrial applications. Each brand represents our
-                  commitment to quality, durability, and performance.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-[#E21138] font-bold mr-2">•</span>
-                    <span className="text-gray-700">
-                      Certified formulations
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#40B5AD] font-bold mr-2">•</span>
-                    <span className="text-gray-700">Rigorous testing</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#009E61] font-bold mr-2">•</span>
-                    <span className="text-gray-700">
-                      Industry-specific solutions
-                    </span>
-                  </li>
-                </ul>
-              </motion.div>
-            </div>
-
-            {/* Brand Images (70%) */}
-            <div className="w-full md:w-7/10">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {brands.map((brand, index) => (
-                  <motion.div
-                    key={brand.id}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true }}
-                    variants={{
-                      hidden: { opacity: 0, y: 20 },
-                      show: {
-                        opacity: 1,
-                        y: 0,
-                        transition: { delay: index * 0.2, duration: 0.6 },
-                      },
-                    }}
-                    className="group"
-                  >
-                    <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
-                      <div className="relative h-48 sm:h-56 w-full">
-                        <Image
-                          src={brand.image}
-                          alt={brand.name}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="p-4">
-                        <h3 className="text-lg font-semibold text-[#6E260E] mb-2">
-                          {brand.name}
-                        </h3>
-                        <p className="text-gray-600 text-sm">
-                          {brand.description}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* RAL Color Section - Improved Version */}
+      {/* RAL Color Section */}
       <motion.section
         initial="hidden"
         whileInView="show"

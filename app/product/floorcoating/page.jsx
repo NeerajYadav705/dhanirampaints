@@ -9,15 +9,31 @@ const FloorCoating = () => {
       id: 1,
       name: "PU Coating",
       description: "Polyurethane floor coating provides exceptional durability and chemical resistance. Ideal for industrial facilities, warehouses, and commercial spaces that require high-performance flooring with excellent abrasion resistance and a glossy finish. PU coatings are highly flexible and can withstand extreme temperature fluctuations without cracking or peeling.",
+      features: [
+        "Abrasion resistant",
+        "Chemical resistant",
+        "Seamless finish",
+        "Custom colors",
+        "Fast curing",
+        "Low maintenance"
+      ],
       image: "/assets/floor-coating/pu-coating.jpg",
-      color: "#3B82F6" // Blue
+      color: "#40B5AD" // Dhaniram teal
     },
     {
       id: 2,
       name: "Epoxy Coating",
       description: "Epoxy floor coatings create a hard-wearing, seamless surface that's perfect for garages, factories, and showrooms. Provides superior adhesion to concrete with excellent impact resistance and easy maintenance. Epoxy forms a rigid, durable surface that resists chemicals, stains, and heavy impacts while being available in various colors and finishes to match any design requirement.",
+      features: [
+        "Impact resistant",
+        "Chemical resistant",
+        "Seamless surface",
+        "Color options",
+        "Durable finish",
+        "Easy to clean"
+      ],
       image: "/assets/floor-coating/epoxy-coating.jpg",
-      color: "#10B981" // Green
+      color: "#E21138" // Dhaniram red
     }
   ];
 
@@ -82,27 +98,33 @@ const FloorCoating = () => {
             transition={{ delay: index * 0.1 }}
             className="group mb-10 sm:mb-12"
           >
-            {/* Animated Tab - Modified for alternating alignment */}
-            <motion.div
-              variants={tabVariants}
-              initial="rest"
-              whileHover="hover"
-              style={{ backgroundColor: coating.color }}
-              className={`w-full sm:w-fit px-4 sm:px-6 py-2 sm:py-3 rounded-t-lg shadow-sm ${
-                index % 2 === 0 ? "ml-0" : "ml-auto"
-              }`}
-            >
-              <h3 className={`text-xl sm:text-2xl md:text-3xl font-semibold text-white ${
-                index % 2 === 0 ? "text-left pl-2 sm:pl-16" : "text-right pr-2 sm:pr-16"
-              }`}>
-                {coating.name}
-              </h3>
-            </motion.div>
+            {/* Product Title Tab - Alternating alignment */}
+            <div className={`flex ${index % 2 === 0 ? "justify-start" : "justify-end"}`}>
+              <motion.div
+                variants={tabVariants}
+                initial="rest"
+                whileHover="hover"
+                style={{ backgroundColor: coating.color }}
+                className={`px-6 py-3 rounded-t-lg shadow-sm w-fit ${
+                  index % 2 === 0 ? "ml-0" : "mr-0"
+                }`}
+              >
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white">
+                  {coating.name}
+                </h3>
+              </motion.div>
+            </div>
 
             {/* Card Content */}
             <div
-              className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-4 sm:gap-6 p-4 sm:p-6 bg-white rounded-b-lg rounded-tr-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300`}
-              style={{ borderTopColor: coating.color }}
+              className={`flex flex-col ${
+                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              } gap-4 sm:gap-6 p-4 sm:p-6 bg-white rounded-b-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300`}
+              style={{ 
+                borderTop: `2px solid ${coating.color}`,
+                borderTopLeftRadius: index % 2 === 0 ? "0" : "0.5rem",
+                borderTopRightRadius: index % 2 === 0 ? "0.5rem" : "0"
+              }}
             >
               {/* Text Content */}
               <div className="w-full md:w-1/2">
@@ -110,25 +132,25 @@ const FloorCoating = () => {
                   {coating.description}
                 </p>
                 <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {[
-                    "Abrasion resistant",
-                    "Chemical resistant",
-                    "Seamless finish",
-                    "Custom colors",
-                    "Fast curing",
-                    "Low maintenance"
-                  ].map((feature, i) => (
+                  {coating.features.map((feature, i) => (
                     <div key={i} className="flex items-start">
-                      <svg 
-                        className="h-5 w-5 mr-2 mt-0.5 flex-shrink-0" 
-                        style={{ color: coating.color }} 
-                        fill="none" 
-                        viewBox="0 0 24 24" 
+                      <svg
+                        className="h-5 w-5 mr-2 mt-0.5 flex-shrink-0"
+                        style={{ color: coating.color }}
+                        fill="none"
+                        viewBox="0 0 24 24"
                         stroke="currentColor"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
                       </svg>
-                      <span className="text-gray-700 text-sm sm:text-base">{feature}</span>
+                      <span className="text-gray-700 text-sm sm:text-base">
+                        {feature}
+                      </span>
                     </div>
                   ))}
                 </div>

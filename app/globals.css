@@ -50,6 +50,20 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "lancelot";
+  src: url("/fonts/Lancelot-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Berkshire";
+  src: url("/fonts/BerkshireSwash-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 /* ===== Theme Configuration ===== */
 @custom-variant dark (&:is(.dark *));
 

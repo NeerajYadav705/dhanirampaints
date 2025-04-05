@@ -8,8 +8,7 @@ const Precoat = () => {
     {
       id: 1,
       name: "White Putty",
-      description:
-        "High-quality white putty for smooth wall finishes. Our premium putty provides excellent adhesion, workability, and whiteness. It fills cracks and imperfections effectively, creating a perfect base for paint application. Formulated with advanced polymers for enhanced durability and water resistance.",
+      description: "High-quality white putty for smooth wall finishes. Our premium putty provides excellent adhesion, workability, and whiteness. It fills cracks and imperfections effectively, creating a perfect base for paint application.",
       features: [
         "Superior whiteness and brightness",
         "Excellent adhesion to surfaces",
@@ -19,13 +18,12 @@ const Precoat = () => {
         "Long-lasting finish",
       ],
       image: "/assets/precoat/white-putty.jpg",
-      color: "#6B7280", // Gray
+      color: "#E21138" // Dhaniram red
     },
     {
       id: 2,
       name: "White Cement",
-      description:
-        "Premium white cement for construction and decorative applications. Our white cement offers high strength, consistent whiteness, and excellent workability. Ideal for architectural concrete, terrazzo, tile grout, and decorative plaster work where aesthetic appearance is crucial.",
+      description: "Premium white cement for construction and decorative applications. Our white cement offers high strength, consistent whiteness, and excellent workability. Ideal for architectural concrete and decorative plaster work.",
       features: [
         "High compressive strength",
         "Consistent whiteness",
@@ -35,7 +33,7 @@ const Precoat = () => {
         "Versatile applications",
       ],
       image: "/assets/precoat/white-cement.jpg",
-      color: "#9CA3AF", // Light Gray
+      color: "#40B5AD" // Dhaniram teal
     },
   ];
 
@@ -98,35 +96,35 @@ const Precoat = () => {
             animate="visible"
             variants={cardVariants}
             transition={{ delay: index * 0.1 }}
-            className="group mb-10 sm:mb-12"
+            className="group mb-10 sm:mb-16"
           >
-            {/* Animated Tab - Modified for alternating alignment */}
-            <motion.div
-              variants={tabVariants}
-              initial="rest"
-              whileHover="hover"
-              style={{ backgroundColor: product.color }}
-              className={`w-full sm:w-fit px-4 sm:px-6 py-2 sm:py-3 rounded-t-lg shadow-sm ${
-                index % 2 === 0 ? "ml-0" : "ml-auto"
-              }`}
-            >
-              <h3
-                className={`text-xl sm:text-2xl md:text-3xl font-semibold text-white ${
-                  index % 2 === 0
-                    ? "text-left pl-2 sm:pl-16"
-                    : "text-right pr-2 sm:pr-16"
+            {/* Product Title Tab - Alternating alignment */}
+            <div className={`flex ${index % 2 === 0 ? "justify-start" : "justify-end"}`}>
+              <motion.div
+                variants={tabVariants}
+                initial="rest"
+                whileHover="hover"
+                style={{ backgroundColor: product.color }}
+                className={`px-6 py-3 rounded-t-lg shadow-sm w-fit ${
+                  index % 2 === 0 ? "mr-4" : "ml-4"
                 }`}
               >
-                {product.name}
-              </h3>
-            </motion.div>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white">
+                  {product.name}
+                </h3>
+              </motion.div>
+            </div>
 
             {/* Card Content */}
             <div
               className={`flex flex-col ${
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              } gap-4 sm:gap-6 p-4 sm:p-6 bg-white rounded-b-lg rounded-tr-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300`}
-              style={{ borderTopColor: product.color }}
+              } gap-6 p-6 bg-white rounded-b-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300`}
+              style={{ 
+                borderTop: `2px solid ${product.color}`,
+                borderTopLeftRadius: index % 2 === 0 ? "0" : "0.5rem",
+                borderTopRightRadius: index % 2 === 0 ? "0.5rem" : "0"
+              }}
             >
               {/* Text Content */}
               <div className="w-full md:w-1/2">

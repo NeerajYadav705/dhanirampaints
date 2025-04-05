@@ -184,24 +184,6 @@ const ClientsSection = () => {
             </motion.div>
           ))}
         </div>
-
-        <motion.div variants={slideUp} className="mt-12 text-center">
-          <div className="inline-flex flex-wrap justify-center gap-2 max-w-2xl mx-auto">
-            {industryTags.map((tag, i) => (
-              <span
-                key={i}
-                className="inline-block px-3 py-1 text-xs sm:text-sm font-medium rounded-full"
-                style={{ backgroundColor: `${tag.color}20`, color: tag.color }}
-              >
-                {tag.label}
-              </span>
-            ))}
-          </div>
-          <p className="text-gray-600 mt-6 max-w-2xl mx-auto">
-            Serving diverse industries with our high-performance coating
-            solutions
-          </p>
-        </motion.div>
       </div>
     </motion.section>
   );

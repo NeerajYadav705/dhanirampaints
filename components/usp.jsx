@@ -15,7 +15,7 @@ const USP = () => {
     {
       icon: <FaTruck className="text-4xl" />,
       title: "On-Time Dispatch",
-      description: "Guaranteed timely delivery with our efficient logistics",
+      description: "Timely delivery with our efficient logistics",
       color: "#40B5AD",
     },
     {

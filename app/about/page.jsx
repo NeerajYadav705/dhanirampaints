@@ -107,66 +107,25 @@ const About = () => {
               ABOUT US
             </motion.h2>
 
-            <motion.p
-              variants={item}
-              className="text-base sm:text-lg text-gray-700 mb-4"
-            >
-              Founded in 2005,{" "}
-              <span className="text-[#E21138] font-medium">
-                Dhaniram Paints
-              </span>{" "}
-              has grown from a small regional manufacturer to a nationally
-              recognized leader in industrial and decorative coatings. Our
-              journey began with a single production facility in [Your
-              Location], and through relentless commitment to quality and
-              customer satisfaction, we've expanded our operations across India.
-            </motion.p>
-
-            <motion.p
-              variants={item}
-              className="text-base sm:text-lg text-gray-700 mb-4"
-            >
-              Specializing in{" "}
-              <span className="text-[#E21138]">epoxy coatings</span>,{" "}
-              <span className="text-[#40B5AD]">bitumen paints</span>, and{" "}
-              <span className="text-[#009E61]">aluminum finishes</span>, we
-              serve diverse industries including manufacturing, infrastructure,
-              automotive, and marine applications. Our state-of-the-art
-              manufacturing plants incorporate German technology and automated
-              production lines, ensuring precision in every batch.
-            </motion.p>
-
-            <motion.p
-              variants={item}
-              className="text-base sm:text-lg text-gray-700 mb-4"
-            >
-              What truly sets us apart is our{" "}
-              <span className="text-[#EC5800] font-medium">
-                customer-centric approach
-              </span>
-              . Each product undergoes rigorous testing in our in-house
-              laboratory, and our technical team provides personalized
-              consultation to ensure optimal coating solutions for every
-              project. From the Himalayan infrastructure projects to coastal
-              marine applications, Dhaniram Paints has become synonymous with
-              durability and performance.
-            </motion.p>
-
-            <motion.p
-              variants={item}
-              className="text-base sm:text-lg text-gray-700 "
-            >
-              With nearly two decades of expertise{" "}
-              <span className="text-[#6E260E] font-medium">
-                we have built a reputation for quality
-              </span>
-              , innovation, and reliability, serving businesses that demand
-              long-lasting and cost-effective paint solutions. Our commitment
-              extends beyond products—we foster strong B2B relationships,
-              working closely with manufacturers, construction firms,
-              infrastructure developers, and industries to provide tailored
-              coating solutions that meet their specific needs.
-            </motion.p>
+            <p className="text-justify lg:text-left">
+              Founded in 2005, With our previous branding under the name of our
+              manufacturing & marketing firm, D R Paint & Chemicals, we have
+              been a trusted name in the paint manufacturing industry,
+              delivering high-performance coating solutions that protect,
+              enhance, and add value to a wide range of applications. As a
+              growing MSME, we specialize in industrial, decorative, and
+              specialty paints, offering advanced coatings designed for
+              durability and excellence.
+            </p>
+            <p className="text-justify lg:text-left mt-8">
+              With nearly two decades of expertise, we have built a reputation
+              for quality, innovation, and reliability, serving businesses that
+              demand long-lasting and cost-effective paint solutions. Our
+              commitment extends beyond products—we foster strong B2B
+              relationships, working closely with manufacturers, construction
+              firms, infrastructure developers, and industries to provide
+              tailored coating solutions that meet their specific needs.
+            </p>
           </motion.div>
         </div>
       </motion.section>
@@ -221,6 +180,30 @@ const About = () => {
               </ul>
             </motion.div>
 
+            {/* COVID Impact Column */}
+            <motion.div
+              variants={item}
+              className="bg-[#f8f8f8] p-6 sm:p-8 rounded-lg"
+            >
+              <h3 className="text-xl sm:text-2xl font-semibold text-[#6E260E] mb-4 sm:mb-6 border-b-2 border-[#EC5800] pb-2">
+                Impact of the COVID-19 Pandemic
+              </h3>
+              <ul className="space-y-4">
+                <motion.li variants={item} className="flex items-start">
+                  <span className="text-[#EC5800] font-bold mr-2">•</span>
+                  <span className="text-gray-700">
+                    Operations were significantly disrupted due to lockdowns
+                  </span>
+                </motion.li>
+                <motion.li variants={item} className="flex items-start">
+                  <span className="text-[#EC5800] font-bold mr-2">•</span>
+                  <span className="text-gray-700">
+                    Faced challenges from rising raw material costs
+                  </span>
+                </motion.li>
+              </ul>
+            </motion.div>
+
             {/* Strategic Shift Column */}
             <motion.div
               variants={item}
@@ -259,50 +242,20 @@ const About = () => {
               className="bg-[#f8f8f8] p-6 sm:p-8 rounded-lg"
             >
               <h3 className="text-xl sm:text-2xl font-semibold text-[#6E260E] mb-4 sm:mb-6 border-b-2 border-[#009E61] pb-2">
-                Commitment to Quality Management
+                Investment in Quality Assurance
               </h3>
               <ul className="space-y-4">
                 <motion.li variants={item} className="flex items-start">
                   <span className="text-[#009E61] font-bold mr-2">•</span>
                   <span className="text-gray-700">
-                    Focused on improving the effectiveness of the quality
-                    management system
+                    Established a state-of-the-art testing laboratory to enhance
+                    raw material procurement
                   </span>
                 </motion.li>
                 <motion.li variants={item} className="flex items-start">
                   <span className="text-[#009E61] font-bold mr-2">•</span>
                   <span className="text-gray-700">
-                    Actively engaged in understanding customer requirements
-                  </span>
-                </motion.li>
-                <motion.li variants={item} className="flex items-start">
-                  <span className="text-[#009E61] font-bold mr-2">•</span>
-                  <span className="text-gray-700">
-                    Consistently striving to exceed customer expectations
-                  </span>
-                </motion.li>
-              </ul>
-            </motion.div>
-
-            {/* COVID Impact Column */}
-            <motion.div
-              variants={item}
-              className="bg-[#f8f8f8] p-6 sm:p-8 rounded-lg"
-            >
-              <h3 className="text-xl sm:text-2xl font-semibold text-[#6E260E] mb-4 sm:mb-6 border-b-2 border-[#EC5800] pb-2">
-                Impact of the COVID-19 Pandemic
-              </h3>
-              <ul className="space-y-4">
-                <motion.li variants={item} className="flex items-start">
-                  <span className="text-[#EC5800] font-bold mr-2">•</span>
-                  <span className="text-gray-700">
-                    Operations were significantly disrupted due to lockdowns
-                  </span>
-                </motion.li>
-                <motion.li variants={item} className="flex items-start">
-                  <span className="text-[#EC5800] font-bold mr-2">•</span>
-                  <span className="text-gray-700">
-                    Faced challenges from rising raw material costs
+                    Ensured procurement processes adhere to industry standards
                   </span>
                 </motion.li>
               </ul>
@@ -315,20 +268,26 @@ const About = () => {
             className="bg-[#f8f8f8] p-6 sm:p-8 rounded-lg mt-12 max-w-3xl mx-auto"
           >
             <h3 className="text-xl sm:text-2xl font-semibold text-[#6E260E] mb-4 sm:mb-6 border-b-2 border-[#6E260E] pb-2 text-center">
-              Investment in Quality Assurance
+              Commitment to Quality Management
             </h3>
             <ul className="space-y-4">
               <motion.li variants={item} className="flex items-start">
                 <span className="text-[#6E260E] font-bold mr-2">•</span>
                 <span className="text-gray-700">
-                  Established a state-of-the-art testing laboratory to enhance
-                  raw material procurement
+                  Focused on improving the effectiveness of the quality
+                  management system
                 </span>
               </motion.li>
               <motion.li variants={item} className="flex items-start">
                 <span className="text-[#6E260E] font-bold mr-2">•</span>
                 <span className="text-gray-700">
-                  Ensured procurement processes adhere to industry standards
+                  Actively engaged in understanding customer requirements
+                </span>
+              </motion.li>
+              <motion.li variants={item} className="flex items-start">
+                <span className="text-[#009E61] font-bold mr-2">•</span>
+                <span className="text-gray-700">
+                  Consistently striving to exceed customer expectations
                 </span>
               </motion.li>
             </ul>
@@ -430,8 +389,6 @@ const About = () => {
           </p>
         </motion.div>
       </motion.section>
-
-      
     </div>
   );
 };

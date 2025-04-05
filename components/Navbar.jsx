@@ -81,27 +81,20 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center h-[150px]">
         {/* Left Side - Logo */}
-       {/* Left Side - Logo */}
-<div className="flex flex-col justify-center h-full">
-  <Link href="/" className="flex flex-col items-center gap-1 z-10">
-    <Image
-      src="/assets/logo1.png"
-      alt="First Logo Part"
-      width={180}
-      height={80}
-      className="w-auto h-[60px] object-contain"
-      priority
-    />
-    <Image
-      src="/assets/logo2.png"
-      alt="Second Logo Part"
-      width={180}
-      height={40}
-      className="w-auto h-[25px] object-contain"
-      priority
-    />
-  </Link>
-</div>
+        {/* Left Side - Logo */}
+        <div className="flex flex-col justify-center h-full">
+          <Link href="/" className="flex flex-col items-center gap-1 z-10">
+            <Image
+              src="/assets/logo.png"
+              alt="First Logo Part"
+              width={180}
+              height={80}
+              className="w-auto h-[130px] object-contain"
+              priority
+            />
+           
+          </Link>
+        </div>
 
         {/* Center - Navigation */}
         <div className="hidden md:flex h-full items-center flex-1 justify-center">
@@ -114,7 +107,9 @@ const Navbar = () => {
                   key="products"
                 >
                   <button
-                    onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
+                    onClick={() =>
+                      setProductsDropdownOpen(!productsDropdownOpen)
+                    }
                     className={`group relative px-6 h-full flex items-center text-lg font-medium ${
                       isProductActive ? "text-white" : "text-black"
                     }`}
@@ -130,15 +125,18 @@ const Navbar = () => {
                     </div>
                     {/* Enhanced rhombus hover background */}
                     <div
-                      className={`absolute inset-0 w-full h-full ${item.color} transform -skew-x-12 transition-all duration-500 ${
+                      className={`absolute inset-0 w-full h-full ${
+                        item.color
+                      } transform -skew-x-12 transition-all duration-500 ${
                         isProductActive || productsDropdownOpen
                           ? "scale-x-100 opacity-100"
                           : "scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100"
                       }`}
-                      style={{ 
+                      style={{
                         zIndex: -1,
-                        transformOrigin: 'center',
-                        transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
+                        transformOrigin: "center",
+                        transitionTimingFunction:
+                          "cubic-bezier(0.4, 0, 0.2, 1)",
                       }}
                     ></div>
                   </button>
@@ -176,15 +174,17 @@ const Navbar = () => {
                 <span className="relative z-10">{item.name}</span>
                 {/* Enhanced rhombus hover background */}
                 <div
-                  className={`absolute inset-0 w-full h-full ${item.color} transform -skew-x-12 transition-all duration-500 ${
+                  className={`absolute inset-0 w-full h-full ${
+                    item.color
+                  } transform -skew-x-12 transition-all duration-500 ${
                     pathname === item.path
                       ? "scale-x-100 opacity-100"
                       : "scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100"
                   }`}
-                  style={{ 
+                  style={{
                     zIndex: -1,
-                    transformOrigin: 'center',
-                    transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
+                    transformOrigin: "center",
+                    transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
                   }}
                 ></div>
               </Link>
@@ -249,7 +249,9 @@ const Navbar = () => {
                       <div key="products-mobile">
                         <button
                           onClick={() =>
-                            setMobileProductsDropdownOpen(!mobileProductsDropdownOpen)
+                            setMobileProductsDropdownOpen(
+                              !mobileProductsDropdownOpen
+                            )
                           }
                           className={`w-full flex justify-between items-center py-2 px-4 transition-colors duration-300 ${
                             isProductActive
@@ -294,7 +296,8 @@ const Navbar = () => {
                         className={`block py-2 px-4 transition-colors duration-300 ${
                           pathname === item.path
                             ? `text-white ${item.color}`
-                            : "text-gray-800 hover:text-white hover:" + item.color
+                            : "text-gray-800 hover:text-white hover:" +
+                              item.color
                         }`}
                       >
                         {item.name}
