@@ -25,6 +25,7 @@ const productCategories = [
   { name: "DECORATIVE", path: "/product/decorative" },
   { name: "FLOOR COATINGS", path: "/product/floorcoating" },
   { name: "PRECOAT", path: "/product/precoat" },
+  { name: "ANCILLARY PRODUCTS", path: "/product/ancillary" },
 ];
 
 const Navbar = () => {

@@ -12,7 +12,7 @@ const Tagline = () => {
       className="w-full py-16 md:py-24 bg-gradient-to-b from-[#f9f9f9] to-white"
     >
       <div
-        className="max-w-4xl mx-auto px-6 "
+        className="max-w-5xl mx-auto px-6 "
         style={{ fontFamily: "Berkshire" }}
       >
         <div className="text-center">
@@ -23,7 +23,7 @@ const Tagline = () => {
             transition={{ duration: 0.6 }}
             className="text-4xl sm:text-5xl md:text-5xl font-medium text-[#2a2a2a] tracking-tight leading-tight"
           >
-            Building partnership{" "}
+            " Building partnerships,{" "}
             <motion.span
               className="relative"
               initial={{ opacity: 0 }}
@@ -31,7 +31,7 @@ const Tagline = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              <span className="relative z-10">one layer at a time</span>
+              <span className="relative z-10">One Layer at a Time ! "</span>
             </motion.span>
           </motion.h2>
         </div>
