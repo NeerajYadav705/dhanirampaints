@@ -69,7 +69,7 @@ const AboutSection = () => {
               {/* Left alignment guide (visible only in development) */}
               <div className="hidden lg:block absolute left-0 top-0 h-full w-px bg-gray-200 -ml-12"></div>
               
-              <p className="text-justify lg:text-left">
+              <p className="text-justify text-align: justify; text-justify: inter-word;">
                 Founded in 2005, With our previous branding under the name of
                 our manufacturing & marketing firm, D R Paint & Chemicals, we
                 have been a trusted name in the paint manufacturing industry,
@@ -79,7 +79,7 @@ const AboutSection = () => {
                 specialty paints, offering advanced coatings designed for
                 durability and excellence.
               </p>
-              <p className="text-justify lg:text-left">
+              <p className="text-justify text-align: justify; text-justify: inter-word;">
                 With nearly two decades of expertise, we have built a reputation
                 for quality, innovation, and reliability, serving businesses
                 that demand long-lasting and cost-effective paint solutions. Our

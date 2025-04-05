@@ -107,7 +107,7 @@ const About = () => {
               ABOUT US
             </motion.h2>
 
-            <p className="text-justify lg:text-left">
+            <p className="text-justify text-align: justify; text-justify: inter-word;">
               Founded in 2005, With our previous branding under the name of our
               manufacturing & marketing firm, D R Paint & Chemicals, we have
               been a trusted name in the paint manufacturing industry,
@@ -117,7 +117,7 @@ const About = () => {
               specialty paints, offering advanced coatings designed for
               durability and excellence.
             </p>
-            <p className="text-justify lg:text-left mt-8">
+            <p className="text-justify text-align: justify; text-justify: inter-word; mt-10">
               With nearly two decades of expertise, we have built a reputation
               for quality, innovation, and reliability, serving businesses that
               demand long-lasting and cost-effective paint solutions. Our
