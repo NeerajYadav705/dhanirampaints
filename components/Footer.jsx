@@ -251,7 +251,7 @@ const Footer = () => {
           className="mt-8 text-center text-white/50 text-xs"
         >
           <p>
-            Crafted with by{" "}
+            Crafted by{" "}
             <a
               href="/"
               // target="_blank"
