@@ -121,7 +121,7 @@ const FloorCoating = () => {
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               } gap-4 sm:gap-6 p-4 sm:p-6 bg-white rounded-b-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300`}
               style={{ 
-                borderTop: `2px solid ${coating.color}`,
+                borderTop: `1px solid ${coating.color}`,
                 borderTopLeftRadius: index % 2 === 0 ? "0" : "0.5rem",
                 borderTopRightRadius: index % 2 === 0 ? "0.5rem" : "0"
               }}

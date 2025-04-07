@@ -144,7 +144,7 @@ const Footer = () => {
               {[
                 { href: "/", text: "Home" },
                 { href: "/about", text: "About Us" },
-                { href: "/products", text: "Products" },
+                { href: "/", text: "Products" },
                 { href: "/contact", text: "Contact Us" },
               ].map((link, index) => (
                 <motion.li key={index} whileHover={{ x: 5 }}>
@@ -223,23 +223,45 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/70 text-xs md:text-sm text-center md:text-left">
-            &copy; {new Date().getFullYear()} DhaniRam Paints. All Rights Reserved.
+            &copy; {new Date().getFullYear()} DhaniRam Paints. All Rights
+            Reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             <Link
-              href="/privacy"
+              href="/"
               className="text-white/70 hover:text-white transition-colors duration-300 text-xs md:text-sm"
             >
               Privacy Policy
             </Link>
             <Link
-              href="/terms"
+              href="/"
               className="text-white/70 hover:text-white transition-colors duration-300 text-xs md:text-sm"
             >
               Terms of Service
             </Link>
           </div>
         </div>
+
+        {/* Developer Credit - Added Section */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          viewport={{ once: true }}
+          className="mt-8 text-center text-white/50 text-xs"
+        >
+          <p>
+            Crafted with by{" "}
+            <a
+              href="/"
+              // target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/70 hover:text-white underline underline-offset-2"
+            >
+              Neeraj Yadav
+            </a>
+          </p>
+        </motion.div>
       </div>
     </footer>
   );

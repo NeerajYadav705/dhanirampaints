@@ -193,7 +193,7 @@ const Ancillary = () => {
         variants={fadeIn}
         className="relative h-[40vh] sm:h-[70vh] w-full"
       >
-        <div className="absolute inset-0 bg-black/50 z-10 flex items-end pb-8 sm:pb-16 md:pb-24 justify-center">
+        <div className="absolute inset-0 bg-black/50 z-10 flex items-end pb-8 sm:pb-16 md:pb-2 justify-center">
           <motion.h1
             variants={slideUp}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center px-4"
@@ -248,7 +248,7 @@ const Ancillary = () => {
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               } gap-6 p-6 bg-white rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300`}
               style={{
-                borderTop: `4px solid ${product.color}`,
+                borderTop: `1px solid ${product.color}`,
                 borderTopLeftRadius: index % 2 === 0 ? "0" : "0.5rem",
                 borderTopRightRadius: index % 2 === 0 ? "0.5rem" : "0",
               }}

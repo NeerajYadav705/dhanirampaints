@@ -121,7 +121,7 @@ const Precoat = () => {
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               } gap-6 p-6 bg-white rounded-b-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300`}
               style={{ 
-                borderTop: `2px solid ${product.color}`,
+                borderTop: `1px solid ${product.color}`,
                 borderTopLeftRadius: index % 2 === 0 ? "0" : "0.5rem",
                 borderTopRightRadius: index % 2 === 0 ? "0.5rem" : "0"
               }}

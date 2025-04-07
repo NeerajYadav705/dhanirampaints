@@ -12,7 +12,7 @@ const clients = [
   "/assets/client6.jpg",
   "/assets/client7.png",
   "/assets/client8.png",
-  "/assets/client9.png",
+  "/assets/client9.jpg",
   "/assets/client10.jpg",
   "/assets/client11.png",
   "/assets/client12.png",

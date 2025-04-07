@@ -72,7 +72,7 @@ const clients = [
     bg: "bg-[#f8f8f8]",
   },
   {
-    logo: "/assets/client9.png",
+    logo: "/assets/client9.jpg",
     alt: "Textile Client",
     bg: "bg-white",
   },
