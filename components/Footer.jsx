@@ -106,14 +106,9 @@ const Footer = () => {
             <div className="flex space-x-4">
               <motion.a
                 whileHover={{ y: -3, scale: 1.1 }}
-                href="#"
-                className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 text-[#E21138]"
-              >
-                <FaFacebook size={18} />
-              </motion.a>
-              <motion.a
-                whileHover={{ y: -3, scale: 1.1 }}
-                href="#"
+                href="https://www.instagram.com/dhanirampaint?utm_source=qr&igsh=N20xbTVpaXMyd2l3"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 text-[#EC5800]"
               >
                 <FaInstagram size={18} />
@@ -121,6 +116,8 @@ const Footer = () => {
               <motion.a
                 whileHover={{ y: -3, scale: 1.1 }}
                 href="#"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 text-[#3153b3]"
               >
                 <FaLinkedin size={18} />

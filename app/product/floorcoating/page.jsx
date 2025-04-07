@@ -7,32 +7,32 @@ const FloorCoating = () => {
   const coatings = [
     {
       id: 1,
-      name: "PU Coating",
-      description: "Polyurethane floor coating provides exceptional durability and chemical resistance. Ideal for industrial facilities, warehouses, and commercial spaces that require high-performance flooring with excellent abrasion resistance and a glossy finish. PU coatings are highly flexible and can withstand extreme temperature fluctuations without cracking or peeling.",
+      name: "PU Floor Coating",
+      description: "PU Floor Coating is a high-performance polyurethane-based coating designed to protect and enhance concrete and cement floors. It is used for its abrasion resistance, chemical durability, and smooth finish in areas like warehouses, parking lots, factories, and commercial floors. Its flexible yet tough formulation resists cracking, UV exposure, and harsh chemicals, ensuring long-lasting surface protection.",
       features: [
-        "Abrasion resistant",
-        "Chemical resistant",
-        "Seamless finish",
-        "Custom colors",
-        "Fast curing",
-        "Low maintenance"
+        "High Abrasion Resistance",
+        "Chemical & Oil Resistant",
+        "UV & Weather Resistant",
+        "Smooth & Glossy Finish",
+        "Fast Flexible Yet Tough Coating",
+        "Ideal for Industrial, Commercial & Parking Floors"
       ],
-      image: "/assets/floor-coating/pu-coating.jpg",
+      image: "/assets/PU_Floor_Coating.jpg",
       color: "#40B5AD" // Dhaniram teal
     },
     {
       id: 2,
-      name: "Epoxy Coating",
-      description: "Epoxy floor coatings create a hard-wearing, seamless surface that's perfect for garages, factories, and showrooms. Provides superior adhesion to concrete with excellent impact resistance and easy maintenance. Epoxy forms a rigid, durable surface that resists chemicals, stains, and heavy impacts while being available in various colors and finishes to match any design requirement.",
+      name: "Epoxy Floor Coating",
+      description: "Epoxy Floor Coating is a two-component, high-strength flooring solution made by combining epoxy resin with a hardener to form a rigid, durable surface. It is used for heavy-duty protection in industrial, commercial, and garage floors where high impact, chemical, and load resistance are essential. Unlike PU floor coatings, epoxy forms a harder, more rigid film that is ideal for static environments with high mechanical stress.",
       features: [
-        "Impact resistant",
-        "Chemical resistant",
-        "Seamless surface",
-        "Color options",
-        "Durable finish",
-        "Easy to clean"
+        "Exceptional Load-Bearing Strength",
+        "High Chemical & Stain Resistance",
+        "Seamless & Non-Porous Surface",
+        "Long-Lasting Gloss & Finish",
+        "Ideal for Concrete, Industrial & Garage Floors",
+        "Resistant to Abrasion, Heat & Impact"
       ],
-      image: "/assets/floor-coating/epoxy-coating.jpg",
+      image: "/assets/Epoxy_Floor_coating.jpg",
       color: "#E21138" // Dhaniram red
     }
   ];

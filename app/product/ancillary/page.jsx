@@ -8,115 +8,67 @@ const Ancillary = () => {
   const products = [
     {
       id: 1,
-      name: "DTM Paint",
+      name: "Turpentine Oil",
       description:
-        "DTM (Direct to Metal) Paint is a specially formulated coating designed to be applied directly onto metal surfaces without the need for a separate primer. Unlike the traditional two-coat system of primer followed by enamel, DTM paint combines both functions, saving time and effort. It is commonly used on surfaces like gates, grills, industrial machinery, and metal furniture.",
+        "Turpentine Oil is a natural solvent distilled from the resin of pine trees, commonly used for thinning oil-based paints and cleaning brushes or tools. It enhances paint flow, improves surface penetration, and accelerates drying time in enamel and oil-based systems. Its chemical composition contains active terpenes, giving it strong solvency power and a characteristic aroma.",
       features: [
-        "Time-Saving",
-        "Excellent durability",
-        "Corrosion Resistant",
-        "Strong Adhesion",
-        "Durable Finish",
-        "Multi-Surface Compatibility",
+        "Effective Paint Thinner",
+        "Enhances Paint Spreadability",
+        "Speeds Up Drying Time",
+        "Ideal for Brush & Tool Cleaning",
+        "Strong Solvency Power",
+        "Suitable for Oil-Based Paints & Varnishes",
       ],
-      image: "/assets/DT.jpg",
+      image: "/assets/Turpentine_Oil.jpg",
       color: "#E21138",
     },
     {
       id: 2,
-      name: "Synthetic Enamel",
+      name: "NC Thinner",
       description:
-        "Synthetic Enamel is a versatile paint known for its smooth, glossy finish and durable protective layer on various surfaces. It is commonly used on doors, windows, furniture, machinery, and metal due to its aesthetic appeal and strength. Its unique formulation creates a tough, flexible film that resists moisture, fading, and everyday wear.",
+        "NC Thinner is a fast-evaporating solvent blend used to dilute nitrocellulose-based paints, lacquers, and primers. It enhances sprayability, reduces viscosity, and ensures quick drying for furniture, woodwork, and automotive touch-ups. Its chemical blend contains esters, ketones, and aromatic solvents for high volatility and smooth finishes.",
       features: [
-        "High Gloss Finish",
-        "Weather & Moisture Resistant",
-        "Smooth Brushability",
-        "Durable & Scratch Resistant",
-        "Strong Adhesion to Wood & Metal",
-        "Excellent Color Retention",
+        "Fast Evaporation for Quick Drying",
+        "Improves Spray Application",
+        "Excellent Flow & Leveling",
+        "Ideal for Wood, Metal & Automotive Uses",
+        "Ensures Smooth, Glossy Finishes",
+        "Prevents Blushing & Orange Peel Effects",
       ],
-      image: "/assets/SyntheticEname.jpg",
+      image: "/assets/NC_Thinner.jpg",
       color: "#E21138",
     },
     {
       id: 3,
-      name: "Black Bitumen Paint",
+      name: "PU Thinner",
       description:
-        "Black Bitumen Paint is a solvent-based protective coating made from bitumen, known for its waterproofing and corrosion-resistant properties. It is primarily used to protect metal, concrete, and masonry surfaces exposed to moisture and chemicals. Common applications include underground pipes, tanks, roofs, and foundation walls.",
+        "PU Thinner is a high-grade solvent mixture formulated specifically for polyurethane-based paints, primers, and clear coats. It ensures uniform application, extends pot life, and supports chemical bonding in two-component PU systems. Its balanced mix of slow and medium evaporating solvents allows deeper penetration and smooth leveling.",
       features: [
-        "Excellent Waterproofing",
-        "Anti-Corrosive Protection",
-        "UV Resistant",
-        "Strong Surface Bonding",
-        "Long-Lasting Durability",
-        "Suitable for Metal, Concrete & Masonry",
+        "Supports PU 2K Systems",
+        "Balanced Evaporation Rate",
+        "Enhances Pot Life & Application Window",
+        "Excellent Gloss & Flow Control",
+        "Prevents Surface Defects & Bubbling",
+        "Suitable for Furniture, Flooring & Auto Refinishing",
       ],
-      image: "/assets/Bituen.jpg",
+      image: "/assets/NC_Thinner.jpg",
       color: "#40B5AD",
     },
     {
       id: 4,
-      name: "Aluminum Paint",
+      name: "Epoxy Thinner",
       description:
-        "Aluminium Paint is a reflective, metallic coating made by mixing finely ground aluminum flakes with a durable resin base. It is used to protect surfaces from heat, sunlight, and corrosion while providing a bright, silver finish. Commonly applied on storage tanks, pipelines, roofs, and radiators. Its chemical structure forms a tight, impermeable film that reflects UV rays and resists oxidation.",
+        "Epoxy Thinner is a solvent blend engineered for reducing the viscosity of epoxy-based paints, primers, and floor coatings. It aids in proper film formation, improves substrate wetting, and maintains chemical resistance post-curing. Its unique formula contains slow evaporating solvents to match the curing profile of epoxies.",
       features: [
-        "Heat reflective",
-        "Corrosion resistant",
-        "Weatherproof",
-        "High Coverage",
-        "Bright Metallic Finish",
-        "Ideal for Metal, Concrete & Industrial Surfaces",
+        "Optimized for Epoxy Coatings",
+        "Maintains Strength & Durability",
+        "Improves Flow, Penetration & Leveling",
+        "Compatible with Primers, Paints & Floors",
+        "Helps in Brush, Roller & Spray Applications",
+        "Reduces Risk of Blistering & Improper Cure",
       ],
-      image: "/assets/aluminium.avif",
+      image: "/assets/NC_Thinner.jpg",
       color: "#009E61",
-    },
-    {
-      id: 5,
-      name: "PU Enamel Paint",
-      description:
-        "PU Enamel Paint is a high-performance polyurethane-based coating known for its superior gloss, hardness, and durability. It is used for both decorative and protective purposes on surfaces that demand a premium finish and long-lasting protection. Ideal for automobiles, furniture, appliances, and industrial equipment.",
-      features: [
-        "High Gloss Finish",
-        "Excellent Scratch Resistance",
-        "UV & Weather Resistant",
-        "Long-Lasting Color Retention",
-        "Chemical & Stain Resistant",
-        "Suitable for Wood, Metal & Plastic Surfaces",
-      ],
-      image: "/assets/PUEnamel.jpg",
-      color: "#EC5800",
-    },
-    {
-      id: 6,
-      name: "Epoxy Paint",
-      description:
-        "Epoxy Paint is a two-component, chemically resistant coating made by combining epoxy resin with a hardener, forming a tough, durable film. It is used for high-performance protection in industrial, commercial, and marine environments. Known for its excellent chemical bonding, it adheres strongly to concrete, metal, and floors, creating a hard, non-porous surface resistant to wear and corrosion.",
-      features: [
-        "Exceptional Chemical Resistance",
-        "High Abrasion Durability",
-        "Strong Adhesion to Multiple Surfaces",
-        "Long-Lasting Protection",
-        "Easy to Clean & Maintain",
-        "Ideal for Industrial, Marine & Floor Applications",
-      ],
-      image: "/assets/EpoxyPaint.jpg",
-      color: "#6E260E",
-    },
-    {
-      id: 7,
-      name: "Red Oxide Primer",
-      description:
-        "Red Oxide Primer is a rust-inhibiting, alkyd-based primer formulated with red oxide pigment for superior adhesion and corrosion resistance on metal surfaces. It is widely used as a preparatory coat for grills, gates, machinery, and structural steel. Chemically designed to block moisture and oxidation, it forms a protective base layer; we also offer a BIS-Standard approved Zinc Chrome variant for enhanced performance in demanding conditions.",
-      features: [
-        "Strong Rust Protection",
-        "Excellent Metal Adhesion",
-        "Quick Drying",
-        "Moisture Barrier",
-        "Smooth Topcoat Compatibility",
-        "BIS-Grade Zinc Chrome Option Available",
-      ],
-      image: "/assets/Redoxide.jpg",
-      color: "#E21138",
     },
   ];
 
@@ -302,8 +254,6 @@ const Ancillary = () => {
           </motion.div>
         ))}
       </div>
-
-  
     </div>
   );
 };

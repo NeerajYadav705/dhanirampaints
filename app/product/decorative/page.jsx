@@ -12,7 +12,7 @@ const Decorative = () => {
         id: 1,
         name: "Interior Emulsion",
         description:
-          "Interior Emulsion is a water-based wall paint designed to provide a smooth, elegant finish for interior walls and ceilings. It is widely used in homes, offices, and commercial spaces for its low odor, quick drying, and clean aesthetic.",
+          "Interior Emulsion is a water-based wall paint designed to provide a smooth, elegant finish for interior walls and ceilings. It is widely used in homes, offices, and commercial spaces for its low odor, quick drying, and clean aesthetic. Its polymer-rich formulation offers superior coverage, stain resistance, and long-lasting color vibrancy.",
         features: [
           "Smooth & Rich Finish",
           "Low Odor & Quick Drying",
@@ -28,7 +28,7 @@ const Decorative = () => {
         id: 2,
         name: "Interior Primer",
         description:
-          "Interior Primer is a water-based undercoat applied to walls and ceilings before interior emulsion to create a smooth, sealed surface.",
+          "Interior Primer is a water-based undercoat applied to walls and ceilings before interior emulsion to create a smooth, sealed surface. It is used to enhance paint adhesion, reduce surface absorbency, and ensure a uniform topcoat finish. Formulated with fine acrylic binders and additives, it provides excellent sealing, stain-blocking, and long-term durability on plaster, putty, and masonry surfaces.",
         features: [
           "Strong Adhesion for Topcoat",
           "Seals Porous Surfaces",
@@ -96,16 +96,16 @@ const Decorative = () => {
         id: 2,
         name: "Exterior Primer",
         description:
-          "High-performance primer designed for exterior surfaces. Provides superior adhesion and protects against moisture penetration.",
+          "Exterior Primer is a water-based undercoat specially designed to prepare exterior walls for emulsion or topcoat application. It is used to seal porous surfaces, enhance paint adhesion, and protect against alkali and efflorescence on cement, plaster, and concrete. Its formulation includes weather-resistant polymers and additives that ensure durability and long-term performance in outdoor conditions.",
         features: [
-          "Water resistant",
-          "Excellent adhesion",
-          "Blocks efflorescence",
-          "Flexible film",
-          "Durable undercoat",
-          "Quick drying",
+          "Strong Adhesion to Topcoat",
+          "Seals Porous & Uneven Surfaces",
+          "Alkali & Efflorescence Resistant",
+          "Improves Paint Durability",
+          "Quick Drying & Easy to Apply",
+          "Ideal for Plaster, Cement & Concrete Walls",
         ],
-        image: "/assets/aboutbg.jpg",
+        image: "/assets/Exterior_Primer.jpg",
         color: "#40B5AD",
       },
       // Add more exterior products as needed
@@ -155,7 +155,7 @@ const Decorative = () => {
           </motion.h1>
         </div>
         <Image
-          src="/assets/aboutbg.jpg"
+          src="/assets/Decorative_head.jpg"
           alt="Decorative Paints"
           fill
           className="object-cover"

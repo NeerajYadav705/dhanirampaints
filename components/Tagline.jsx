@@ -23,7 +23,7 @@ const Tagline = () => {
             transition={{ duration: 0.6 }}
             className="text-4xl sm:text-5xl md:text-4xl font-medium text-[#2a2a2a] tracking-tight leading-tight"
           >
-            " Building partnerships,{" "}
+             Building Partnerships,{" "}
             <motion.span
               className="relative"
               initial={{ opacity: 0 }}
@@ -31,7 +31,7 @@ const Tagline = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              <span className="relative z-10">One Layer at a Time ! "</span>
+              <span className="relative z-10">One Layer at a Time ! </span>
             </motion.span>
           </motion.h2>
         </div>

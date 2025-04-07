@@ -93,7 +93,6 @@ const Navbar = () => {
               className="w-auto h-[130px] object-contain"
               priority
             />
-           
           </Link>
         </div>
 
@@ -196,15 +195,7 @@ const Navbar = () => {
         {/* Right Side - Social Icons */}
         <div className="hidden md:flex items-center space-x-4 z-10">
           <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#6E260E] hover:text-[#3b5998] transition-colors duration-300"
-          >
-            <FaFacebook size={20} />
-          </a>
-          <a
-            href="https://linkedin.com"
+            href="https://www.instagram.com/dhanirampaint?utm_source=qr&igsh=N20xbTVpaXMyd2l3"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#6E260E] hover:text-[#0077b5] transition-colors duration-300"
@@ -212,7 +203,7 @@ const Navbar = () => {
             <FaLinkedin size={20} />
           </a>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/dhanirampaint?utm_source=qr&igsh=N20xbTVpaXMyd2l3"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#6E260E] hover:text-[#E1306C] transition-colors duration-300"
@@ -310,16 +301,9 @@ const Navbar = () => {
 
               {/* Social Icons at Bottom of Mobile Menu */}
               <div className="flex justify-center space-x-6 pb-6">
+              
                 <a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#6E260E] hover:text-[#3b5998] transition-colors duration-300"
-                >
-                  <FaFacebook size={20} />
-                </a>
-                <a
-                  href="https://linkedin.com"
+                  href="https://www.instagram.com/dhanirampaint?utm_source=qr&igsh=N20xbTVpaXMyd2l3"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#6E260E] hover:text-[#0077b5] transition-colors duration-300"
@@ -327,7 +311,7 @@ const Navbar = () => {
                   <FaLinkedin size={20} />
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/dhanirampaint?utm_source=qr&igsh=N20xbTVpaXMyd2l3"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#6E260E] hover:text-[#E1306C] transition-colors duration-300"
