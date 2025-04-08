@@ -247,7 +247,7 @@ const Footer = () => {
           <p>
             Crafted by{" "}
             <a
-              href="/"
+              href="https://portfolio-six-xi-87.vercel.app/"
               rel="noopener noreferrer"
               className="text-white/70 hover:text-white underline underline-offset-2"
             >
