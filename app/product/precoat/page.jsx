@@ -80,7 +80,7 @@ const Precoat = () => {
           </motion.h1>
         </div>
         <Image
-          src="/assets/precoat/hero-bg.jpg"
+          src="/assets/Precoat_Page.jpg"
           alt="Precoat Solutions"
           fill
           className="object-cover"

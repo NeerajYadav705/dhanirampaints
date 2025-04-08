@@ -62,7 +62,7 @@ const About = () => {
           </motion.h1>
         </div>
         <Image
-          src="/assets/aboutbg.jpg"
+          src="/assets/About_hero.jpg"
           alt="About Dhaniram Paints"
           fill
           className="object-cover"

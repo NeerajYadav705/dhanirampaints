@@ -24,6 +24,22 @@ const Industrial = () => {
     },
     {
       id: 2,
+      name: "QD Enamel",
+      description:
+        "QD Enamel (Quick Drying Enamel) is a fast-curing, solvent-based paint designed for metal, machinery, and industrial surfaces requiring rapid turnaround. It is used for its excellent coverage, durability, and quick handling time in high-volume production environments. Formulated with special resins and fast-evaporating solvents, it delivers a tough, semi-gloss to glossy finish within minutes.",
+      features: [
+        "Fast Drying – Saves Time in Production",
+        "Excellent Adhesion to Metal Surfaces",
+        "Smooth & Durable Finish",
+        "Ideal for Machinery, Tools & Industrial Use",
+        "Resistant to Mild Chemicals & Abrasion",
+        "Available in Multiple Shades & Finishes",
+      ],
+      image: "/assets/QD_Enamel.jpg",
+      color: "#E21138",
+    },
+    {
+      id: 3,
       name: "Synthetic Enamel",
       description:
         "Synthetic Enamel is a versatile paint known for its smooth, glossy finish and durable protective layer on various surfaces. It is commonly used on doors, windows, furniture, machinery, and metal due to its aesthetic appeal and strength. Its unique formulation creates a tough, flexible film that resists moisture, fading, and everyday wear.",
@@ -39,7 +55,7 @@ const Industrial = () => {
       color: "#E21138",
     },
     {
-      id: 3,
+      id: 4,
       name: "Black Bitumen Paint",
       description:
         "Black Bitumen Paint is a solvent-based protective coating made from bitumen, known for its waterproofing and corrosion-resistant properties. It is primarily used to protect metal, concrete, and masonry surfaces exposed to moisture and chemicals. Common applications include underground pipes, tanks, roofs, and foundation walls.",
@@ -55,7 +71,7 @@ const Industrial = () => {
       color: "#40B5AD",
     },
     {
-      id: 4,
+      id: 5,
       name: "Aluminum Paint",
       description:
         "Aluminium Paint is a reflective, metallic coating made by mixing finely ground aluminum flakes with a durable resin base. It is used to protect surfaces from heat, sunlight, and corrosion while providing a bright, silver finish. Commonly applied on storage tanks, pipelines, roofs, and radiators. Its chemical structure forms a tight, impermeable film that reflects UV rays and resists oxidation.",
@@ -71,7 +87,7 @@ const Industrial = () => {
       color: "#009E61",
     },
     {
-      id: 5,
+      id: 6,
       name: "PU Enamel Paint",
       description:
         "PU Enamel Paint is a high-performance polyurethane-based coating known for its superior gloss, hardness, and durability. It is used for both decorative and protective purposes on surfaces that demand a premium finish and long-lasting protection. Ideal for automobiles, furniture, appliances, and industrial equipment.",
@@ -87,7 +103,7 @@ const Industrial = () => {
       color: "#EC5800",
     },
     {
-      id: 6,
+      id: 7,
       name: "Epoxy Paint",
       description:
         "Epoxy Paint is a two-component, chemically resistant coating made by combining epoxy resin with a hardener, forming a tough, durable film. It is used for high-performance protection in industrial, commercial, and marine environments. Known for its excellent chemical bonding, it adheres strongly to concrete, metal, and floors, creating a hard, non-porous surface resistant to wear and corrosion.",
@@ -103,7 +119,7 @@ const Industrial = () => {
       color: "#6E260E",
     },
     {
-      id: 7,
+      id: 8,
       name: "Red Oxide Primer",
       description:
         "Red Oxide Primer is a rust-inhibiting, alkyd-based primer formulated with red oxide pigment for superior adhesion and corrosion resistance on metal surfaces. It is widely used as a preparatory coat for grills, gates, machinery, and structural steel. Chemically designed to block moisture and oxidation, it forms a protective base layer; we also offer a BIS-Standard approved Zinc Chrome variant for enhanced performance in demanding conditions.",

@@ -4,7 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const WhatsAppButton = () => {
-  const whatsappNumber = "9773764257";
+  const whatsappNumber = "8109288169";
   const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
   return (

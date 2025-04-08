@@ -44,8 +44,8 @@ const FAQSection = () => {
         answer: "Our formulations use premium resins and additives that provide superior adhesion, weather resistance, and long-lasting color retention."
       },
       {
-        question: "Can your paints be used in industrial environments?",
-        answer: "Absolutely. We offer specialized coatings designed to withstand harsh industrial conditions including chemicals, abrasion, and extreme temperatures."
+        question: "How do you ensure timely delivery ?",
+        answer: "Situated at the heart of our country, we have excellent connectivity throughout India via road and railway, from our manufacturing site situated in Raipur (Chhattisgarh)."
       }
   ];
 

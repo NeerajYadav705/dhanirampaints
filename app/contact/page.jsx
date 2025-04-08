@@ -64,7 +64,7 @@ const Contact = () => {
           </motion.h1>
         </div>
         <Image
-          src="/assets/aboutbg.jpg"
+          src="/assets/Contact_Page.jpg"
           alt="About Dhaniram Paints"
           fill
           className="object-cover"

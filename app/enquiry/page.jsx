@@ -105,7 +105,7 @@ const Enquiry = () => {
           </motion.h1>
         </div>
         <Image
-          src="/assets/aboutbg.jpg"
+          src="/assets/Enquiry_Page.jpg"
           alt="About Dhaniram Paints"
           fill
           className="object-cover"

@@ -145,17 +145,17 @@ const Ancillary = () => {
         variants={fadeIn}
         className="relative h-[40vh] sm:h-[70vh] w-full"
       >
-        <div className="absolute inset-0 bg-black/50 z-10 flex items-end pb-8 sm:pb-16 md:pb-2 justify-center">
+        <div className="absolute inset-0 bg-black/50 z-10 flex items-end pb-8 sm:pb-16 md:pb-24 justify-center">
           <motion.h1
             variants={slideUp}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center px-4"
           >
-            Industrial Paints
+            Ancillary Products
           </motion.h1>
         </div>
         <Image
-          src="/assets/IndustryHero.jpg"
-          alt="Industrial Paints"
+          src="/assets/Ancillary_Products_page.jpg"
+          alt="Floor Coating Solutions"
           fill
           className="object-cover"
           priority

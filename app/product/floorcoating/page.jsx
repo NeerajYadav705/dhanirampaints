@@ -80,7 +80,7 @@ const FloorCoating = () => {
           </motion.h1>
         </div>
         <Image
-          src="/assets/floor-coating/hero-bg.jpg"
+          src="/assets/Floor_Coating_Page.jpg"
           alt="Floor Coating Solutions"
           fill
           className="object-cover"
