@@ -306,12 +306,12 @@ const Enquiry = () => {
                 >
                   <option value="">Select a product category</option>
                   <option value="Industrial Coatings">
-                    Industrial Coatings
+                    Industrial
                   </option>
-                  <option value="Decorative Paints">Decorative Paints</option>
+                  <option value="Decorative Paints">Decorative</option>
                   <option value="Floor Coatings">Floor Coatings</option>
                   <option value="Precoat Metals">Precoat</option>
-                  <option value="Precoat Metals">Ancillary Paints</option>
+                  <option value="Precoat Metals">Ancillary Products</option>
                 </select>
               </motion.div>
 
