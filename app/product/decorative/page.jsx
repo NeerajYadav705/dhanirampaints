@@ -5,6 +5,9 @@ import { motion } from "framer-motion";
 
 const Decorative = () => {
   const [activeTab, setActiveTab] = useState("interior");
+  
+  // Define the color sequence
+  const colorSequence = ["#E21138", "#EC5800", "#40B5AD", "#009E61"];
 
   const products = {
     interior: [
@@ -22,7 +25,7 @@ const Decorative = () => {
           "Ideal for Walls & Ceilings Indoors",
         ],
         image: "/assets/InteriorEmulsion.jpg",
-        color: "#E21138",
+        color: colorSequence[0 % colorSequence.length], // E21138
       },
       {
         id: 2,
@@ -38,7 +41,7 @@ const Decorative = () => {
           "Ideal after Plaster, Putty & Masonry",
         ],
         image: "/assets/InteriorPrimer.jpg",
-        color: "#E21138",
+        color: colorSequence[1 % colorSequence.length], // EC5800
       },
       {
         id: 3,
@@ -54,7 +57,7 @@ const Decorative = () => {
           "Ideal for Plastered & Brick Surfaces",
         ],
         image: "/assets/Distemper.jpg",
-        color: "#E21138",
+        color: colorSequence[2 % colorSequence.length], // 40B5AD
       },
       {
         id: 4,
@@ -70,10 +73,8 @@ const Decorative = () => {
           "Ideal for Interior & Exterior Walls",
         ],
         image: "/assets/Texture.jpg",
-        color: "#E21138",
+        color: colorSequence[3 % colorSequence.length], // 009E61
       },
-
-      // Add more interior products as needed
     ],
     exterior: [
       {
@@ -87,10 +88,10 @@ const Decorative = () => {
           "Dust Resistant",
           "Excellent Color Retention",
           "Breathable Coating Prevents Peeling",
-          "Ideal for Cement, Concrete & Brick Walls",
+          "Ideal for Cement, Concrete & Brick Walls",
         ],
         image: "/assets/ExteriorEmulsion.jpg",
-        color: "#40B5AD",
+        color: colorSequence[0 % colorSequence.length], // E21138
       },
       {
         id: 2,
@@ -103,12 +104,11 @@ const Decorative = () => {
           "Alkali & Efflorescence Resistant",
           "Improves Paint Durability",
           "Quick Drying & Easy to Apply",
-          "Ideal for Plaster, Cement & Concrete Walls",
+          "Ideal for Plaster, Cement & Concrete Walls",
         ],
         image: "/assets/Exterior_Primer.jpg",
-        color: "#40B5AD",
+        color: colorSequence[1 % colorSequence.length], // EC5800
       },
-      // Add more exterior products as needed
     ],
   };
 
@@ -237,7 +237,7 @@ const Decorative = () => {
               >
                 {/* Text Content */}
                 <div className="w-full md:w-1/2">
-                  <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                  <p className="text-gray-700 text-sm sm:text-base leading-relaxed text-justify text-align: justify; text-justify: inter-word;">
                     {product.description}
                   </p>
                   <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">

@@ -84,12 +84,12 @@ const Contact = () => {
           {/* Contact Details */}
           <motion.div variants={item} className="space-y-8">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#6E260E] mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#000000] mb-4">
                 Get in Touch
               </h2>
               <p className="text-gray-700">
-                Reach out to our team for any inquiries or support. We're here
-                to help you with your coating solutions.
+                Reach out to our team for any queries and support. We're here to
+                help you with your coating problems.
               </p>
             </div>
 
@@ -103,7 +103,7 @@ const Contact = () => {
                     Our Location
                   </h3>
                   <p className="text-gray-600">
-                    DhaniRam Paints
+                    Dhaniram Oil & Paint Industries
                     <br />
                     Plot 7B, Industrial Area, Bhanpuri
                     <br />
@@ -190,21 +190,18 @@ const Contact = () => {
               <div className="flex space-x-4">
                 <motion.a
                   whileHover={{ y: -3 }}
-                  href="#"
-                  className="text-[#6E260E] hover:text-[#E21138] transition-colors"
-                >
-                  <FaFacebook size={20} />
-                </motion.a>
-                <motion.a
-                  whileHover={{ y: -3 }}
-                  href="#"
+                  href="https://www.instagram.com/dhanirampaint?utm_source=qr&igsh=N20xbTVpaXMyd2l3"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-[#6E260E] hover:text-[#EC5800] transition-colors"
                 >
                   <FaInstagram size={20} />
                 </motion.a>
                 <motion.a
                   whileHover={{ y: -3 }}
-                  href="#"
+                  href="https://www.linkedin.com/company/dhaniram-paint/posts/?feedView=all"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-[#6E260E] hover:text-[#40B5AD] transition-colors"
                 >
                   <FaLinkedin size={20} />
@@ -218,7 +215,7 @@ const Contact = () => {
             variants={item}
             className="rounded-lg overflow-hidden shadow-lg border border-gray-200 h-full"
           >
-            <h3 className="text-xl font-semibold text-[#6E260E] p-4 bg-gray-50 border-b border-gray-200">
+            <h3 className="text-xl font-semibold text-[#000000] p-4 bg-gray-50 border-b border-gray-200">
               Our Location
             </h3>
             <div className="h-full w-full" style={{ minHeight: "400px" }}>

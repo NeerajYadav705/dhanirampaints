@@ -102,18 +102,18 @@ const About = () => {
           <motion.div variants={item}>
             <motion.h2
               variants={slideUp}
-              className="text-2xl sm:text-3xl font-bold text-[#6E260E] mb-4 sm:mb-6"
+              className="text-2xl sm:text-3xl font-bold text-[#000000] mb-4 sm:mb-6"
             >
               ABOUT US
             </motion.h2>
 
             <p className="text-justify text-align: justify; text-justify: inter-word;">
-              Founded in 2005, With our previous branding under the name of our
+              Founded in 2005, with our previous branding under the name of our
               manufacturing & marketing firm, D R Paint & Chemicals, we have
               been a trusted name in the paint manufacturing industry,
               delivering high-performance coating solutions that protect,
               enhance, and add value to a wide range of applications. As a
-              growing MSME, we specialize in industrial, decorative, and
+              growing SME, we specialize in industrial, decorative, and
               specialty paints, offering advanced coatings designed for
               durability and excellence.
             </p>
@@ -123,8 +123,8 @@ const About = () => {
               demand long-lasting and cost-effective paint solutions. Our
               commitment extends beyond products—we foster strong B2B
               relationships, working closely with manufacturers, construction
-              firms, infrastructure developers, and industries to provide
-              tailored coating solutions that meet their specific needs.
+              firms, infrastructure developers, and other industries to provide
+              tailored coating solutions that satiate their specific needs.
             </p>
           </motion.div>
         </div>
@@ -141,7 +141,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             variants={slideUp}
-            className="text-2xl sm:text-3xl font-bold text-center text-[#6E260E] mb-8 sm:mb-12"
+            className="text-2xl sm:text-3xl font-bold text-center text-[#000000] mb-8 sm:mb-12"
           >
             COMPANY OVERVIEW
           </motion.h2>
@@ -153,28 +153,28 @@ const About = () => {
               variants={item}
               className="bg-[#f8f8f8] p-6 sm:p-8 rounded-lg"
             >
-              <h3 className="text-xl sm:text-2xl font-semibold text-[#6E260E] mb-4 sm:mb-6 border-b-2 border-[#E21138] pb-2">
+              <h3 className="text-xl sm:text-2xl font-semibold text-[#000000] mb-4 sm:mb-6 border-b-2 border-[#E21138] pb-2">
                 Background
               </h3>
               <ul className="space-y-4">
                 <motion.li variants={item} className="flex items-start">
                   <span className="text-[#E21138] font-bold mr-2">•</span>
                   <span className="text-gray-700">
-                    Established Manufacturing in 2005
+                    Established Manufacturing in 2005.
                   </span>
                 </motion.li>
                 <motion.li variants={item} className="flex items-start">
                   <span className="text-[#E21138] font-bold mr-2">•</span>
                   <span className="text-gray-700">
                     Initially focused on serving price-sensitive customers in
-                    the local market
+                    the local market.
                   </span>
                 </motion.li>
                 <motion.li variants={item} className="flex items-start">
                   <span className="text-[#E21138] font-bold mr-2">•</span>
                   <span className="text-gray-700">
                     Limited emphasis on high-quality paint products in the early
-                    years
+                    years.
                   </span>
                 </motion.li>
               </ul>
@@ -185,20 +185,20 @@ const About = () => {
               variants={item}
               className="bg-[#f8f8f8] p-6 sm:p-8 rounded-lg"
             >
-              <h3 className="text-xl sm:text-2xl font-semibold text-[#6E260E] mb-4 sm:mb-6 border-b-2 border-[#EC5800] pb-2">
+              <h3 className="text-xl sm:text-2xl font-semibold text-[#000000] mb-4 sm:mb-6 border-b-2 border-[#EC5800] pb-2">
                 Impact of the COVID-19 Pandemic
               </h3>
               <ul className="space-y-4">
                 <motion.li variants={item} className="flex items-start">
                   <span className="text-[#EC5800] font-bold mr-2">•</span>
                   <span className="text-gray-700">
-                    Operations were significantly disrupted due to lockdowns
+                    Operations were significantly disrupted during the inital lockdown period.
                   </span>
                 </motion.li>
                 <motion.li variants={item} className="flex items-start">
                   <span className="text-[#EC5800] font-bold mr-2">•</span>
                   <span className="text-gray-700">
-                    Faced challenges from rising raw material costs
+                    Faced challenges due to rising costs of raw meterials.
                   </span>
                 </motion.li>
               </ul>
@@ -209,28 +209,28 @@ const About = () => {
               variants={item}
               className="bg-[#f8f8f8] p-6 sm:p-8 rounded-lg"
             >
-              <h3 className="text-xl sm:text-2xl font-semibold text-[#6E260E] mb-4 sm:mb-6 border-b-2 border-[#40B5AD] pb-2">
-                Strategic Shift in 2020
+              <h3 className="text-xl sm:text-2xl font-semibold text-[#000000] mb-4 sm:mb-6 border-b-2 border-[#40B5AD] pb-2">
+                Strategic Shift post 2020
               </h3>
               <ul className="space-y-4">
                 <motion.li variants={item} className="flex items-start">
                   <span className="text-[#40B5AD] font-bold mr-2">•</span>
                   <span className="text-gray-700">
-                    Shifted focus towards improving product quality
+                    Shifted focus towards improving the product quality.
                   </span>
                 </motion.li>
                 <motion.li variants={item} className="flex items-start">
                   <span className="text-[#40B5AD] font-bold mr-2">•</span>
                   <span className="text-gray-700">
                     Expanded operations beyond local markets to cater to
-                    customers across India
+                    customers across India.
                   </span>
                 </motion.li>
                 <motion.li variants={item} className="flex items-start">
                   <span className="text-[#40B5AD] font-bold mr-2">•</span>
                   <span className="text-gray-700">
                     Successfully supplied products to over 50+ government
-                    organizations in the past two years
+                    organizations in the past two years.
                   </span>
                 </motion.li>
               </ul>
@@ -241,7 +241,7 @@ const About = () => {
               variants={item}
               className="bg-[#f8f8f8] p-6 sm:p-8 rounded-lg"
             >
-              <h3 className="text-xl sm:text-2xl font-semibold text-[#6E260E] mb-4 sm:mb-6 border-b-2 border-[#009E61] pb-2">
+              <h3 className="text-xl sm:text-2xl font-semibold text-[#000000] mb-4 sm:mb-6 border-b-2 border-[#009E61] pb-2">
                 Investment in Quality Assurance
               </h3>
               <ul className="space-y-4">
@@ -249,13 +249,13 @@ const About = () => {
                   <span className="text-[#009E61] font-bold mr-2">•</span>
                   <span className="text-gray-700">
                     Established a state-of-the-art testing laboratory to enhance
-                    raw material procurement
+                    raw material procurement and implemented a rigorous quality maintenance process.
                   </span>
                 </motion.li>
                 <motion.li variants={item} className="flex items-start">
                   <span className="text-[#009E61] font-bold mr-2">•</span>
                   <span className="text-gray-700">
-                    Ensured procurement processes adhere to industry standards
+                    Ensured procurement processes adhere to industry standards.
                   </span>
                 </motion.li>
               </ul>
@@ -267,27 +267,26 @@ const About = () => {
             variants={item}
             className="bg-[#f8f8f8] p-6 sm:p-8 rounded-lg mt-12 max-w-3xl mx-auto"
           >
-            <h3 className="text-xl sm:text-2xl font-semibold text-[#6E260E] mb-4 sm:mb-6 border-b-2 border-[#6E260E] pb-2 text-center">
+            <h3 className="text-xl sm:text-2xl font-semibold text-[#000000] mb-4 sm:mb-6 border-b-2 border-[#6E260E] pb-2 text-center">
               Commitment to Quality Management
             </h3>
             <ul className="space-y-4">
               <motion.li variants={item} className="flex items-start">
-                <span className="text-[#6E260E] font-bold mr-2">•</span>
+                <span className="text-[#000000] font-bold mr-2">•</span>
                 <span className="text-gray-700">
-                  Focused on improving the effectiveness of the quality
-                  management system
+                  Focused on improving and adhering stringently by the quality assurance system.
                 </span>
               </motion.li>
               <motion.li variants={item} className="flex items-start">
                 <span className="text-[#6E260E] font-bold mr-2">•</span>
                 <span className="text-gray-700">
-                  Actively engaged in understanding customer requirements
+                  Actively engaged in understanding customer requirements.
                 </span>
               </motion.li>
               <motion.li variants={item} className="flex items-start">
                 <span className="text-[#009E61] font-bold mr-2">•</span>
                 <span className="text-gray-700">
-                  Consistently striving to exceed customer expectations
+                  Consistently striving to exceed customer expectations.
                 </span>
               </motion.li>
             </ul>
@@ -307,7 +306,7 @@ const About = () => {
       >
         <motion.h2
           variants={slideUp}
-          className="text-2xl sm:text-3xl font-bold text-center text-[#6E260E] mb-8 sm:mb-12"
+          className="text-2xl sm:text-3xl font-bold text-center text-[#000000] mb-8 sm:mb-12"
         >
           OUR REACH & DISTRIBUTION
         </motion.h2>

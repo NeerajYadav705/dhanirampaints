@@ -2,7 +2,6 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FaIndustry, FaPalette, FaSearch, FaSwatchbook } from "react-icons/fa";
 
 const Ancillary = () => {
   const products = [
@@ -17,10 +16,9 @@ const Ancillary = () => {
         "Speeds Up Drying Time",
         "Ideal for Brush & Tool Cleaning",
         "Strong Solvency Power",
-        "Suitable for Oil-Based Paints & Varnishes",
+        "Suitable for Oil-Based Paints & Varnishes",
       ],
       image: "/assets/Turpentine_Oil.jpg",
-      color: "#E21138",
     },
     {
       id: 2,
@@ -33,10 +31,9 @@ const Ancillary = () => {
         "Excellent Flow & Leveling",
         "Ideal for Wood, Metal & Automotive Uses",
         "Ensures Smooth, Glossy Finishes",
-        "Prevents Blushing & Orange Peel Effects",
+        "Prevents Blushing & Orange Peel Effects",
       ],
       image: "/assets/NC_Thinner.jpg",
-      color: "#E21138",
     },
     {
       id: 3,
@@ -49,10 +46,9 @@ const Ancillary = () => {
         "Enhances Pot Life & Application Window",
         "Excellent Gloss & Flow Control",
         "Prevents Surface Defects & Bubbling",
-        "Suitable for Furniture, Flooring & Auto Refinishing",
+        "Suitable for Furniture, Flooring & Auto Refinishing",
       ],
       image: "/assets/NC_Thinner.jpg",
-      color: "#40B5AD",
     },
     {
       id: 4,
@@ -65,53 +61,16 @@ const Ancillary = () => {
         "Improves Flow, Penetration & Leveling",
         "Compatible with Primers, Paints & Floors",
         "Helps in Brush, Roller & Spray Applications",
-        "Reduces Risk of Blistering & Improper Cure",
+        "Reduces Risk of Blistering & Improper Cure",
       ],
       image: "/assets/NC_Thinner.jpg",
-      color: "#009E61",
     },
   ];
 
-  const brands = [
-    {
-      id: 1,
-      name: "Premium Coatings",
-      description:
-        "Our premium line offers the highest quality industrial coatings with advanced formulations for extreme environments.",
-      image: "/assets/brand1.jpg",
-    },
-    {
-      id: 2,
-      name: "Eco Solutions",
-      description:
-        "Environmentally friendly coatings that meet strict environmental regulations without compromising performance.",
-      image: "/assets/brand2.jpg",
-    },
-    {
-      id: 3,
-      name: "Marine Grade",
-      description:
-        "Specialized formulations designed for marine applications with superior saltwater and UV resistance.",
-      image: "/assets/brand3.jpg",
-    },
-  ];
+  // Color palette to cycle through
+  const colors = ["#E21138", "#EC5800", "#40B5AD", "#009E61"];
 
   // Animation variants
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-  };
-
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -155,104 +114,102 @@ const Ancillary = () => {
         </div>
         <Image
           src="/assets/Ancillary_Products_page.jpg"
-          alt="Floor Coating Solutions"
+          alt="Ancillary Products"
           fill
           className="object-cover"
           priority
         />
       </motion.div>
 
-      {/* Products Section - Fixed alignment */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        {products.map((product, index) => (
-          <motion.div
-            key={product.id}
-            initial="hidden"
-            animate="visible"
-            variants={cardVariants}
-            transition={{ delay: index * 0.1 }}
-            className="group mb-10 sm:mb-16"
-          >
-            {/* Heading Container */}
-            <div
-              className={`flex ${
-                index % 2 === 0 ? "justify-start" : "justify-end"
-              }`}
+        {products.map((product, index) => {
+          const color = colors[index % colors.length];
+          return (
+            <motion.div
+              key={product.id}
+              initial="hidden"
+              animate="visible"
+              variants={cardVariants}
+              transition={{ delay: index * 0.1 }}
+              className="group mb-10 sm:mb-16"
             >
-              <motion.div
-                variants={tabVariants}
-                initial="rest"
-                whileHover="hover"
-                style={{ backgroundColor: product.color }}
-                className={`px-6 py-3 rounded-t-lg shadow-sm ${
-                  index % 2 === 0 ? "mr-4" : "ml-4"
-                }`}
-              >
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white">
-                  {product.name}
-                </h3>
-              </motion.div>
-            </div>
-
-            {/* Card Content */}
-            <div
-              className={`flex flex-col ${
-                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              } gap-6 p-6 bg-white rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300`}
-              style={{
-                borderTop: `1px solid ${product.color}`,
-                borderTopLeftRadius: index % 2 === 0 ? "0" : "0.5rem",
-                borderTopRightRadius: index % 2 === 0 ? "0.5rem" : "0",
-              }}
-            >
-              {/* Text Content */}
-              <div className="w-full md:w-1/2">
-                <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                  {product.description}
-                </p>
-                <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {product.features.map((feature, i) => (
-                    <div key={i} className="flex items-start">
-                      <svg
-                        className="h-5 w-5 mr-2 mt-0.5 flex-shrink-0"
-                        style={{ color: product.color }}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      <span className="text-gray-700 text-sm sm:text-base">
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Image */}
-              <div className="w-full md:w-1/2">
+              {/* Heading Container */}
+              <div className={`flex ${index % 2 === 0 ? "justify-start" : "justify-end"}`}>
                 <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="relative w-full h-48 sm:h-64 md:h-72 rounded-lg overflow-hidden bg-gray-100 shadow-inner"
+                  variants={tabVariants}
+                  initial="rest"
+                  whileHover="hover"
+                  style={{ backgroundColor: color }}
+                  className={`px-6 py-3 rounded-t-lg shadow-sm ${
+                    index % 2 === 0 ? "mr-4" : "ml-4"
+                  }`}
                 >
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white">
+                    {product.name}
+                  </h3>
                 </motion.div>
               </div>
-            </div>
-          </motion.div>
-        ))}
+
+              {/* Card Content */}
+              <div
+                className={`flex flex-col ${
+                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                } gap-6 p-6 bg-white rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300`}
+                style={{
+                  borderTop: `1px solid ${color}`,
+                  borderTopLeftRadius: index % 2 === 0 ? "0" : "0.5rem",
+                  borderTopRightRadius: index % 2 === 0 ? "0.5rem" : "0",
+                }}
+              >
+                {/* Text Content */}
+                <div className="w-full md:w-1/2">
+                  <p className="text-gray-700 text-sm sm:text-base leading-relaxed text-justify">
+                    {product.description}
+                  </p>
+                  <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {product.features.map((feature, i) => (
+                      <div key={i} className="flex items-start">
+                        <svg
+                          className="h-5 w-5 mr-2 mt-0.5 flex-shrink-0"
+                          style={{ color: color }}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        <span className="text-gray-700 text-sm sm:text-base">
+                          {feature}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Image */}
+                <div className="w-full md:w-1/2">
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    className="relative w-full h-48 sm:h-64 md:h-72 rounded-lg overflow-hidden bg-gray-100 shadow-inner"
+                  >
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );

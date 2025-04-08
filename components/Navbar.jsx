@@ -195,7 +195,7 @@ const Navbar = () => {
         {/* Right Side - Social Icons */}
         <div className="hidden md:flex items-center space-x-4 z-10">
           <a
-            href="https://www.instagram.com/dhanirampaint?utm_source=qr&igsh=N20xbTVpaXMyd2l3"
+            href="https://www.linkedin.com/company/dhaniram-paint/posts/?feedView=all"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#6E260E] hover:text-[#0077b5] transition-colors duration-300"
@@ -303,7 +303,7 @@ const Navbar = () => {
               <div className="flex justify-center space-x-6 pb-6">
               
                 <a
-                  href="https://www.instagram.com/dhanirampaint?utm_source=qr&igsh=N20xbTVpaXMyd2l3"
+                  href="https://www.linkedin.com/company/dhaniram-paint/posts/?feedView=all"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#6E260E] hover:text-[#0077b5] transition-colors duration-300"

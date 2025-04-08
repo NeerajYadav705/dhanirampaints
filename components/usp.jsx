@@ -9,7 +9,7 @@ const USP = () => {
       icon: <FaAward className="text-4xl" />,
       title: "20+ Years Experience",
       description:
-        "Decades of expertise in paint manufacturing and formulation",
+        "Thorough expertise in paint manufacturing and formulation",
       color: "#E21138",
     },
     {

@@ -40,7 +40,7 @@ const OurClients = () => {
         viewport={{ once: true, margin: "-50px" }}
         className="text-center mb-8 sm:mb-12"
       >
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#6e260e] mb-2 sm:mb-3">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#000000] mb-2 sm:mb-3">
           Our Valued Clients
         </h2>
         <div className="w-20 sm:w-24 h-1 sm:h-1.5 bg-[#E21138] mx-auto"></div>

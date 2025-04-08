@@ -5,7 +5,6 @@ import {
   FaPhone,
   FaEnvelope,
   FaMapMarkerAlt,
-  FaFacebook,
   FaInstagram,
   FaLinkedin,
 } from "react-icons/fa";
@@ -17,15 +16,15 @@ const Footer = () => {
 
   return (
     <footer className="relative overflow-hidden pt-16 pb-12 px-4 sm:px-6 lg:px-8 bg-[#40B5AD]">
-      {/* Vector Background */}
-      <div className="absolute inset-0 z-0 opacity-90">
+      {/* Vector Background - Same as VisionMission component */}
+      <div className="absolute inset-0 z-0">
         <svg
           width="100%"
           height="100%"
           viewBox="0 0 1200 800"
           preserveAspectRatio="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="text-[#2a7a74]"
+          className="text-[#40B5AD]"
         >
           <defs>
             <pattern
@@ -44,24 +43,31 @@ const Footer = () => {
               <stop offset="100%" stopColor="#2a7a74" stopOpacity="0.9" />
             </linearGradient>
           </defs>
-
+          
           <rect width="100%" height="100%" fill="url(#gradient)" />
           <rect width="100%" height="100%" fill="url(#pattern-circles)" />
-
-          {/* Decorative paint brush strokes */}
+          
+          {/* Decorative elements - same as VisionMission */}
           <path
-            d="M0,150 Q150,50 300,200 T600,100 T900,250 T1200,150"
+            d="M0,200 Q300,100 600,300 T1200,200"
             stroke="white"
-            strokeWidth="3"
+            strokeWidth="2"
             fill="none"
-            opacity="0.08"
+            opacity="0.1"
           />
           <path
-            d="M0,350 Q150,250 300,400 T600,300 T900,450 T1200,350"
+            d="M0,400 Q300,300 600,500 T1200,400"
             stroke="white"
-            strokeWidth="3"
+            strokeWidth="2"
             fill="none"
-            opacity="0.08"
+            opacity="0.1"
+          />
+          <path
+            d="M0,600 Q300,500 600,700 T1200,600"
+            stroke="white"
+            strokeWidth="2"
+            fill="none"
+            opacity="0.1"
           />
         </svg>
       </div>
@@ -115,7 +121,7 @@ const Footer = () => {
               </motion.a>
               <motion.a
                 whileHover={{ y: -3, scale: 1.1 }}
-                href="#"
+                href="https://www.linkedin.com/company/dhaniram-paint/posts/?feedView=all"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 text-[#3153b3]"
@@ -208,15 +214,6 @@ const Footer = () => {
           </motion.div>
         </div>
 
-        {/* Divider */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="h-px bg-gradient-to-r from-transparent via-white/30 to-transparent my-8"
-        />
-
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/70 text-xs md:text-sm text-center md:text-left">
@@ -239,7 +236,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Developer Credit - Added Section */}
+        {/* Developer Credit */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -251,7 +248,6 @@ const Footer = () => {
             Crafted by{" "}
             <a
               href="/"
-              // target="_blank"
               rel="noopener noreferrer"
               className="text-white/70 hover:text-white underline underline-offset-2"
             >

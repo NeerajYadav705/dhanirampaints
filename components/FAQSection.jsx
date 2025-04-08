@@ -33,7 +33,7 @@ const FAQSection = () => {
     },
     {
         question: "How long has your company been in business?",
-        answer: "We've been transforming spaces with quality since 2005, bringing over 18 years of experience to every project."
+        answer: "We've been transforming spaces with quality since 2005, bringing over 20 years of experience to every project."
       },
       {
         question: "Do you offer custom color matching?",
@@ -52,9 +52,11 @@ const FAQSection = () => {
   return (
     <section className="py-16 bg-white px-4 sm:px-6 lg:px-8" ref={faqRef}>
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#6e260e] mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#000000] mb-12">
           Frequently Asked Questions
+          <div className="w-20 h-1 bg-[#E21138] mx-auto mt-4"></div>
         </h2>
+       
 
         <div className="flex flex-col lg:flex-row gap-12">
           {/* Left Side - Image with Text Overlay */}
@@ -67,7 +69,7 @@ const FAQSection = () => {
                 className="object-cover"
                 quality={100}
               />
-              <div className="absolute inset-0 bg-black/20 flex items-end p-8">
+              <div className="absolute inset-0  flex items-end p-8">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -75,12 +77,7 @@ const FAQSection = () => {
                   viewport={{ once: true }}
                   className="text-white"
                 >
-                  <h3 className="text-2xl md:text-3xl font-bold mb-2">
-                    Transforming Spaces
-                  </h3>
-                  <p className="text-xl md:text-2xl font-medium">
-                    With Quality Since 2005
-                  </p>
+              
                 </motion.div>
               </div>
             </div>

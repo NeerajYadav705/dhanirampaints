@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { FaIndustry, FaPalette, FaSearch, FaSwatchbook } from "react-icons/fa";
 
 const Industrial = () => {
+  const colorSequence = ["#E21138", "#EC5800", "#40B5AD", "#009E61"];
   const products = [
     {
       id: 1,
@@ -20,7 +21,7 @@ const Industrial = () => {
         "Multi-Surface Compatibility",
       ],
       image: "/assets/DTM.jpg",
-      color: "#E21138",
+      color: colorSequence[0 % colorSequence.length], // E21138
     },
     {
       id: 2,
@@ -33,10 +34,10 @@ const Industrial = () => {
         "Smooth & Durable Finish",
         "Ideal for Machinery, Tools & Industrial Use",
         "Resistant to Mild Chemicals & Abrasion",
-        "Available in Multiple Shades & Finishes",
+        "Available in Multiple Shades & Finishes",
       ],
       image: "/assets/QD_Enamel.jpg",
-      color: "#E21138",
+      color: colorSequence[1 % colorSequence.length], // EC5800
     },
     {
       id: 3,
@@ -52,7 +53,7 @@ const Industrial = () => {
         "Excellent Color Retention",
       ],
       image: "/assets/SyntheticEnamel.jpg",
-      color: "#E21138",
+      color: colorSequence[2 % colorSequence.length], // 40B5AD
     },
     {
       id: 4,
@@ -68,7 +69,7 @@ const Industrial = () => {
         "Suitable for Metal, Concrete & Masonry",
       ],
       image: "/assets/Bitumen.jpg",
-      color: "#40B5AD",
+      color: colorSequence[3 % colorSequence.length], // 009E61
     },
     {
       id: 5,
@@ -84,7 +85,7 @@ const Industrial = () => {
         "Ideal for Metal, Concrete & Industrial Surfaces",
       ],
       image: "/assets/aluminium.avif",
-      color: "#009E61",
+      color: colorSequence[4 % colorSequence.length], // E21138 (cycle repeats)
     },
     {
       id: 6,
@@ -100,7 +101,7 @@ const Industrial = () => {
         "Suitable for Wood, Metal & Plastic Surfaces",
       ],
       image: "/assets/PUEnamel.jpg",
-      color: "#EC5800",
+      color: colorSequence[5 % colorSequence.length], // EC5800
     },
     {
       id: 7,
@@ -116,7 +117,7 @@ const Industrial = () => {
         "Ideal for Industrial, Marine & Floor Applications",
       ],
       image: "/assets/EpoxyPaint.jpg",
-      color: "#6E260E",
+      color: colorSequence[6 % colorSequence.length], // 40B5AD
     },
     {
       id: 8,
@@ -132,7 +133,7 @@ const Industrial = () => {
         "BIS-Grade Zinc Chrome Option Available",
       ],
       image: "/assets/Redoxide.jpg",
-      color: "#E21138",
+      color: colorSequence[7 % colorSequence.length], // 009E61
     },
   ];
 
@@ -226,7 +227,7 @@ const Industrial = () => {
         />
       </motion.div>
 
-      {/* Products Section - Fixed alignment */}
+      {/* Products Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         {products.map((product, index) => (
           <motion.div
@@ -271,7 +272,7 @@ const Industrial = () => {
             >
               {/* Text Content */}
               <div className="w-full md:w-1/2">
-                <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                <p className="text-gray-700 text-sm sm:text-base leading-relaxed text-justify text-align: justify; text-justify: inter-word;">
                   {product.description}
                 </p>
                 <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">

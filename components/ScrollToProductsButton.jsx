@@ -1,24 +1,13 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 export function ScrollToProductsButton() {
-  const scrollToProducts = () => {
-    const productsButton = document.querySelector('[data-products-button]');
-    
-    if (productsButton) {
-      const yOffset = -20;
-      const y = productsButton.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      
-      window.scrollTo({
-        top: y,
-        behavior: 'smooth'
-      });
+  const router = useRouter();
 
-      setTimeout(() => {
-        productsButton.click();
-      }, 500);
-    }
+  const navigateToProducts = () => {
+    router.push('/product/industrial');
   };
 
   return (
@@ -40,7 +29,7 @@ export function ScrollToProductsButton() {
       
       {/* Animated button */}
       <motion.button
-        onClick={scrollToProducts}
+        onClick={navigateToProducts}
         className="px-8 py-4 bg-[#40B5AD] text-white rounded-xl shadow-lg hover:bg-[#35938c] 
         flex items-center gap-3 text-lg font-medium cursor-pointer"
         whileHover={{ 
@@ -51,22 +40,14 @@ export function ScrollToProductsButton() {
         transition={{ type: "spring", stiffness: 400, damping: 15 }}
       >
         <span>Explore Our Products</span>
-        <motion.svg 
+        <svg 
           className="w-5 h-5"
-          animate={{
-            x: [0, 4, 0],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
           fill="none" 
           stroke="currentColor" 
           viewBox="0 0 24 24"
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </motion.svg>
+        </svg>
       </motion.button>
     </motion.div>
   );

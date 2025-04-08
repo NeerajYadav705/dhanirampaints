@@ -52,7 +52,7 @@ const Enquiry = () => {
   });
 
   const [showSuccess, setShowSuccess] = useState(false);
-  const [state, handleSubmit] = useForm("mblgzzer");
+  const [state, handleSubmit] = useForm("manelgjl"); // Updated Formspree form ID
 
   useEffect(() => {
     if (state.succeeded) {
@@ -81,11 +81,6 @@ const Enquiry = () => {
       ...prev,
       [name]: value,
     }));
-  };
-
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-    await handleSubmit(e);
   };
 
   return (
@@ -157,12 +152,16 @@ const Enquiry = () => {
           ) : (
             <motion.form
               variants={container}
-              onSubmit={handleFormSubmit}
+              onSubmit={handleSubmit}
               className="space-y-6"
             >
-              <input type="hidden" name="_subject" value="New Enquiry from Dhaniram Paints Website" />
+              <input
+                type="hidden"
+                name="_subject"
+                value="New Enquiry from Dhaniram Paints Website"
+              />
               <input type="hidden" name="_format" value="plain" />
-              
+
               <motion.div
                 variants={item}
                 className="grid grid-cols-1 sm:grid-cols-2 gap-6"
@@ -226,8 +225,8 @@ const Enquiry = () => {
                       className="pl-10 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[#009E61] focus:border-[#009E61]"
                       placeholder="your@email.com"
                     />
-                    <ValidationError 
-                      prefix="Email" 
+                    <ValidationError
+                      prefix="Email"
                       field="email"
                       errors={state.errors}
                     />
@@ -311,7 +310,8 @@ const Enquiry = () => {
                   </option>
                   <option value="Decorative Paints">Decorative Paints</option>
                   <option value="Floor Coatings">Floor Coatings</option>
-                  <option value="Precoat Metals">Precoat Metals</option>
+                  <option value="Precoat Metals">Precoat</option>
+                  <option value="Precoat Metals">Ancillary Paints</option>
                 </select>
               </motion.div>
 
@@ -411,8 +411,8 @@ const Enquiry = () => {
                     className="pl-10 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[#009E61] focus:border-[#009E61]"
                     placeholder="Please provide details about your requirements..."
                   />
-                  <ValidationError 
-                    prefix="Message" 
+                  <ValidationError
+                    prefix="Message"
                     field="message"
                     errors={state.errors}
                   />
@@ -426,7 +426,7 @@ const Enquiry = () => {
                   disabled={state.submitting}
                   className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#009E61] hover:bg-[#315a4a] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#009E61] transition-colors duration-300"
                 >
-                  {state.submitting ? 'Submitting...' : 'Submit Enquiry'}
+                  {state.submitting ? "Submitting..." : "Submit Enquiry"}
                 </button>
               </motion.div>
             </motion.form>

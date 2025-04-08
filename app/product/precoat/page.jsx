@@ -15,10 +15,9 @@ const Precoat = () => {
         "Ideal Base for Paints",
         "Crack Resistance",
         "Suitable for Interior & Exterior Walls",
-        "Can Be Used for Light Textures & Shapes",
+        "Can Be Used for Light Textures & Shapes",
       ],
       image: "/assets/White_Putty.jpg",
-      color: "#E21138" // Dhaniram red
     },
     {
       id: 2,
@@ -30,12 +29,14 @@ const Precoat = () => {
         "Excellent Bonding with Surfaces",
         "Suitable for Decorative Applications",
         "Weather & Moisture Resistant",
-        "Ideal for Plaster, Mortar & Tile Work",
+        "Ideal for Plaster, Mortar & Tile Work",
       ],
       image: "/assets/White_Cement.jpg",
-      color: "#40B5AD" // Dhaniram teal
     },
   ];
+
+  // Color palette to cycle through
+  const colors = ["#E21138", "#EC5800", "#40B5AD", "#009E61"];
 
   // Animation variants
   const cardVariants = {
@@ -89,91 +90,94 @@ const Precoat = () => {
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        {products.map((product, index) => (
-          <motion.div
-            key={product.id}
-            initial="hidden"
-            animate="visible"
-            variants={cardVariants}
-            transition={{ delay: index * 0.1 }}
-            className="group mb-10 sm:mb-16"
-          >
-            {/* Product Title Tab - Alternating alignment */}
-            <div className={`flex ${index % 2 === 0 ? "justify-start" : "justify-end"}`}>
-              <motion.div
-                variants={tabVariants}
-                initial="rest"
-                whileHover="hover"
-                style={{ backgroundColor: product.color }}
-                className={`px-6 py-3 rounded-t-lg shadow-sm w-fit ${
-                  index % 2 === 0 ? "mr-4" : "ml-4"
-                }`}
-              >
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white">
-                  {product.name}
-                </h3>
-              </motion.div>
-            </div>
-
-            {/* Card Content */}
-            <div
-              className={`flex flex-col ${
-                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              } gap-6 p-6 bg-white rounded-b-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300`}
-              style={{ 
-                borderTop: `1px solid ${product.color}`,
-                borderTopLeftRadius: index % 2 === 0 ? "0" : "0.5rem",
-                borderTopRightRadius: index % 2 === 0 ? "0.5rem" : "0"
-              }}
+        {products.map((product, index) => {
+          const color = colors[index % colors.length];
+          return (
+            <motion.div
+              key={product.id}
+              initial="hidden"
+              animate="visible"
+              variants={cardVariants}
+              transition={{ delay: index * 0.1 }}
+              className="group mb-10 sm:mb-16"
             >
-              {/* Text Content */}
-              <div className="w-full md:w-1/2">
-                <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                  {product.description}
-                </p>
-                <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {product.features.map((feature, i) => (
-                    <div key={i} className="flex items-start">
-                      <svg
-                        className="h-5 w-5 mr-2 mt-0.5 flex-shrink-0"
-                        style={{ color: product.color }}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      <span className="text-gray-700 text-sm sm:text-base">
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Image */}
-              <div className="w-full md:w-1/2">
+              {/* Product Title Tab - Alternating alignment */}
+              <div className={`flex ${index % 2 === 0 ? "justify-start" : "justify-end"}`}>
                 <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="relative w-full h-48 sm:h-64 md:h-72 rounded-lg overflow-hidden bg-gray-100 shadow-inner"
+                  variants={tabVariants}
+                  initial="rest"
+                  whileHover="hover"
+                  style={{ backgroundColor: color }}
+                  className={`px-6 py-3 rounded-t-lg shadow-sm w-fit ${
+                    index % 2 === 0 ? "mr-4" : "ml-4"
+                  }`}
                 >
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white">
+                    {product.name}
+                  </h3>
                 </motion.div>
               </div>
-            </div>
-          </motion.div>
-        ))}
+
+              {/* Card Content */}
+              <div
+                className={`flex flex-col ${
+                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                } gap-6 p-6 bg-white rounded-b-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300`}
+                style={{ 
+                  borderTop: `1px solid ${color}`,
+                  borderTopLeftRadius: index % 2 === 0 ? "0" : "0.5rem",
+                  borderTopRightRadius: index % 2 === 0 ? "0.5rem" : "0"
+                }}
+              >
+                {/* Text Content */}
+                <div className="w-full md:w-1/2">
+                  <p className="text-gray-700 text-sm sm:text-base leading-relaxed text-justify">
+                    {product.description}
+                  </p>
+                  <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {product.features.map((feature, i) => (
+                      <div key={i} className="flex items-start">
+                        <svg
+                          className="h-5 w-5 mr-2 mt-0.5 flex-shrink-0"
+                          style={{ color: color }}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        <span className="text-gray-700 text-sm sm:text-base">
+                          {feature}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Image */}
+                <div className="w-full md:w-1/2">
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    className="relative w-full h-48 sm:h-64 md:h-72 rounded-lg overflow-hidden bg-gray-100 shadow-inner"
+                  >
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );

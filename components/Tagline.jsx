@@ -21,7 +21,7 @@ const Tagline = () => {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl sm:text-5xl md:text-4xl font-medium text-[#2a2a2a] tracking-tight leading-tight"
+            className="text-4xl sm:text-5xl md:text-4xl font-medium text-[#6e260e] tracking-tight leading-tight"
           >
              Building Partnerships,{" "}
             <motion.span
